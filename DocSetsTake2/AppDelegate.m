@@ -43,7 +43,7 @@
 	}
 
 	NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-	NSURL *storeFileURL = [NSURL fileURLWithPath:[self _pathToDocSetStoreFile]];
+	NSURL *storeFileURL = [NSURL fileURLWithPath:[self _pathToPersistentStoreFile]];
 	NSError *error;
 	if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeFileURL options:nil error:&error]) {
 		coordinator = nil;
@@ -99,7 +99,7 @@
 	return @"/Users/alee/_Developer/Cocoa Projects/AppKiDo/Exploration/com.apple.adc.documentation.OSX.docset";
 }
 
-- (NSString *)_pathToDocSetStoreFile
+- (NSString *)_pathToPersistentStoreFile
 {
 	return [[self _pathToDocSetBundle] stringByAppendingPathComponent:@"Contents/Resources/docSet.dsidx"];
 }
