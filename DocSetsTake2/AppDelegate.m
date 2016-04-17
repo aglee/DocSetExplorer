@@ -99,11 +99,6 @@
 	return @"/Users/alee/_Developer/Cocoa Projects/AppKiDo/Exploration/com.apple.adc.documentation.OSX.docset";
 }
 
-- (NSString *)_pathToDocSetModelFile
-{
-	return [[self _pathToDocSetBundle] stringByAppendingPathComponent:@"Contents/Resources/docSet.mom"];
-}
-
 - (NSString *)_pathToDocSetStoreFile
 {
 	return [[self _pathToDocSetBundle] stringByAppendingPathComponent:@"Contents/Resources/docSet.dsidx"];
