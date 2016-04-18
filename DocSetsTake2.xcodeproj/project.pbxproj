@@ -121,6 +121,9 @@
 		73F2D11A1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
 		73F2D11B1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
 		73F2D11C1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
+		73F2D11F1CC48B2500B15509 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D11E1CC48B2500B15509 /* QuietLog.m */; };
+		73F2D1201CC48B2500B15509 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D11E1CC48B2500B15509 /* QuietLog.m */; };
+		73F2D1211CC48B2500B15509 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D11E1CC48B2500B15509 /* QuietLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +222,8 @@
 		7370BEDB1CC21C0600079C8E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		73F2D1181CC45A1700B15509 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
 		73F2D1191CC45A1700B15509 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
+		73F2D11D1CC48B2500B15509 /* QuietLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuietLog.h; sourceTree = "<group>"; };
+		73F2D11E1CC48B2500B15509 /* QuietLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuietLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +364,8 @@
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
 				73F2D1181CC45A1700B15509 /* DocSetIndex.h */,
 				73F2D1191CC45A1700B15509 /* DocSetIndex.m */,
+				73F2D11D1CC48B2500B15509 /* QuietLog.h */,
+				73F2D11E1CC48B2500B15509 /* QuietLog.m */,
 				7370BEB41CC21BB400079C8E /* Assets.xcassets */,
 				7370BEB61CC21BB400079C8E /* MainMenu.xib */,
 				7370BEB91CC21BB400079C8E /* Info.plist */,
@@ -549,6 +556,7 @@
 				730DE95D1CC3F83100557D4C /* Container.m in Sources */,
 				730DE9A81CC3F83200557D4C /* _OrderedSubnode.m in Sources */,
 				730DE9841CC3F83100557D4C /* TokenType.m in Sources */,
+				73F2D11F1CC48B2500B15509 /* QuietLog.m in Sources */,
 				730DE9931CC3F83200557D4C /* _DSADistributionVersion.m in Sources */,
 				730DE98D1CC3F83200557D4C /* _DocSet.m in Sources */,
 				730DE9871CC3F83200557D4C /* _APILanguage.m in Sources */,
@@ -598,6 +606,7 @@
 				730DE9B21CC3F83200557D4C /* _TokenType.m in Sources */,
 				730DE95B1CC3F83100557D4C /* APILanguage.m in Sources */,
 				730DE9851CC3F83100557D4C /* TokenType.m in Sources */,
+				73F2D1201CC48B2500B15509 /* QuietLog.m in Sources */,
 				730DE9881CC3F83200557D4C /* _APILanguage.m in Sources */,
 				730DE96A1CC3F83100557D4C /* DSANode.m in Sources */,
 				730DE9971CC3F83200557D4C /* _DSANode.m in Sources */,
@@ -637,6 +646,7 @@
 				730DE9B31CC3F83200557D4C /* _TokenType.m in Sources */,
 				730DE95C1CC3F83100557D4C /* APILanguage.m in Sources */,
 				730DE9861CC3F83100557D4C /* TokenType.m in Sources */,
+				73F2D1211CC48B2500B15509 /* QuietLog.m in Sources */,
 				730DE9891CC3F83200557D4C /* _APILanguage.m in Sources */,
 				730DE96B1CC3F83100557D4C /* DSANode.m in Sources */,
 				730DE9981CC3F83200557D4C /* _DSANode.m in Sources */,
