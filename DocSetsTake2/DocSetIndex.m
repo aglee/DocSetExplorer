@@ -31,6 +31,11 @@
 	return self;
 }
 
+- (instancetype)init
+{
+	return [self initWithDocSetPath:nil];
+}
+
 #pragma mark - Getters and setters
 
 - (NSManagedObjectModel *)managedObjectModel
