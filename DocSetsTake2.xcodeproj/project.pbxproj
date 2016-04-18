@@ -118,6 +118,9 @@
 		7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB61CC21BB400079C8E /* MainMenu.xib */; };
 		7370BEC31CC21BB500079C8E /* DocSetsTake2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetsTake2Tests.m */; };
 		7370BECE1CC21BB500079C8E /* DocSetsTake2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */; };
+		73F2D11A1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
+		73F2D11B1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
+		73F2D11C1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +217,8 @@
 		7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetsTake2UITests.m; sourceTree = "<group>"; };
 		7370BECF1CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7370BEDB1CC21C0600079C8E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		73F2D1181CC45A1700B15509 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
+		73F2D1191CC45A1700B15509 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +357,8 @@
 				730DE91A1CC3F83100557D4C /* DocSetModel */,
 				7370BEAB1CC21BB400079C8E /* AppDelegate.h */,
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
+				73F2D1181CC45A1700B15509 /* DocSetIndex.h */,
+				73F2D1191CC45A1700B15509 /* DocSetIndex.m */,
 				7370BEB41CC21BB400079C8E /* Assets.xcassets */,
 				7370BEB61CC21BB400079C8E /* MainMenu.xib */,
 				7370BEB91CC21BB400079C8E /* Info.plist */,
@@ -568,6 +575,7 @@
 				7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */,
 				730DE9601CC3F83100557D4C /* DocSet.m in Sources */,
 				730DE9901CC3F83200557D4C /* _DownloadableFile.m in Sources */,
+				73F2D11A1CC45A1700B15509 /* DocSetIndex.m in Sources */,
 				730DE9AE1CC3F83200557D4C /* _TokenMetainformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +586,7 @@
 			files = (
 				730DE9731CC3F83100557D4C /* FilePath.m in Sources */,
 				730DE9761CC3F83100557D4C /* Header.m in Sources */,
+				73F2D11B1CC45A1700B15509 /* DocSetIndex.m in Sources */,
 				730DE9791CC3F83100557D4C /* NodeUUID.m in Sources */,
 				730DE96D1CC3F83100557D4C /* DSANodeURL.m in Sources */,
 				730DE9701CC3F83100557D4C /* DSAToken.m in Sources */,
@@ -616,6 +625,7 @@
 			files = (
 				730DE9741CC3F83100557D4C /* FilePath.m in Sources */,
 				730DE9771CC3F83100557D4C /* Header.m in Sources */,
+				73F2D11C1CC45A1700B15509 /* DocSetIndex.m in Sources */,
 				730DE97A1CC3F83100557D4C /* NodeUUID.m in Sources */,
 				730DE96E1CC3F83100557D4C /* DSANodeURL.m in Sources */,
 				730DE9711CC3F83100557D4C /* DSAToken.m in Sources */,
@@ -854,6 +864,7 @@
 				730DE7E61CC3F0CA00557D4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7370BEA31CC21BB400079C8E /* Build configuration list for PBXProject "DocSetsTake2" */ = {
 			isa = XCConfigurationList;
