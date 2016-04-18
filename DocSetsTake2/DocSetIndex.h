@@ -16,6 +16,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 /*! docSetPath should be a path to a .docset bundle. */
-- (instancetype)initWithDocSetPath:(NSString *)docSetPath;
+- (instancetype)initWithDocSetPath:(NSString *)docSetPath NS_DESIGNATED_INITIALIZER;
 
 @end
