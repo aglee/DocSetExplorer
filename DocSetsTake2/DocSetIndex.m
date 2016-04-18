@@ -61,7 +61,11 @@
 	NSString *pathToPersistentStoreFile = [self.docSetPath stringByAppendingPathComponent:@"Contents/Resources/docSet.dsidx"];
 	NSURL *storeFileURL = [NSURL fileURLWithPath:pathToPersistentStoreFile];
 	NSError *error;
-	if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeFileURL options:nil error:&error]) {
+	if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType
+								   configuration:nil
+											 URL:storeFileURL
+										 options:@{ NSReadOnlyPersistentStoreOption: @YES }
+										   error:&error]) {
 		coordinator = nil;
 	}
 	_persistentStoreCoordinator = coordinator;
