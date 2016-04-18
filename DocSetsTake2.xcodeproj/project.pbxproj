@@ -111,6 +111,8 @@
 		730DE9B11CC3F83200557D4C /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9591CC3F83100557D4C /* _TokenType.m */; };
 		730DE9B21CC3F83200557D4C /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9591CC3F83100557D4C /* _TokenType.m */; };
 		730DE9B31CC3F83200557D4C /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9591CC3F83100557D4C /* _TokenType.m */; };
+		736AB61E1CC58C9500C4376C /* SimpleFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* SimpleFetchViewController.m */; };
+		736AB61F1CC58C9500C4376C /* SimpleFetchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* SimpleFetchViewController.xib */; };
 		7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAC1CC21BB400079C8E /* AppDelegate.m */; };
 		7370BEB01CC21BB400079C8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAF1CC21BB400079C8E /* main.m */; };
 		7370BEB31CC21BB400079C8E /* DocSetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEB11CC21BB400079C8E /* DocSetModel.xcdatamodeld */; };
@@ -205,6 +207,9 @@
 		730DE9571CC3F83100557D4C /* _TokenMetainformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenMetainformation.m; sourceTree = "<group>"; };
 		730DE9581CC3F83100557D4C /* _TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenType.h; sourceTree = "<group>"; };
 		730DE9591CC3F83100557D4C /* _TokenType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenType.m; sourceTree = "<group>"; };
+		736AB61B1CC58C9500C4376C /* SimpleFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFetchViewController.h; sourceTree = "<group>"; };
+		736AB61C1CC58C9500C4376C /* SimpleFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFetchViewController.m; sourceTree = "<group>"; };
+		736AB61D1CC58C9500C4376C /* SimpleFetchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleFetchViewController.xib; sourceTree = "<group>"; };
 		7370BEA81CC21BB400079C8E /* DocSetsTake2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocSetsTake2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7370BEAB1CC21BB400079C8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7370BEAC1CC21BB400079C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -366,6 +371,9 @@
 				73F2D1191CC45A1700B15509 /* DocSetIndex.m */,
 				73F2D11D1CC48B2500B15509 /* QuietLog.h */,
 				73F2D11E1CC48B2500B15509 /* QuietLog.m */,
+				736AB61B1CC58C9500C4376C /* SimpleFetchViewController.h */,
+				736AB61C1CC58C9500C4376C /* SimpleFetchViewController.m */,
+				736AB61D1CC58C9500C4376C /* SimpleFetchViewController.xib */,
 				7370BEB41CC21BB400079C8E /* Assets.xcassets */,
 				7370BEB61CC21BB400079C8E /* MainMenu.xib */,
 				7370BEB91CC21BB400079C8E /* Info.plist */,
@@ -509,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7370BEB51CC21BB400079C8E /* Assets.xcassets in Resources */,
+				736AB61F1CC58C9500C4376C /* SimpleFetchViewController.xib in Resources */,
 				7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +582,7 @@
 				7370BEB31CC21BB400079C8E /* DocSetModel.xcdatamodeld in Sources */,
 				730DE9691CC3F83100557D4C /* DSANode.m in Sources */,
 				730DE98A1CC3F83200557D4C /* _Container.m in Sources */,
+				736AB61E1CC58C9500C4376C /* SimpleFetchViewController.m in Sources */,
 				7370BEB01CC21BB400079C8E /* main.m in Sources */,
 				730DE9A21CC3F83200557D4C /* _Header.m in Sources */,
 				730DE95A1CC3F83100557D4C /* APILanguage.m in Sources */,
