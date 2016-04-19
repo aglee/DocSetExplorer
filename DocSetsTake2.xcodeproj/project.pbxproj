@@ -21,111 +21,113 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		730DE95A1CC3F83100557D4C /* APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE91E1CC3F83100557D4C /* APILanguage.m */; };
-		730DE95B1CC3F83100557D4C /* APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE91E1CC3F83100557D4C /* APILanguage.m */; };
-		730DE95C1CC3F83100557D4C /* APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE91E1CC3F83100557D4C /* APILanguage.m */; };
-		730DE95D1CC3F83100557D4C /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9201CC3F83100557D4C /* Container.m */; };
-		730DE95E1CC3F83100557D4C /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9201CC3F83100557D4C /* Container.m */; };
-		730DE95F1CC3F83100557D4C /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9201CC3F83100557D4C /* Container.m */; };
-		730DE9601CC3F83100557D4C /* DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9221CC3F83100557D4C /* DocSet.m */; };
-		730DE9611CC3F83100557D4C /* DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9221CC3F83100557D4C /* DocSet.m */; };
-		730DE9621CC3F83100557D4C /* DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9221CC3F83100557D4C /* DocSet.m */; };
-		730DE9631CC3F83100557D4C /* DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9241CC3F83100557D4C /* DownloadableFile.m */; };
-		730DE9641CC3F83100557D4C /* DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9241CC3F83100557D4C /* DownloadableFile.m */; };
-		730DE9651CC3F83100557D4C /* DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9241CC3F83100557D4C /* DownloadableFile.m */; };
-		730DE9661CC3F83100557D4C /* DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9261CC3F83100557D4C /* DSADistributionVersion.m */; };
-		730DE9671CC3F83100557D4C /* DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9261CC3F83100557D4C /* DSADistributionVersion.m */; };
-		730DE9681CC3F83100557D4C /* DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9261CC3F83100557D4C /* DSADistributionVersion.m */; };
-		730DE9691CC3F83100557D4C /* DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9281CC3F83100557D4C /* DSANode.m */; };
-		730DE96A1CC3F83100557D4C /* DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9281CC3F83100557D4C /* DSANode.m */; };
-		730DE96B1CC3F83100557D4C /* DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9281CC3F83100557D4C /* DSANode.m */; };
-		730DE96C1CC3F83100557D4C /* DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92A1CC3F83100557D4C /* DSANodeURL.m */; };
-		730DE96D1CC3F83100557D4C /* DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92A1CC3F83100557D4C /* DSANodeURL.m */; };
-		730DE96E1CC3F83100557D4C /* DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92A1CC3F83100557D4C /* DSANodeURL.m */; };
-		730DE96F1CC3F83100557D4C /* DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92C1CC3F83100557D4C /* DSAToken.m */; };
-		730DE9701CC3F83100557D4C /* DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92C1CC3F83100557D4C /* DSAToken.m */; };
-		730DE9711CC3F83100557D4C /* DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92C1CC3F83100557D4C /* DSAToken.m */; };
-		730DE9721CC3F83100557D4C /* FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92E1CC3F83100557D4C /* FilePath.m */; };
-		730DE9731CC3F83100557D4C /* FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92E1CC3F83100557D4C /* FilePath.m */; };
-		730DE9741CC3F83100557D4C /* FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE92E1CC3F83100557D4C /* FilePath.m */; };
-		730DE9751CC3F83100557D4C /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9301CC3F83100557D4C /* Header.m */; };
-		730DE9761CC3F83100557D4C /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9301CC3F83100557D4C /* Header.m */; };
-		730DE9771CC3F83100557D4C /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9301CC3F83100557D4C /* Header.m */; };
-		730DE9781CC3F83100557D4C /* NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9321CC3F83100557D4C /* NodeUUID.m */; };
-		730DE9791CC3F83100557D4C /* NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9321CC3F83100557D4C /* NodeUUID.m */; };
-		730DE97A1CC3F83100557D4C /* NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9321CC3F83100557D4C /* NodeUUID.m */; };
-		730DE97B1CC3F83100557D4C /* OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9341CC3F83100557D4C /* OrderedSubnode.m */; };
-		730DE97C1CC3F83100557D4C /* OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9341CC3F83100557D4C /* OrderedSubnode.m */; };
-		730DE97D1CC3F83100557D4C /* OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9341CC3F83100557D4C /* OrderedSubnode.m */; };
-		730DE97E1CC3F83100557D4C /* TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9361CC3F83100557D4C /* TokenGroup.m */; };
-		730DE97F1CC3F83100557D4C /* TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9361CC3F83100557D4C /* TokenGroup.m */; };
-		730DE9801CC3F83100557D4C /* TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9361CC3F83100557D4C /* TokenGroup.m */; };
-		730DE9811CC3F83100557D4C /* TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9381CC3F83100557D4C /* TokenMetainformation.m */; };
-		730DE9821CC3F83100557D4C /* TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9381CC3F83100557D4C /* TokenMetainformation.m */; };
-		730DE9831CC3F83100557D4C /* TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9381CC3F83100557D4C /* TokenMetainformation.m */; };
-		730DE9841CC3F83100557D4C /* TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93A1CC3F83100557D4C /* TokenType.m */; };
-		730DE9851CC3F83100557D4C /* TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93A1CC3F83100557D4C /* TokenType.m */; };
-		730DE9861CC3F83100557D4C /* TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93A1CC3F83100557D4C /* TokenType.m */; };
-		730DE9871CC3F83200557D4C /* _APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93D1CC3F83100557D4C /* _APILanguage.m */; };
-		730DE9881CC3F83200557D4C /* _APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93D1CC3F83100557D4C /* _APILanguage.m */; };
-		730DE9891CC3F83200557D4C /* _APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93D1CC3F83100557D4C /* _APILanguage.m */; };
-		730DE98A1CC3F83200557D4C /* _Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93F1CC3F83100557D4C /* _Container.m */; };
-		730DE98B1CC3F83200557D4C /* _Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93F1CC3F83100557D4C /* _Container.m */; };
-		730DE98C1CC3F83200557D4C /* _Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE93F1CC3F83100557D4C /* _Container.m */; };
-		730DE98D1CC3F83200557D4C /* _DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9411CC3F83100557D4C /* _DocSet.m */; };
-		730DE98E1CC3F83200557D4C /* _DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9411CC3F83100557D4C /* _DocSet.m */; };
-		730DE98F1CC3F83200557D4C /* _DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9411CC3F83100557D4C /* _DocSet.m */; };
-		730DE9901CC3F83200557D4C /* _DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9431CC3F83100557D4C /* _DownloadableFile.m */; };
-		730DE9911CC3F83200557D4C /* _DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9431CC3F83100557D4C /* _DownloadableFile.m */; };
-		730DE9921CC3F83200557D4C /* _DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9431CC3F83100557D4C /* _DownloadableFile.m */; };
-		730DE9931CC3F83200557D4C /* _DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9451CC3F83100557D4C /* _DSADistributionVersion.m */; };
-		730DE9941CC3F83200557D4C /* _DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9451CC3F83100557D4C /* _DSADistributionVersion.m */; };
-		730DE9951CC3F83200557D4C /* _DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9451CC3F83100557D4C /* _DSADistributionVersion.m */; };
-		730DE9961CC3F83200557D4C /* _DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9471CC3F83100557D4C /* _DSANode.m */; };
-		730DE9971CC3F83200557D4C /* _DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9471CC3F83100557D4C /* _DSANode.m */; };
-		730DE9981CC3F83200557D4C /* _DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9471CC3F83100557D4C /* _DSANode.m */; };
-		730DE9991CC3F83200557D4C /* _DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9491CC3F83100557D4C /* _DSANodeURL.m */; };
-		730DE99A1CC3F83200557D4C /* _DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9491CC3F83100557D4C /* _DSANodeURL.m */; };
-		730DE99B1CC3F83200557D4C /* _DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9491CC3F83100557D4C /* _DSANodeURL.m */; };
-		730DE99C1CC3F83200557D4C /* _DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94B1CC3F83100557D4C /* _DSAToken.m */; };
-		730DE99D1CC3F83200557D4C /* _DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94B1CC3F83100557D4C /* _DSAToken.m */; };
-		730DE99E1CC3F83200557D4C /* _DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94B1CC3F83100557D4C /* _DSAToken.m */; };
-		730DE99F1CC3F83200557D4C /* _FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94D1CC3F83100557D4C /* _FilePath.m */; };
-		730DE9A01CC3F83200557D4C /* _FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94D1CC3F83100557D4C /* _FilePath.m */; };
-		730DE9A11CC3F83200557D4C /* _FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94D1CC3F83100557D4C /* _FilePath.m */; };
-		730DE9A21CC3F83200557D4C /* _Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94F1CC3F83100557D4C /* _Header.m */; };
-		730DE9A31CC3F83200557D4C /* _Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94F1CC3F83100557D4C /* _Header.m */; };
-		730DE9A41CC3F83200557D4C /* _Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE94F1CC3F83100557D4C /* _Header.m */; };
-		730DE9A51CC3F83200557D4C /* _NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9511CC3F83100557D4C /* _NodeUUID.m */; };
-		730DE9A61CC3F83200557D4C /* _NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9511CC3F83100557D4C /* _NodeUUID.m */; };
-		730DE9A71CC3F83200557D4C /* _NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9511CC3F83100557D4C /* _NodeUUID.m */; };
-		730DE9A81CC3F83200557D4C /* _OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9531CC3F83100557D4C /* _OrderedSubnode.m */; };
-		730DE9A91CC3F83200557D4C /* _OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9531CC3F83100557D4C /* _OrderedSubnode.m */; };
-		730DE9AA1CC3F83200557D4C /* _OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9531CC3F83100557D4C /* _OrderedSubnode.m */; };
-		730DE9AB1CC3F83200557D4C /* _TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9551CC3F83100557D4C /* _TokenGroup.m */; };
-		730DE9AC1CC3F83200557D4C /* _TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9551CC3F83100557D4C /* _TokenGroup.m */; };
-		730DE9AD1CC3F83200557D4C /* _TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9551CC3F83100557D4C /* _TokenGroup.m */; };
-		730DE9AE1CC3F83200557D4C /* _TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9571CC3F83100557D4C /* _TokenMetainformation.m */; };
-		730DE9AF1CC3F83200557D4C /* _TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9571CC3F83100557D4C /* _TokenMetainformation.m */; };
-		730DE9B01CC3F83200557D4C /* _TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9571CC3F83100557D4C /* _TokenMetainformation.m */; };
-		730DE9B11CC3F83200557D4C /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9591CC3F83100557D4C /* _TokenType.m */; };
-		730DE9B21CC3F83200557D4C /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9591CC3F83100557D4C /* _TokenType.m */; };
-		730DE9B31CC3F83200557D4C /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 730DE9591CC3F83100557D4C /* _TokenType.m */; };
 		736AB61E1CC58C9500C4376C /* SimpleFetchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* SimpleFetchViewController.m */; };
 		736AB61F1CC58C9500C4376C /* SimpleFetchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* SimpleFetchViewController.xib */; };
 		7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAC1CC21BB400079C8E /* AppDelegate.m */; };
 		7370BEB01CC21BB400079C8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAF1CC21BB400079C8E /* main.m */; };
-		7370BEB31CC21BB400079C8E /* DocSetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEB11CC21BB400079C8E /* DocSetModel.xcdatamodeld */; };
 		7370BEB51CC21BB400079C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB41CC21BB400079C8E /* Assets.xcassets */; };
 		7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB61CC21BB400079C8E /* MainMenu.xib */; };
 		7370BEC31CC21BB500079C8E /* DocSetsTake2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetsTake2Tests.m */; };
 		7370BECE1CC21BB500079C8E /* DocSetsTake2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */; };
-		73F2D11A1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
-		73F2D11B1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
-		73F2D11C1CC45A1700B15509 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D1191CC45A1700B15509 /* DocSetIndex.m */; };
-		73F2D11F1CC48B2500B15509 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D11E1CC48B2500B15509 /* QuietLog.m */; };
-		73F2D1201CC48B2500B15509 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D11E1CC48B2500B15509 /* QuietLog.m */; };
-		73F2D1211CC48B2500B15509 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F2D11E1CC48B2500B15509 /* QuietLog.m */; };
+		73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
+		73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
+		73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
+		73C216341CC5BCA700F097B9 /* APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F01CC5BCA700F097B9 /* APILanguage.m */; };
+		73C216351CC5BCA700F097B9 /* APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F01CC5BCA700F097B9 /* APILanguage.m */; };
+		73C216361CC5BCA700F097B9 /* APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F01CC5BCA700F097B9 /* APILanguage.m */; };
+		73C216371CC5BCA700F097B9 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F21CC5BCA700F097B9 /* Container.m */; };
+		73C216381CC5BCA700F097B9 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F21CC5BCA700F097B9 /* Container.m */; };
+		73C216391CC5BCA700F097B9 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F21CC5BCA700F097B9 /* Container.m */; };
+		73C2163A1CC5BCA700F097B9 /* DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F41CC5BCA700F097B9 /* DocSet.m */; };
+		73C2163B1CC5BCA700F097B9 /* DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F41CC5BCA700F097B9 /* DocSet.m */; };
+		73C2163C1CC5BCA700F097B9 /* DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F41CC5BCA700F097B9 /* DocSet.m */; };
+		73C2163D1CC5BCA700F097B9 /* DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F61CC5BCA700F097B9 /* DownloadableFile.m */; };
+		73C2163E1CC5BCA700F097B9 /* DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F61CC5BCA700F097B9 /* DownloadableFile.m */; };
+		73C2163F1CC5BCA700F097B9 /* DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F61CC5BCA700F097B9 /* DownloadableFile.m */; };
+		73C216401CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F81CC5BCA700F097B9 /* DSADistributionVersion.m */; };
+		73C216411CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F81CC5BCA700F097B9 /* DSADistributionVersion.m */; };
+		73C216421CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215F81CC5BCA700F097B9 /* DSADistributionVersion.m */; };
+		73C216431CC5BCA700F097B9 /* DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FA1CC5BCA700F097B9 /* DSANode.m */; };
+		73C216441CC5BCA700F097B9 /* DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FA1CC5BCA700F097B9 /* DSANode.m */; };
+		73C216451CC5BCA700F097B9 /* DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FA1CC5BCA700F097B9 /* DSANode.m */; };
+		73C216461CC5BCA700F097B9 /* DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FC1CC5BCA700F097B9 /* DSANodeURL.m */; };
+		73C216471CC5BCA700F097B9 /* DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FC1CC5BCA700F097B9 /* DSANodeURL.m */; };
+		73C216481CC5BCA700F097B9 /* DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FC1CC5BCA700F097B9 /* DSANodeURL.m */; };
+		73C216491CC5BCA700F097B9 /* DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FE1CC5BCA700F097B9 /* DSAToken.m */; };
+		73C2164A1CC5BCA700F097B9 /* DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FE1CC5BCA700F097B9 /* DSAToken.m */; };
+		73C2164B1CC5BCA700F097B9 /* DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215FE1CC5BCA700F097B9 /* DSAToken.m */; };
+		73C2164C1CC5BCA700F097B9 /* FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216001CC5BCA700F097B9 /* FilePath.m */; };
+		73C2164D1CC5BCA700F097B9 /* FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216001CC5BCA700F097B9 /* FilePath.m */; };
+		73C2164E1CC5BCA700F097B9 /* FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216001CC5BCA700F097B9 /* FilePath.m */; };
+		73C2164F1CC5BCA700F097B9 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216021CC5BCA700F097B9 /* Header.m */; };
+		73C216501CC5BCA700F097B9 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216021CC5BCA700F097B9 /* Header.m */; };
+		73C216511CC5BCA700F097B9 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216021CC5BCA700F097B9 /* Header.m */; };
+		73C216521CC5BCA700F097B9 /* NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216041CC5BCA700F097B9 /* NodeUUID.m */; };
+		73C216531CC5BCA700F097B9 /* NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216041CC5BCA700F097B9 /* NodeUUID.m */; };
+		73C216541CC5BCA700F097B9 /* NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216041CC5BCA700F097B9 /* NodeUUID.m */; };
+		73C216551CC5BCA700F097B9 /* OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216061CC5BCA700F097B9 /* OrderedSubnode.m */; };
+		73C216561CC5BCA700F097B9 /* OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216061CC5BCA700F097B9 /* OrderedSubnode.m */; };
+		73C216571CC5BCA700F097B9 /* OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216061CC5BCA700F097B9 /* OrderedSubnode.m */; };
+		73C216581CC5BCA700F097B9 /* TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216081CC5BCA700F097B9 /* TokenGroup.m */; };
+		73C216591CC5BCA700F097B9 /* TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216081CC5BCA700F097B9 /* TokenGroup.m */; };
+		73C2165A1CC5BCA700F097B9 /* TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216081CC5BCA700F097B9 /* TokenGroup.m */; };
+		73C2165B1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160A1CC5BCA700F097B9 /* TokenMetainformation.m */; };
+		73C2165C1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160A1CC5BCA700F097B9 /* TokenMetainformation.m */; };
+		73C2165D1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160A1CC5BCA700F097B9 /* TokenMetainformation.m */; };
+		73C2165E1CC5BCA700F097B9 /* TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160C1CC5BCA700F097B9 /* TokenType.m */; };
+		73C2165F1CC5BCA700F097B9 /* TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160C1CC5BCA700F097B9 /* TokenType.m */; };
+		73C216601CC5BCA700F097B9 /* TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160C1CC5BCA700F097B9 /* TokenType.m */; };
+		73C216611CC5BCA700F097B9 /* _APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160F1CC5BCA700F097B9 /* _APILanguage.m */; };
+		73C216621CC5BCA700F097B9 /* _APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160F1CC5BCA700F097B9 /* _APILanguage.m */; };
+		73C216631CC5BCA700F097B9 /* _APILanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2160F1CC5BCA700F097B9 /* _APILanguage.m */; };
+		73C216641CC5BCA700F097B9 /* _Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216111CC5BCA700F097B9 /* _Container.m */; };
+		73C216651CC5BCA700F097B9 /* _Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216111CC5BCA700F097B9 /* _Container.m */; };
+		73C216661CC5BCA700F097B9 /* _Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216111CC5BCA700F097B9 /* _Container.m */; };
+		73C216671CC5BCA700F097B9 /* _DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216131CC5BCA700F097B9 /* _DocSet.m */; };
+		73C216681CC5BCA700F097B9 /* _DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216131CC5BCA700F097B9 /* _DocSet.m */; };
+		73C216691CC5BCA700F097B9 /* _DocSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216131CC5BCA700F097B9 /* _DocSet.m */; };
+		73C2166A1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216151CC5BCA700F097B9 /* _DownloadableFile.m */; };
+		73C2166B1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216151CC5BCA700F097B9 /* _DownloadableFile.m */; };
+		73C2166C1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216151CC5BCA700F097B9 /* _DownloadableFile.m */; };
+		73C2166D1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216171CC5BCA700F097B9 /* _DSADistributionVersion.m */; };
+		73C2166E1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216171CC5BCA700F097B9 /* _DSADistributionVersion.m */; };
+		73C2166F1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216171CC5BCA700F097B9 /* _DSADistributionVersion.m */; };
+		73C216701CC5BCA700F097B9 /* _DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216191CC5BCA700F097B9 /* _DSANode.m */; };
+		73C216711CC5BCA700F097B9 /* _DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216191CC5BCA700F097B9 /* _DSANode.m */; };
+		73C216721CC5BCA700F097B9 /* _DSANode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216191CC5BCA700F097B9 /* _DSANode.m */; };
+		73C216731CC5BCA700F097B9 /* _DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161B1CC5BCA700F097B9 /* _DSANodeURL.m */; };
+		73C216741CC5BCA700F097B9 /* _DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161B1CC5BCA700F097B9 /* _DSANodeURL.m */; };
+		73C216751CC5BCA700F097B9 /* _DSANodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161B1CC5BCA700F097B9 /* _DSANodeURL.m */; };
+		73C216761CC5BCA700F097B9 /* _DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161D1CC5BCA700F097B9 /* _DSAToken.m */; };
+		73C216771CC5BCA700F097B9 /* _DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161D1CC5BCA700F097B9 /* _DSAToken.m */; };
+		73C216781CC5BCA700F097B9 /* _DSAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161D1CC5BCA700F097B9 /* _DSAToken.m */; };
+		73C216791CC5BCA700F097B9 /* _FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161F1CC5BCA700F097B9 /* _FilePath.m */; };
+		73C2167A1CC5BCA700F097B9 /* _FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161F1CC5BCA700F097B9 /* _FilePath.m */; };
+		73C2167B1CC5BCA700F097B9 /* _FilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2161F1CC5BCA700F097B9 /* _FilePath.m */; };
+		73C2167C1CC5BCA700F097B9 /* _Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216211CC5BCA700F097B9 /* _Header.m */; };
+		73C2167D1CC5BCA700F097B9 /* _Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216211CC5BCA700F097B9 /* _Header.m */; };
+		73C2167E1CC5BCA700F097B9 /* _Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216211CC5BCA700F097B9 /* _Header.m */; };
+		73C2167F1CC5BCA700F097B9 /* _NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216231CC5BCA700F097B9 /* _NodeUUID.m */; };
+		73C216801CC5BCA700F097B9 /* _NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216231CC5BCA700F097B9 /* _NodeUUID.m */; };
+		73C216811CC5BCA700F097B9 /* _NodeUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216231CC5BCA700F097B9 /* _NodeUUID.m */; };
+		73C216821CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216251CC5BCA700F097B9 /* _OrderedSubnode.m */; };
+		73C216831CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216251CC5BCA700F097B9 /* _OrderedSubnode.m */; };
+		73C216841CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216251CC5BCA700F097B9 /* _OrderedSubnode.m */; };
+		73C216851CC5BCA700F097B9 /* _TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216271CC5BCA700F097B9 /* _TokenGroup.m */; };
+		73C216861CC5BCA700F097B9 /* _TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216271CC5BCA700F097B9 /* _TokenGroup.m */; };
+		73C216871CC5BCA700F097B9 /* _TokenGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216271CC5BCA700F097B9 /* _TokenGroup.m */; };
+		73C216881CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216291CC5BCA700F097B9 /* _TokenMetainformation.m */; };
+		73C216891CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216291CC5BCA700F097B9 /* _TokenMetainformation.m */; };
+		73C2168A1CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216291CC5BCA700F097B9 /* _TokenMetainformation.m */; };
+		73C2168B1CC5BCA700F097B9 /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2162B1CC5BCA700F097B9 /* _TokenType.m */; };
+		73C2168C1CC5BCA700F097B9 /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2162B1CC5BCA700F097B9 /* _TokenType.m */; };
+		73C2168D1CC5BCA700F097B9 /* _TokenType.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2162B1CC5BCA700F097B9 /* _TokenType.m */; };
+		73C2168E1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73C2162C1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld */; };
+		73C2168F1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73C2162C1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld */; };
+		73C216901CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73C2162C1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld */; };
+		73C216911CC5BCA700F097B9 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216301CC5BCA700F097B9 /* QuietLog.m */; };
+		73C216921CC5BCA700F097B9 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216301CC5BCA700F097B9 /* QuietLog.m */; };
+		73C216931CC5BCA700F097B9 /* QuietLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C216301CC5BCA700F097B9 /* QuietLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,67 +148,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		730DE91B1CC3F83100557D4C /* DocSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetModel.h; sourceTree = "<group>"; };
-		730DE91D1CC3F83100557D4C /* APILanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILanguage.h; sourceTree = "<group>"; };
-		730DE91E1CC3F83100557D4C /* APILanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILanguage.m; sourceTree = "<group>"; };
-		730DE91F1CC3F83100557D4C /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
-		730DE9201CC3F83100557D4C /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
-		730DE9211CC3F83100557D4C /* DocSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSet.h; sourceTree = "<group>"; };
-		730DE9221CC3F83100557D4C /* DocSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSet.m; sourceTree = "<group>"; };
-		730DE9231CC3F83100557D4C /* DownloadableFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadableFile.h; sourceTree = "<group>"; };
-		730DE9241CC3F83100557D4C /* DownloadableFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadableFile.m; sourceTree = "<group>"; };
-		730DE9251CC3F83100557D4C /* DSADistributionVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSADistributionVersion.h; sourceTree = "<group>"; };
-		730DE9261CC3F83100557D4C /* DSADistributionVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSADistributionVersion.m; sourceTree = "<group>"; };
-		730DE9271CC3F83100557D4C /* DSANode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSANode.h; sourceTree = "<group>"; };
-		730DE9281CC3F83100557D4C /* DSANode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSANode.m; sourceTree = "<group>"; };
-		730DE9291CC3F83100557D4C /* DSANodeURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSANodeURL.h; sourceTree = "<group>"; };
-		730DE92A1CC3F83100557D4C /* DSANodeURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSANodeURL.m; sourceTree = "<group>"; };
-		730DE92B1CC3F83100557D4C /* DSAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSAToken.h; sourceTree = "<group>"; };
-		730DE92C1CC3F83100557D4C /* DSAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSAToken.m; sourceTree = "<group>"; };
-		730DE92D1CC3F83100557D4C /* FilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePath.h; sourceTree = "<group>"; };
-		730DE92E1CC3F83100557D4C /* FilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePath.m; sourceTree = "<group>"; };
-		730DE92F1CC3F83100557D4C /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		730DE9301CC3F83100557D4C /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
-		730DE9311CC3F83100557D4C /* NodeUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeUUID.h; sourceTree = "<group>"; };
-		730DE9321CC3F83100557D4C /* NodeUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeUUID.m; sourceTree = "<group>"; };
-		730DE9331CC3F83100557D4C /* OrderedSubnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedSubnode.h; sourceTree = "<group>"; };
-		730DE9341CC3F83100557D4C /* OrderedSubnode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedSubnode.m; sourceTree = "<group>"; };
-		730DE9351CC3F83100557D4C /* TokenGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenGroup.h; sourceTree = "<group>"; };
-		730DE9361CC3F83100557D4C /* TokenGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenGroup.m; sourceTree = "<group>"; };
-		730DE9371CC3F83100557D4C /* TokenMetainformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenMetainformation.h; sourceTree = "<group>"; };
-		730DE9381CC3F83100557D4C /* TokenMetainformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenMetainformation.m; sourceTree = "<group>"; };
-		730DE9391CC3F83100557D4C /* TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
-		730DE93A1CC3F83100557D4C /* TokenType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenType.m; sourceTree = "<group>"; };
-		730DE93C1CC3F83100557D4C /* _APILanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _APILanguage.h; sourceTree = "<group>"; };
-		730DE93D1CC3F83100557D4C /* _APILanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _APILanguage.m; sourceTree = "<group>"; };
-		730DE93E1CC3F83100557D4C /* _Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Container.h; sourceTree = "<group>"; };
-		730DE93F1CC3F83100557D4C /* _Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Container.m; sourceTree = "<group>"; };
-		730DE9401CC3F83100557D4C /* _DocSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DocSet.h; sourceTree = "<group>"; };
-		730DE9411CC3F83100557D4C /* _DocSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DocSet.m; sourceTree = "<group>"; };
-		730DE9421CC3F83100557D4C /* _DownloadableFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DownloadableFile.h; sourceTree = "<group>"; };
-		730DE9431CC3F83100557D4C /* _DownloadableFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DownloadableFile.m; sourceTree = "<group>"; };
-		730DE9441CC3F83100557D4C /* _DSADistributionVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSADistributionVersion.h; sourceTree = "<group>"; };
-		730DE9451CC3F83100557D4C /* _DSADistributionVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSADistributionVersion.m; sourceTree = "<group>"; };
-		730DE9461CC3F83100557D4C /* _DSANode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSANode.h; sourceTree = "<group>"; };
-		730DE9471CC3F83100557D4C /* _DSANode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSANode.m; sourceTree = "<group>"; };
-		730DE9481CC3F83100557D4C /* _DSANodeURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSANodeURL.h; sourceTree = "<group>"; };
-		730DE9491CC3F83100557D4C /* _DSANodeURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSANodeURL.m; sourceTree = "<group>"; };
-		730DE94A1CC3F83100557D4C /* _DSAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSAToken.h; sourceTree = "<group>"; };
-		730DE94B1CC3F83100557D4C /* _DSAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSAToken.m; sourceTree = "<group>"; };
-		730DE94C1CC3F83100557D4C /* _FilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FilePath.h; sourceTree = "<group>"; };
-		730DE94D1CC3F83100557D4C /* _FilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FilePath.m; sourceTree = "<group>"; };
-		730DE94E1CC3F83100557D4C /* _Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Header.h; sourceTree = "<group>"; };
-		730DE94F1CC3F83100557D4C /* _Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Header.m; sourceTree = "<group>"; };
-		730DE9501CC3F83100557D4C /* _NodeUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _NodeUUID.h; sourceTree = "<group>"; };
-		730DE9511CC3F83100557D4C /* _NodeUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _NodeUUID.m; sourceTree = "<group>"; };
-		730DE9521CC3F83100557D4C /* _OrderedSubnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _OrderedSubnode.h; sourceTree = "<group>"; };
-		730DE9531CC3F83100557D4C /* _OrderedSubnode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _OrderedSubnode.m; sourceTree = "<group>"; };
-		730DE9541CC3F83100557D4C /* _TokenGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenGroup.h; sourceTree = "<group>"; };
-		730DE9551CC3F83100557D4C /* _TokenGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenGroup.m; sourceTree = "<group>"; };
-		730DE9561CC3F83100557D4C /* _TokenMetainformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenMetainformation.h; sourceTree = "<group>"; };
-		730DE9571CC3F83100557D4C /* _TokenMetainformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenMetainformation.m; sourceTree = "<group>"; };
-		730DE9581CC3F83100557D4C /* _TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenType.h; sourceTree = "<group>"; };
-		730DE9591CC3F83100557D4C /* _TokenType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenType.m; sourceTree = "<group>"; };
 		736AB61B1CC58C9500C4376C /* SimpleFetchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFetchViewController.h; sourceTree = "<group>"; };
 		736AB61C1CC58C9500C4376C /* SimpleFetchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFetchViewController.m; sourceTree = "<group>"; };
 		736AB61D1CC58C9500C4376C /* SimpleFetchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleFetchViewController.xib; sourceTree = "<group>"; };
@@ -214,7 +155,6 @@
 		7370BEAB1CC21BB400079C8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7370BEAC1CC21BB400079C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7370BEAF1CC21BB400079C8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7370BEB21CC21BB400079C8E /* DocSetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DocSetModel.xcdatamodel; sourceTree = "<group>"; };
 		7370BEB41CC21BB400079C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7370BEB71CC21BB400079C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7370BEB91CC21BB400079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -225,10 +165,72 @@
 		7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetsTake2UITests.m; sourceTree = "<group>"; };
 		7370BECF1CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7370BEDB1CC21C0600079C8E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		73F2D1181CC45A1700B15509 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
-		73F2D1191CC45A1700B15509 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
-		73F2D11D1CC48B2500B15509 /* QuietLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuietLog.h; sourceTree = "<group>"; };
-		73F2D11E1CC48B2500B15509 /* QuietLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuietLog.m; sourceTree = "<group>"; };
+		73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
+		73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
+		73C215ED1CC5BCA700F097B9 /* DocSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetModel.h; sourceTree = "<group>"; };
+		73C215EF1CC5BCA700F097B9 /* APILanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILanguage.h; sourceTree = "<group>"; };
+		73C215F01CC5BCA700F097B9 /* APILanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILanguage.m; sourceTree = "<group>"; };
+		73C215F11CC5BCA700F097B9 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
+		73C215F21CC5BCA700F097B9 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
+		73C215F31CC5BCA700F097B9 /* DocSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSet.h; sourceTree = "<group>"; };
+		73C215F41CC5BCA700F097B9 /* DocSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSet.m; sourceTree = "<group>"; };
+		73C215F51CC5BCA700F097B9 /* DownloadableFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadableFile.h; sourceTree = "<group>"; };
+		73C215F61CC5BCA700F097B9 /* DownloadableFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadableFile.m; sourceTree = "<group>"; };
+		73C215F71CC5BCA700F097B9 /* DSADistributionVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSADistributionVersion.h; sourceTree = "<group>"; };
+		73C215F81CC5BCA700F097B9 /* DSADistributionVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSADistributionVersion.m; sourceTree = "<group>"; };
+		73C215F91CC5BCA700F097B9 /* DSANode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSANode.h; sourceTree = "<group>"; };
+		73C215FA1CC5BCA700F097B9 /* DSANode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSANode.m; sourceTree = "<group>"; };
+		73C215FB1CC5BCA700F097B9 /* DSANodeURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSANodeURL.h; sourceTree = "<group>"; };
+		73C215FC1CC5BCA700F097B9 /* DSANodeURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSANodeURL.m; sourceTree = "<group>"; };
+		73C215FD1CC5BCA700F097B9 /* DSAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSAToken.h; sourceTree = "<group>"; };
+		73C215FE1CC5BCA700F097B9 /* DSAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSAToken.m; sourceTree = "<group>"; };
+		73C215FF1CC5BCA700F097B9 /* FilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePath.h; sourceTree = "<group>"; };
+		73C216001CC5BCA700F097B9 /* FilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePath.m; sourceTree = "<group>"; };
+		73C216011CC5BCA700F097B9 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		73C216021CC5BCA700F097B9 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
+		73C216031CC5BCA700F097B9 /* NodeUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeUUID.h; sourceTree = "<group>"; };
+		73C216041CC5BCA700F097B9 /* NodeUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeUUID.m; sourceTree = "<group>"; };
+		73C216051CC5BCA700F097B9 /* OrderedSubnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedSubnode.h; sourceTree = "<group>"; };
+		73C216061CC5BCA700F097B9 /* OrderedSubnode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedSubnode.m; sourceTree = "<group>"; };
+		73C216071CC5BCA700F097B9 /* TokenGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenGroup.h; sourceTree = "<group>"; };
+		73C216081CC5BCA700F097B9 /* TokenGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenGroup.m; sourceTree = "<group>"; };
+		73C216091CC5BCA700F097B9 /* TokenMetainformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenMetainformation.h; sourceTree = "<group>"; };
+		73C2160A1CC5BCA700F097B9 /* TokenMetainformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenMetainformation.m; sourceTree = "<group>"; };
+		73C2160B1CC5BCA700F097B9 /* TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
+		73C2160C1CC5BCA700F097B9 /* TokenType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenType.m; sourceTree = "<group>"; };
+		73C2160E1CC5BCA700F097B9 /* _APILanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _APILanguage.h; sourceTree = "<group>"; };
+		73C2160F1CC5BCA700F097B9 /* _APILanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _APILanguage.m; sourceTree = "<group>"; };
+		73C216101CC5BCA700F097B9 /* _Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Container.h; sourceTree = "<group>"; };
+		73C216111CC5BCA700F097B9 /* _Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Container.m; sourceTree = "<group>"; };
+		73C216121CC5BCA700F097B9 /* _DocSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DocSet.h; sourceTree = "<group>"; };
+		73C216131CC5BCA700F097B9 /* _DocSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DocSet.m; sourceTree = "<group>"; };
+		73C216141CC5BCA700F097B9 /* _DownloadableFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DownloadableFile.h; sourceTree = "<group>"; };
+		73C216151CC5BCA700F097B9 /* _DownloadableFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DownloadableFile.m; sourceTree = "<group>"; };
+		73C216161CC5BCA700F097B9 /* _DSADistributionVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSADistributionVersion.h; sourceTree = "<group>"; };
+		73C216171CC5BCA700F097B9 /* _DSADistributionVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSADistributionVersion.m; sourceTree = "<group>"; };
+		73C216181CC5BCA700F097B9 /* _DSANode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSANode.h; sourceTree = "<group>"; };
+		73C216191CC5BCA700F097B9 /* _DSANode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSANode.m; sourceTree = "<group>"; };
+		73C2161A1CC5BCA700F097B9 /* _DSANodeURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSANodeURL.h; sourceTree = "<group>"; };
+		73C2161B1CC5BCA700F097B9 /* _DSANodeURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSANodeURL.m; sourceTree = "<group>"; };
+		73C2161C1CC5BCA700F097B9 /* _DSAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DSAToken.h; sourceTree = "<group>"; };
+		73C2161D1CC5BCA700F097B9 /* _DSAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DSAToken.m; sourceTree = "<group>"; };
+		73C2161E1CC5BCA700F097B9 /* _FilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FilePath.h; sourceTree = "<group>"; };
+		73C2161F1CC5BCA700F097B9 /* _FilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FilePath.m; sourceTree = "<group>"; };
+		73C216201CC5BCA700F097B9 /* _Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Header.h; sourceTree = "<group>"; };
+		73C216211CC5BCA700F097B9 /* _Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Header.m; sourceTree = "<group>"; };
+		73C216221CC5BCA700F097B9 /* _NodeUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _NodeUUID.h; sourceTree = "<group>"; };
+		73C216231CC5BCA700F097B9 /* _NodeUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _NodeUUID.m; sourceTree = "<group>"; };
+		73C216241CC5BCA700F097B9 /* _OrderedSubnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _OrderedSubnode.h; sourceTree = "<group>"; };
+		73C216251CC5BCA700F097B9 /* _OrderedSubnode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _OrderedSubnode.m; sourceTree = "<group>"; };
+		73C216261CC5BCA700F097B9 /* _TokenGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenGroup.h; sourceTree = "<group>"; };
+		73C216271CC5BCA700F097B9 /* _TokenGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenGroup.m; sourceTree = "<group>"; };
+		73C216281CC5BCA700F097B9 /* _TokenMetainformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenMetainformation.h; sourceTree = "<group>"; };
+		73C216291CC5BCA700F097B9 /* _TokenMetainformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenMetainformation.m; sourceTree = "<group>"; };
+		73C2162A1CC5BCA700F097B9 /* _TokenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TokenType.h; sourceTree = "<group>"; };
+		73C2162B1CC5BCA700F097B9 /* _TokenType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TokenType.m; sourceTree = "<group>"; };
+		73C2162D1CC5BCA700F097B9 /* DocSetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DocSetModel.xcdatamodel; sourceTree = "<group>"; };
+		73C2162F1CC5BCA700F097B9 /* QuietLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuietLog.h; sourceTree = "<group>"; };
+		73C216301CC5BCA700F097B9 /* QuietLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuietLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,90 +258,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		730DE91A1CC3F83100557D4C /* DocSetModel */ = {
-			isa = PBXGroup;
-			children = (
-				730DE91B1CC3F83100557D4C /* DocSetModel.h */,
-				730DE91C1CC3F83100557D4C /* Human */,
-				730DE93B1CC3F83100557D4C /* Machine */,
-			);
-			path = DocSetModel;
-			sourceTree = "<group>";
-		};
-		730DE91C1CC3F83100557D4C /* Human */ = {
-			isa = PBXGroup;
-			children = (
-				730DE91D1CC3F83100557D4C /* APILanguage.h */,
-				730DE91E1CC3F83100557D4C /* APILanguage.m */,
-				730DE91F1CC3F83100557D4C /* Container.h */,
-				730DE9201CC3F83100557D4C /* Container.m */,
-				730DE9211CC3F83100557D4C /* DocSet.h */,
-				730DE9221CC3F83100557D4C /* DocSet.m */,
-				730DE9231CC3F83100557D4C /* DownloadableFile.h */,
-				730DE9241CC3F83100557D4C /* DownloadableFile.m */,
-				730DE9251CC3F83100557D4C /* DSADistributionVersion.h */,
-				730DE9261CC3F83100557D4C /* DSADistributionVersion.m */,
-				730DE9271CC3F83100557D4C /* DSANode.h */,
-				730DE9281CC3F83100557D4C /* DSANode.m */,
-				730DE9291CC3F83100557D4C /* DSANodeURL.h */,
-				730DE92A1CC3F83100557D4C /* DSANodeURL.m */,
-				730DE92B1CC3F83100557D4C /* DSAToken.h */,
-				730DE92C1CC3F83100557D4C /* DSAToken.m */,
-				730DE92D1CC3F83100557D4C /* FilePath.h */,
-				730DE92E1CC3F83100557D4C /* FilePath.m */,
-				730DE92F1CC3F83100557D4C /* Header.h */,
-				730DE9301CC3F83100557D4C /* Header.m */,
-				730DE9311CC3F83100557D4C /* NodeUUID.h */,
-				730DE9321CC3F83100557D4C /* NodeUUID.m */,
-				730DE9331CC3F83100557D4C /* OrderedSubnode.h */,
-				730DE9341CC3F83100557D4C /* OrderedSubnode.m */,
-				730DE9351CC3F83100557D4C /* TokenGroup.h */,
-				730DE9361CC3F83100557D4C /* TokenGroup.m */,
-				730DE9371CC3F83100557D4C /* TokenMetainformation.h */,
-				730DE9381CC3F83100557D4C /* TokenMetainformation.m */,
-				730DE9391CC3F83100557D4C /* TokenType.h */,
-				730DE93A1CC3F83100557D4C /* TokenType.m */,
-			);
-			path = Human;
-			sourceTree = "<group>";
-		};
-		730DE93B1CC3F83100557D4C /* Machine */ = {
-			isa = PBXGroup;
-			children = (
-				730DE93C1CC3F83100557D4C /* _APILanguage.h */,
-				730DE93D1CC3F83100557D4C /* _APILanguage.m */,
-				730DE93E1CC3F83100557D4C /* _Container.h */,
-				730DE93F1CC3F83100557D4C /* _Container.m */,
-				730DE9401CC3F83100557D4C /* _DocSet.h */,
-				730DE9411CC3F83100557D4C /* _DocSet.m */,
-				730DE9421CC3F83100557D4C /* _DownloadableFile.h */,
-				730DE9431CC3F83100557D4C /* _DownloadableFile.m */,
-				730DE9441CC3F83100557D4C /* _DSADistributionVersion.h */,
-				730DE9451CC3F83100557D4C /* _DSADistributionVersion.m */,
-				730DE9461CC3F83100557D4C /* _DSANode.h */,
-				730DE9471CC3F83100557D4C /* _DSANode.m */,
-				730DE9481CC3F83100557D4C /* _DSANodeURL.h */,
-				730DE9491CC3F83100557D4C /* _DSANodeURL.m */,
-				730DE94A1CC3F83100557D4C /* _DSAToken.h */,
-				730DE94B1CC3F83100557D4C /* _DSAToken.m */,
-				730DE94C1CC3F83100557D4C /* _FilePath.h */,
-				730DE94D1CC3F83100557D4C /* _FilePath.m */,
-				730DE94E1CC3F83100557D4C /* _Header.h */,
-				730DE94F1CC3F83100557D4C /* _Header.m */,
-				730DE9501CC3F83100557D4C /* _NodeUUID.h */,
-				730DE9511CC3F83100557D4C /* _NodeUUID.m */,
-				730DE9521CC3F83100557D4C /* _OrderedSubnode.h */,
-				730DE9531CC3F83100557D4C /* _OrderedSubnode.m */,
-				730DE9541CC3F83100557D4C /* _TokenGroup.h */,
-				730DE9551CC3F83100557D4C /* _TokenGroup.m */,
-				730DE9561CC3F83100557D4C /* _TokenMetainformation.h */,
-				730DE9571CC3F83100557D4C /* _TokenMetainformation.m */,
-				730DE9581CC3F83100557D4C /* _TokenType.h */,
-				730DE9591CC3F83100557D4C /* _TokenType.m */,
-			);
-			path = Machine;
-			sourceTree = "<group>";
-		};
 		7370BE9F1CC21BB400079C8E = {
 			isa = PBXGroup;
 			children = (
@@ -364,20 +282,16 @@
 		7370BEAA1CC21BB400079C8E /* DocSetsTake2 */ = {
 			isa = PBXGroup;
 			children = (
-				730DE91A1CC3F83100557D4C /* DocSetModel */,
+				73C2162E1CC5BCA700F097B9 /* Utilities */,
+				73C215E91CC5BCA700F097B9 /* Data */,
 				7370BEAB1CC21BB400079C8E /* AppDelegate.h */,
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
-				73F2D1181CC45A1700B15509 /* DocSetIndex.h */,
-				73F2D1191CC45A1700B15509 /* DocSetIndex.m */,
-				73F2D11D1CC48B2500B15509 /* QuietLog.h */,
-				73F2D11E1CC48B2500B15509 /* QuietLog.m */,
 				736AB61B1CC58C9500C4376C /* SimpleFetchViewController.h */,
 				736AB61C1CC58C9500C4376C /* SimpleFetchViewController.m */,
 				736AB61D1CC58C9500C4376C /* SimpleFetchViewController.xib */,
 				7370BEB41CC21BB400079C8E /* Assets.xcassets */,
 				7370BEB61CC21BB400079C8E /* MainMenu.xib */,
 				7370BEB91CC21BB400079C8E /* Info.plist */,
-				7370BEB11CC21BB400079C8E /* DocSetModel.xcdatamodeld */,
 				7370BEAE1CC21BB400079C8E /* Supporting Files */,
 			);
 			path = DocSetsTake2;
@@ -407,6 +321,110 @@
 				7370BECF1CC21BB500079C8E /* Info.plist */,
 			);
 			path = DocSetsTake2UITests;
+			sourceTree = "<group>";
+		};
+		73C215E91CC5BCA700F097B9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */,
+				73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */,
+				73C215EC1CC5BCA700F097B9 /* DocSetModel */,
+				73C2162C1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		73C215EC1CC5BCA700F097B9 /* DocSetModel */ = {
+			isa = PBXGroup;
+			children = (
+				73C215ED1CC5BCA700F097B9 /* DocSetModel.h */,
+				73C215EE1CC5BCA700F097B9 /* Human */,
+				73C2160D1CC5BCA700F097B9 /* Machine */,
+			);
+			path = DocSetModel;
+			sourceTree = "<group>";
+		};
+		73C215EE1CC5BCA700F097B9 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				73C215EF1CC5BCA700F097B9 /* APILanguage.h */,
+				73C215F01CC5BCA700F097B9 /* APILanguage.m */,
+				73C215F11CC5BCA700F097B9 /* Container.h */,
+				73C215F21CC5BCA700F097B9 /* Container.m */,
+				73C215F31CC5BCA700F097B9 /* DocSet.h */,
+				73C215F41CC5BCA700F097B9 /* DocSet.m */,
+				73C215F51CC5BCA700F097B9 /* DownloadableFile.h */,
+				73C215F61CC5BCA700F097B9 /* DownloadableFile.m */,
+				73C215F71CC5BCA700F097B9 /* DSADistributionVersion.h */,
+				73C215F81CC5BCA700F097B9 /* DSADistributionVersion.m */,
+				73C215F91CC5BCA700F097B9 /* DSANode.h */,
+				73C215FA1CC5BCA700F097B9 /* DSANode.m */,
+				73C215FB1CC5BCA700F097B9 /* DSANodeURL.h */,
+				73C215FC1CC5BCA700F097B9 /* DSANodeURL.m */,
+				73C215FD1CC5BCA700F097B9 /* DSAToken.h */,
+				73C215FE1CC5BCA700F097B9 /* DSAToken.m */,
+				73C215FF1CC5BCA700F097B9 /* FilePath.h */,
+				73C216001CC5BCA700F097B9 /* FilePath.m */,
+				73C216011CC5BCA700F097B9 /* Header.h */,
+				73C216021CC5BCA700F097B9 /* Header.m */,
+				73C216031CC5BCA700F097B9 /* NodeUUID.h */,
+				73C216041CC5BCA700F097B9 /* NodeUUID.m */,
+				73C216051CC5BCA700F097B9 /* OrderedSubnode.h */,
+				73C216061CC5BCA700F097B9 /* OrderedSubnode.m */,
+				73C216071CC5BCA700F097B9 /* TokenGroup.h */,
+				73C216081CC5BCA700F097B9 /* TokenGroup.m */,
+				73C216091CC5BCA700F097B9 /* TokenMetainformation.h */,
+				73C2160A1CC5BCA700F097B9 /* TokenMetainformation.m */,
+				73C2160B1CC5BCA700F097B9 /* TokenType.h */,
+				73C2160C1CC5BCA700F097B9 /* TokenType.m */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		73C2160D1CC5BCA700F097B9 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				73C2160E1CC5BCA700F097B9 /* _APILanguage.h */,
+				73C2160F1CC5BCA700F097B9 /* _APILanguage.m */,
+				73C216101CC5BCA700F097B9 /* _Container.h */,
+				73C216111CC5BCA700F097B9 /* _Container.m */,
+				73C216121CC5BCA700F097B9 /* _DocSet.h */,
+				73C216131CC5BCA700F097B9 /* _DocSet.m */,
+				73C216141CC5BCA700F097B9 /* _DownloadableFile.h */,
+				73C216151CC5BCA700F097B9 /* _DownloadableFile.m */,
+				73C216161CC5BCA700F097B9 /* _DSADistributionVersion.h */,
+				73C216171CC5BCA700F097B9 /* _DSADistributionVersion.m */,
+				73C216181CC5BCA700F097B9 /* _DSANode.h */,
+				73C216191CC5BCA700F097B9 /* _DSANode.m */,
+				73C2161A1CC5BCA700F097B9 /* _DSANodeURL.h */,
+				73C2161B1CC5BCA700F097B9 /* _DSANodeURL.m */,
+				73C2161C1CC5BCA700F097B9 /* _DSAToken.h */,
+				73C2161D1CC5BCA700F097B9 /* _DSAToken.m */,
+				73C2161E1CC5BCA700F097B9 /* _FilePath.h */,
+				73C2161F1CC5BCA700F097B9 /* _FilePath.m */,
+				73C216201CC5BCA700F097B9 /* _Header.h */,
+				73C216211CC5BCA700F097B9 /* _Header.m */,
+				73C216221CC5BCA700F097B9 /* _NodeUUID.h */,
+				73C216231CC5BCA700F097B9 /* _NodeUUID.m */,
+				73C216241CC5BCA700F097B9 /* _OrderedSubnode.h */,
+				73C216251CC5BCA700F097B9 /* _OrderedSubnode.m */,
+				73C216261CC5BCA700F097B9 /* _TokenGroup.h */,
+				73C216271CC5BCA700F097B9 /* _TokenGroup.m */,
+				73C216281CC5BCA700F097B9 /* _TokenMetainformation.h */,
+				73C216291CC5BCA700F097B9 /* _TokenMetainformation.m */,
+				73C2162A1CC5BCA700F097B9 /* _TokenType.h */,
+				73C2162B1CC5BCA700F097B9 /* _TokenType.m */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+		73C2162E1CC5BCA700F097B9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				73C2162F1CC5BCA700F097B9 /* QuietLog.h */,
+				73C216301CC5BCA700F097B9 /* QuietLog.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,42 +577,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				730DE9751CC3F83100557D4C /* Header.m in Sources */,
-				730DE97B1CC3F83100557D4C /* OrderedSubnode.m in Sources */,
-				730DE9961CC3F83200557D4C /* _DSANode.m in Sources */,
-				730DE95D1CC3F83100557D4C /* Container.m in Sources */,
-				730DE9A81CC3F83200557D4C /* _OrderedSubnode.m in Sources */,
-				730DE9841CC3F83100557D4C /* TokenType.m in Sources */,
-				73F2D11F1CC48B2500B15509 /* QuietLog.m in Sources */,
-				730DE9931CC3F83200557D4C /* _DSADistributionVersion.m in Sources */,
-				730DE98D1CC3F83200557D4C /* _DocSet.m in Sources */,
-				730DE9871CC3F83200557D4C /* _APILanguage.m in Sources */,
-				730DE9661CC3F83100557D4C /* DSADistributionVersion.m in Sources */,
-				730DE9A51CC3F83200557D4C /* _NodeUUID.m in Sources */,
-				730DE9721CC3F83100557D4C /* FilePath.m in Sources */,
-				730DE97E1CC3F83100557D4C /* TokenGroup.m in Sources */,
-				730DE9781CC3F83100557D4C /* NodeUUID.m in Sources */,
-				730DE99F1CC3F83200557D4C /* _FilePath.m in Sources */,
-				730DE96C1CC3F83100557D4C /* DSANodeURL.m in Sources */,
-				730DE9811CC3F83100557D4C /* TokenMetainformation.m in Sources */,
-				730DE9991CC3F83200557D4C /* _DSANodeURL.m in Sources */,
-				730DE9AB1CC3F83200557D4C /* _TokenGroup.m in Sources */,
-				7370BEB31CC21BB400079C8E /* DocSetModel.xcdatamodeld in Sources */,
-				730DE9691CC3F83100557D4C /* DSANode.m in Sources */,
-				730DE98A1CC3F83200557D4C /* _Container.m in Sources */,
+				73C216551CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
+				73C2166D1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
+				73C2165E1CC5BCA700F097B9 /* TokenType.m in Sources */,
 				736AB61E1CC58C9500C4376C /* SimpleFetchViewController.m in Sources */,
+				73C2163D1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
+				73C2164F1CC5BCA700F097B9 /* Header.m in Sources */,
+				73C216791CC5BCA700F097B9 /* _FilePath.m in Sources */,
+				73C216821CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
+				73C2166A1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
+				73C2163A1CC5BCA700F097B9 /* DocSet.m in Sources */,
+				73C2165B1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
+				73C216911CC5BCA700F097B9 /* QuietLog.m in Sources */,
+				73C216671CC5BCA700F097B9 /* _DocSet.m in Sources */,
 				7370BEB01CC21BB400079C8E /* main.m in Sources */,
-				730DE9A21CC3F83200557D4C /* _Header.m in Sources */,
-				730DE95A1CC3F83100557D4C /* APILanguage.m in Sources */,
-				730DE9631CC3F83100557D4C /* DownloadableFile.m in Sources */,
-				730DE96F1CC3F83100557D4C /* DSAToken.m in Sources */,
-				730DE9B11CC3F83200557D4C /* _TokenType.m in Sources */,
-				730DE99C1CC3F83200557D4C /* _DSAToken.m in Sources */,
+				73C2164C1CC5BCA700F097B9 /* FilePath.m in Sources */,
+				73C216341CC5BCA700F097B9 /* APILanguage.m in Sources */,
+				73C216761CC5BCA700F097B9 /* _DSAToken.m in Sources */,
+				73C2167C1CC5BCA700F097B9 /* _Header.m in Sources */,
+				73C216401CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
+				73C216461CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
+				73C2167F1CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
+				73C216431CC5BCA700F097B9 /* DSANode.m in Sources */,
+				73C2168B1CC5BCA700F097B9 /* _TokenType.m in Sources */,
+				73C216881CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */,
+				73C2168E1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */,
+				73C216851CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
+				73C216701CC5BCA700F097B9 /* _DSANode.m in Sources */,
+				73C216371CC5BCA700F097B9 /* Container.m in Sources */,
+				73C216611CC5BCA700F097B9 /* _APILanguage.m in Sources */,
+				73C216581CC5BCA700F097B9 /* TokenGroup.m in Sources */,
+				73C216641CC5BCA700F097B9 /* _Container.m in Sources */,
+				73C216521CC5BCA700F097B9 /* NodeUUID.m in Sources */,
+				73C216731CC5BCA700F097B9 /* _DSANodeURL.m in Sources */,
+				73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
+				73C216491CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */,
-				730DE9601CC3F83100557D4C /* DocSet.m in Sources */,
-				730DE9901CC3F83200557D4C /* _DownloadableFile.m in Sources */,
-				73F2D11A1CC45A1700B15509 /* DocSetIndex.m in Sources */,
-				730DE9AE1CC3F83200557D4C /* _TokenMetainformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,39 +620,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				730DE9731CC3F83100557D4C /* FilePath.m in Sources */,
-				730DE9761CC3F83100557D4C /* Header.m in Sources */,
-				73F2D11B1CC45A1700B15509 /* DocSetIndex.m in Sources */,
-				730DE9791CC3F83100557D4C /* NodeUUID.m in Sources */,
-				730DE96D1CC3F83100557D4C /* DSANodeURL.m in Sources */,
-				730DE9701CC3F83100557D4C /* DSAToken.m in Sources */,
-				730DE95E1CC3F83100557D4C /* Container.m in Sources */,
-				730DE9AC1CC3F83200557D4C /* _TokenGroup.m in Sources */,
-				730DE9611CC3F83100557D4C /* DocSet.m in Sources */,
-				730DE97F1CC3F83100557D4C /* TokenGroup.m in Sources */,
-				730DE99A1CC3F83200557D4C /* _DSANodeURL.m in Sources */,
-				730DE9B21CC3F83200557D4C /* _TokenType.m in Sources */,
-				730DE95B1CC3F83100557D4C /* APILanguage.m in Sources */,
-				730DE9851CC3F83100557D4C /* TokenType.m in Sources */,
-				73F2D1201CC48B2500B15509 /* QuietLog.m in Sources */,
-				730DE9881CC3F83200557D4C /* _APILanguage.m in Sources */,
-				730DE96A1CC3F83100557D4C /* DSANode.m in Sources */,
-				730DE9971CC3F83200557D4C /* _DSANode.m in Sources */,
-				730DE9641CC3F83100557D4C /* DownloadableFile.m in Sources */,
-				730DE98B1CC3F83200557D4C /* _Container.m in Sources */,
-				730DE9821CC3F83100557D4C /* TokenMetainformation.m in Sources */,
-				730DE97C1CC3F83100557D4C /* OrderedSubnode.m in Sources */,
-				730DE9941CC3F83200557D4C /* _DSADistributionVersion.m in Sources */,
-				730DE9A01CC3F83200557D4C /* _FilePath.m in Sources */,
-				730DE9AF1CC3F83200557D4C /* _TokenMetainformation.m in Sources */,
-				730DE9A31CC3F83200557D4C /* _Header.m in Sources */,
+				73C2167A1CC5BCA700F097B9 /* _FilePath.m in Sources */,
+				73C2168F1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */,
+				73C216771CC5BCA700F097B9 /* _DSAToken.m in Sources */,
+				73C216741CC5BCA700F097B9 /* _DSANodeURL.m in Sources */,
+				73C2163B1CC5BCA700F097B9 /* DocSet.m in Sources */,
+				73C216921CC5BCA700F097B9 /* QuietLog.m in Sources */,
+				73C2166E1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
+				73C2163E1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
+				73C216711CC5BCA700F097B9 /* _DSANode.m in Sources */,
+				73C216441CC5BCA700F097B9 /* DSANode.m in Sources */,
+				73C216471CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
+				73C2168C1CC5BCA700F097B9 /* _TokenType.m in Sources */,
+				73C216591CC5BCA700F097B9 /* TokenGroup.m in Sources */,
+				73C216681CC5BCA700F097B9 /* _DocSet.m in Sources */,
+				73C216651CC5BCA700F097B9 /* _Container.m in Sources */,
+				73C2166B1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
+				73C2167D1CC5BCA700F097B9 /* _Header.m in Sources */,
+				73C216831CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
+				73C216501CC5BCA700F097B9 /* Header.m in Sources */,
+				73C216891CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */,
+				73C2165F1CC5BCA700F097B9 /* TokenType.m in Sources */,
+				73C2164D1CC5BCA700F097B9 /* FilePath.m in Sources */,
+				73C216621CC5BCA700F097B9 /* _APILanguage.m in Sources */,
+				73C216861CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
+				73C2164A1CC5BCA700F097B9 /* DSAToken.m in Sources */,
+				73C216351CC5BCA700F097B9 /* APILanguage.m in Sources */,
+				73C216531CC5BCA700F097B9 /* NodeUUID.m in Sources */,
+				73C216381CC5BCA700F097B9 /* Container.m in Sources */,
+				73C216801CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
+				73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
 				7370BEC31CC21BB500079C8E /* DocSetsTake2Tests.m in Sources */,
-				730DE9911CC3F83200557D4C /* _DownloadableFile.m in Sources */,
-				730DE9671CC3F83100557D4C /* DSADistributionVersion.m in Sources */,
-				730DE9A91CC3F83200557D4C /* _OrderedSubnode.m in Sources */,
-				730DE9A61CC3F83200557D4C /* _NodeUUID.m in Sources */,
-				730DE99D1CC3F83200557D4C /* _DSAToken.m in Sources */,
-				730DE98E1CC3F83200557D4C /* _DocSet.m in Sources */,
+				73C216561CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
+				73C216411CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
+				73C2165C1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,39 +661,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				730DE9741CC3F83100557D4C /* FilePath.m in Sources */,
-				730DE9771CC3F83100557D4C /* Header.m in Sources */,
-				73F2D11C1CC45A1700B15509 /* DocSetIndex.m in Sources */,
-				730DE97A1CC3F83100557D4C /* NodeUUID.m in Sources */,
-				730DE96E1CC3F83100557D4C /* DSANodeURL.m in Sources */,
-				730DE9711CC3F83100557D4C /* DSAToken.m in Sources */,
-				730DE95F1CC3F83100557D4C /* Container.m in Sources */,
-				730DE9AD1CC3F83200557D4C /* _TokenGroup.m in Sources */,
-				730DE9621CC3F83100557D4C /* DocSet.m in Sources */,
-				730DE9801CC3F83100557D4C /* TokenGroup.m in Sources */,
-				730DE99B1CC3F83200557D4C /* _DSANodeURL.m in Sources */,
-				730DE9B31CC3F83200557D4C /* _TokenType.m in Sources */,
-				730DE95C1CC3F83100557D4C /* APILanguage.m in Sources */,
-				730DE9861CC3F83100557D4C /* TokenType.m in Sources */,
-				73F2D1211CC48B2500B15509 /* QuietLog.m in Sources */,
-				730DE9891CC3F83200557D4C /* _APILanguage.m in Sources */,
-				730DE96B1CC3F83100557D4C /* DSANode.m in Sources */,
-				730DE9981CC3F83200557D4C /* _DSANode.m in Sources */,
-				730DE9651CC3F83100557D4C /* DownloadableFile.m in Sources */,
-				730DE98C1CC3F83200557D4C /* _Container.m in Sources */,
-				730DE9831CC3F83100557D4C /* TokenMetainformation.m in Sources */,
-				730DE97D1CC3F83100557D4C /* OrderedSubnode.m in Sources */,
-				730DE9951CC3F83200557D4C /* _DSADistributionVersion.m in Sources */,
-				730DE9A11CC3F83200557D4C /* _FilePath.m in Sources */,
-				730DE9B01CC3F83200557D4C /* _TokenMetainformation.m in Sources */,
-				730DE9A41CC3F83200557D4C /* _Header.m in Sources */,
+				73C2167B1CC5BCA700F097B9 /* _FilePath.m in Sources */,
+				73C216901CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */,
+				73C216781CC5BCA700F097B9 /* _DSAToken.m in Sources */,
+				73C216751CC5BCA700F097B9 /* _DSANodeURL.m in Sources */,
+				73C2163C1CC5BCA700F097B9 /* DocSet.m in Sources */,
+				73C216931CC5BCA700F097B9 /* QuietLog.m in Sources */,
+				73C2166F1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
+				73C2163F1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
+				73C216721CC5BCA700F097B9 /* _DSANode.m in Sources */,
+				73C216451CC5BCA700F097B9 /* DSANode.m in Sources */,
+				73C216481CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
+				73C2168D1CC5BCA700F097B9 /* _TokenType.m in Sources */,
+				73C2165A1CC5BCA700F097B9 /* TokenGroup.m in Sources */,
+				73C216691CC5BCA700F097B9 /* _DocSet.m in Sources */,
+				73C216661CC5BCA700F097B9 /* _Container.m in Sources */,
+				73C2166C1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
+				73C2167E1CC5BCA700F097B9 /* _Header.m in Sources */,
+				73C216841CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
+				73C216511CC5BCA700F097B9 /* Header.m in Sources */,
+				73C2168A1CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */,
+				73C216601CC5BCA700F097B9 /* TokenType.m in Sources */,
+				73C2164E1CC5BCA700F097B9 /* FilePath.m in Sources */,
+				73C216631CC5BCA700F097B9 /* _APILanguage.m in Sources */,
+				73C216871CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
+				73C2164B1CC5BCA700F097B9 /* DSAToken.m in Sources */,
+				73C216361CC5BCA700F097B9 /* APILanguage.m in Sources */,
+				73C216541CC5BCA700F097B9 /* NodeUUID.m in Sources */,
+				73C216391CC5BCA700F097B9 /* Container.m in Sources */,
+				73C216811CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
+				73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
 				7370BECE1CC21BB500079C8E /* DocSetsTake2UITests.m in Sources */,
-				730DE9921CC3F83200557D4C /* _DownloadableFile.m in Sources */,
-				730DE9681CC3F83100557D4C /* DSADistributionVersion.m in Sources */,
-				730DE9AA1CC3F83200557D4C /* _OrderedSubnode.m in Sources */,
-				730DE9A71CC3F83200557D4C /* _NodeUUID.m in Sources */,
-				730DE99E1CC3F83200557D4C /* _DSAToken.m in Sources */,
-				730DE98F1CC3F83200557D4C /* _DocSet.m in Sources */,
+				73C216571CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
+				73C216421CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
+				73C2165D1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,12 +945,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7370BEB11CC21BB400079C8E /* DocSetModel.xcdatamodeld */ = {
+		73C2162C1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7370BEB21CC21BB400079C8E /* DocSetModel.xcdatamodel */,
+				73C2162D1CC5BCA700F097B9 /* DocSetModel.xcdatamodel */,
 			);
-			currentVersion = 7370BEB21CC21BB400079C8E /* DocSetModel.xcdatamodel */;
+			currentVersion = 73C2162D1CC5BCA700F097B9 /* DocSetModel.xcdatamodel */;
 			path = DocSetModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
