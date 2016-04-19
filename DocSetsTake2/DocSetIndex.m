@@ -7,11 +7,11 @@
 //
 
 #import "DocSetIndex.h"
+#import "QuietLog.h"
 
 @interface DocSetIndex ()
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @end
-
 
 @implementation DocSetIndex
 
@@ -46,7 +46,6 @@
 
 	NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"DocSetModel" withExtension:@"momd"];
 	_managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-	//	_managedObjectModel = [NSManagedObjectModel modelByMergingModels:nil];
 
 	return _managedObjectModel;
 }
@@ -71,13 +70,8 @@
 	_persistentStoreCoordinator = coordinator;
 
 	if (error) {
-		//TODO: Better error handling when fail to create PSC.
-		NSDictionary *dict = @{
-							   NSLocalizedDescriptionKey: @"Failed to add the docset's persistent store.",
-							   NSUnderlyingErrorKey: error,
-							   };
-		error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-		[[NSApplication sharedApplication] presentError:error];
+		QLog(@"[%s] [ERROR] %@", __PRETTY_FUNCTION__, error);  //TODO: Throw an exception.
+		return nil;
 	}
 
 	return _persistentStoreCoordinator;
@@ -97,6 +91,86 @@
 	_managedObjectContext.persistentStoreCoordinator = coordinator;
 
 	return _managedObjectContext;
+}
+
+#pragma mark - Fetch requests
+
+- (NSArray *)fetchEntity:(NSString *)entityName sort:(NSArray *)sortSpecifiers predicateFormat:(NSString *)format va_args:(va_list)argList
+{
+	if (entityName == nil) {
+		return nil;
+	}
+
+	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+
+	// Was a predicate specified?
+	if (format.length > 0) {
+		fetchRequest.predicate = [NSPredicate predicateWithFormat:format arguments:argList];
+	}
+
+	// Was a sort order specified?
+	if (sortSpecifiers.count > 0) {
+		NSMutableArray *sortDescriptors = [NSMutableArray array];
+		for (NSString *spec in sortSpecifiers) {
+			NSString *errorMessage = nil;
+			NSMutableArray *components = [[spec componentsSeparatedByString:@" "] mutableCopy];
+
+			[components removeObject:@""];
+			if (components.count == 0) {
+				errorMessage = [NSString stringWithFormat:@"Sort specifier is empty."];
+			} else {
+				BOOL ascending = YES;
+
+				if (components.count == 1) {
+					ascending = YES;
+				} else if (components.count == 2) {
+					NSString *direction = [components[1] uppercaseString];
+
+					if ([direction isEqualToString:@"ASC"]) {
+						ascending = YES;
+					} else if ([direction isEqualToString:@"DESC"]) {
+						ascending = NO;
+					} else {
+						errorMessage = [NSString stringWithFormat:@"'%@' is not a valid sort direction.", direction];
+					}
+				} else {
+					errorMessage = [NSString stringWithFormat:@"Too many terms in the sort specifier '%@'.", spec];
+				}
+
+				if (errorMessage) {
+					QLog(@"[%s] [ERROR] %@", __PRETTY_FUNCTION__, errorMessage);  //TODO: Throw an exception.
+					return nil;
+				}
+
+				[sortDescriptors addObject:[NSSortDescriptor sortDescriptorWithKey:components[0] ascending:ascending]];
+			}
+		}
+		fetchRequest.sortDescriptors = sortDescriptors;
+	}
+
+	// Do the fetch.
+//	fetchRequest.returnsObjectsAsFaults = NO;  //[agl] DEBUGGING
+//	fetchRequest.fetchLimit = 50;  //[agl] DEBUGGING
+	__block NSError *error;
+	__block NSArray *fetchedObjects;
+	[self.managedObjectContext performBlockAndWait:^{
+		fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	}];
+	if (fetchedObjects == nil) {
+		QLog(@"[%s] [ERROR] %@", __PRETTY_FUNCTION__, error);  //TODO: Throw an exception.
+		return nil;
+	}
+	return fetchedObjects;
+}
+
+- (NSArray *)fetchEntity:(NSString *)entityName sort:(NSArray *)sortSpecifiers where:(NSString *)format, ...
+{
+	va_list argList;
+	va_start(argList, format);
+	NSArray *fetchedObjects = [self fetchEntity:entityName sort:sortSpecifiers predicateFormat:format va_args:argList];
+	va_end(argList);
+
+	return fetchedObjects;
 }
 
 @end
