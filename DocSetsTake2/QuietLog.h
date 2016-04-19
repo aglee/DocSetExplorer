@@ -14,8 +14,10 @@
 extern void QuietLog (NSString *format, ...);
 
 
-#define REPLACE_NSLOG_WITH_QUIETLOG 1
-#if REPLACE_NSLOG_WITH_QUIETLOG
-#define NSLog QuietLog
+#define QLOG_SHOULD_BE_QUIET 1
+#if QLOG_SHOULD_BE_QUIET
+#define QLog QuietLog
+#else
+#define QLog NSLog
 #endif
 
