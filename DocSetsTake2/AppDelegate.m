@@ -35,7 +35,7 @@
 //	for (NSArray *innerArray in outerArray) {
 //		NSString *entityName = innerArray[0];
 //		NSArray *keyPathsToPrint = [innerArray subarrayWithRange:NSMakeRange(1, innerArray.count - 1)];
-//		[self _printValues:keyPathsToPrint forEntity:entityName sort:nil where:nil];
+//		[self _printValues:keyPathsToPrint forEntity:entityName sort:keyPathsToPrint where:nil];
 //	}
 
 
