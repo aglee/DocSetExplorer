@@ -8,6 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class DocSetIndex;
+
 @interface SimpleFetchViewController : NSViewController
+
+@property (strong) DocSetIndex *docSetIndex;
+@property (copy) NSString *fetchCommandString;
+
+#pragma mark - Action methods
+
+- (IBAction)fetch:(id)sender;
 
 @end

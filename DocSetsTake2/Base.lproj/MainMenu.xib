@@ -628,6 +628,18 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="DocSet" id="6q1-62-Fh1">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="DocSet" id="tHj-qG-sIR">
+                        <items>
+                            <menuItem title="Fetch" keyEquivalent="/" id="zxs-2x-E8f">
+                                <connections>
+                                    <action selector="fetch:" target="-1" id="k9W-bX-2px"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Window" id="aUF-d1-5bR">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
@@ -667,27 +679,16 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="DocSetsTake2" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="DocSetsTake2" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="775" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="775" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0os-Ik-ZMR">
-                        <rect key="frame" x="152" y="193" width="66" height="32"/>
-                        <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nC4-K3-xVX">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="test:" target="Voe-Tx-rLC" id="Cmg-Vr-Uka"/>
-                        </connections>
-                    </button>
-                </subviews>
             </view>
+            <point key="canvasLocation" x="300.5" y="587"/>
         </window>
     </objects>
 </document>
