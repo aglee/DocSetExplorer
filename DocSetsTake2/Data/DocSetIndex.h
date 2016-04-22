@@ -22,7 +22,7 @@
 
 #pragma mark - Fetch requests
 
-/*! sortSpecifiers must contain strings of the form "keyPath" or "keyPath asc" or "keyPath desc", with only one space between the keyPath and the sort direction.  The "asc"/"desc" is case-insensitive.  sortSpecifiers can be nil. */
+/*! sortSpecifiers must contain strings of the form "keyPath" or "keyPath asc" or "keyPath desc", with a space between the keyPath and the sort direction.  Spaces are the only acceptable whitespace.  Extra spaces are ignored.  The "asc"/"desc" is case-insensitive.  The sort direction is optional; "keyPath" is the same as "keyPath asc".  sortSpecifiers can be nil. */
 - (NSArray *)fetchEntity:(NSString *)entityName sort:(NSArray *)sortSpecifiers predicateFormat:(NSString *)format va_args:(va_list)argList;
 
 - (NSArray *)fetchEntity:(NSString *)entityName sort:(NSArray *)sortSpecifiers where:(NSString *)format, ...;
