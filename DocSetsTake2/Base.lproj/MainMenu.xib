@@ -621,6 +621,12 @@
                                     <action selector="runToolbarCustomizationPalette:" target="-1" id="pQI-g3-MTW"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="K0f-Ql-Mly"/>
+                            <menuItem title="Select Query Text" keyEquivalent="l" id="fJU-nS-U7H">
+                                <connections>
+                                    <action selector="selectQueryText:" target="-1" id="hKh-DY-dcU"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

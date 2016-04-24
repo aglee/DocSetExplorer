@@ -18,5 +18,6 @@
 #pragma mark - Action methods
 
 - (IBAction)fetch:(id)sender;
+- (IBAction)selectQueryText:(id)sender;
 
 @end

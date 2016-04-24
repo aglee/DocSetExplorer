@@ -12,6 +12,7 @@
 
 @interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedResultsArrayController;
+@property (strong) IBOutlet NSTextView *fetchCommandTextView;
 @property (weak) IBOutlet NSTableView *fetchedResultsTableView;
 @end
 
@@ -26,6 +27,21 @@
 	[self _tryFetchModelObjectsCommand:self.fetchCommandString]
 	|| [self _tryFetchDistinctValuesForOneKeyPathCommand:self.fetchCommandString]
 	|| [self _tryFetchCountCommand:self.fetchCommandString];
+}
+
+- (IBAction)selectQueryText:(id)sender
+{
+	[self.fetchCommandTextView selectAll:nil];
+}
+
+#pragma mark - <NSWindowDelegate> methods
+
+- (void)windowDidLoad
+{
+	self.fetchCommandString = (@"FETCH \"Token\""
+							   @" WHERE \"language.fullName = 'Objective-C'\""
+							   @" DISPLAY \"tokenName, tokenType.typeName, container.containerName, parentNode.kName\"");
+	[self selectQueryText:nil];
 }
 
 #pragma mark - Private methods - regexes

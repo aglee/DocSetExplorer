@@ -29,9 +29,6 @@
 	// Add a new window controller to our list.
 	SimpleFetchWindowController *windowController = [[SimpleFetchWindowController alloc] initWithWindowNibName:@"SimpleFetchWindowController"];
 	windowController.docSetIndex = self.docSetIndex;
-	windowController.fetchCommandString = (@"FETCH \"Token\""
-										   @" WHERE \"language.fullName = 'Objective-C'\""
-										   @" DISPLAY \"tokenName, tokenType.typeName, container.containerName, parentNode.kName\"");
 	[self.windowControllers addObject:windowController];
 
 	// Ask to be notified when the window closes, so we can remove it from our list.
