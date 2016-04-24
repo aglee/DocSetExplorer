@@ -10,10 +10,13 @@
 #import "DocSetIndex.h"
 #import "QuietLog.h"
 
+#define MyErrorDomain @"com.appkido.DocSetsTake2"
+
 @interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedResultsArrayController;
-@property (strong) IBOutlet NSTextView *fetchCommandTextView;
 @property (weak) IBOutlet NSTableView *fetchedResultsTableView;
+@property (strong) NSArray *keyPathsUsedByTableView;
+
 @end
 
 #pragma mark -
@@ -24,24 +27,60 @@
 
 - (IBAction)fetch:(id)sender
 {
-	[self _tryFetchModelObjectsCommand:self.fetchCommandString]
-	|| [self _tryFetchDistinctValuesForOneKeyPathCommand:self.fetchCommandString]
-	|| [self _tryFetchCountCommand:self.fetchCommandString];
-}
+	// Throughout this method we must make sure that if an error occurs we set this NSError variable.
+	NSError *error;
 
-- (IBAction)selectQueryText:(id)sender
-{
-	[self.fetchCommandTextView selectAll:nil];
+	// Try to parse key paths into an array.
+	NSArray *keyPaths;
+	if (error == nil) {
+		keyPaths = [self _parseKeyPathsStringWithError:&error];
+		if (keyPaths == nil) {
+			QLog(@"%@", @"[ERROR] Invalid key paths string: %@");
+			if (error == nil) {
+				error = [NSError errorWithDomain:MyErrorDomain
+											code:9999
+										userInfo:@{ NSLocalizedDescriptionKey : @"Key paths string is invalid.  Make sure it is a non-empty, comma-separated list of key paths." }];
+			}
+		}
+	}
+
+	// Try to fetch the specified objects.
+	NSArray *fetchedObjects;
+	if (error == nil) {
+		fetchedObjects = [self _tryFetchWithError:&error];
+		if (fetchedObjects == nil) {
+			QLog(@"[ERROR] Fetch failed: %@", error);
+			if (error == nil) {
+				error = [NSError errorWithDomain:MyErrorDomain
+											code:9999
+										userInfo:@{ NSLocalizedDescriptionKey : @"Failed to fetch objects from the docset's Core Data store." }];
+			}
+		}
+	}
+
+	// Try to display our results.  An exception will be thrown if the results are not compatible with the key paths.
+	if (error == nil) {
+		@try {
+			[self _populateTableViewWithObjects:fetchedObjects keyPaths:keyPaths];
+		}
+		@catch (NSException *ex) {
+			error = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : ex.description }];
+		}
+	}
+
+	// Did we get an error anywhere above?
+	if (error) {
+		[self presentError:error];
+	}
 }
 
 #pragma mark - <NSWindowDelegate> methods
 
 - (void)windowDidLoad
 {
-	self.fetchCommandString = (@"FETCH \"Token\"\n\n"
-							   @"WHERE \"language.fullName = 'Objective-C'\"\n\n"
-							   @"DISPLAY \"tokenName, tokenType.typeName, container.containerName, parentNode.kName\"");
-	[self selectQueryText:nil];
+	self.entityName = @"Token";
+	self.keyPathsString = @"tokenName, tokenType.typeName, metainformation.declaredIn.frameworkName";
+	self.predicateString = @"language.fullName = 'Objective-C'";
 }
 
 #pragma mark - Private methods - regexes
@@ -80,7 +119,7 @@
 
 	// Apply the regex to the input string.
 	NSError *error;
-	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
 
 	if (regex == nil) {
 		QLog(@"regex construction error: %@", error);
@@ -115,20 +154,97 @@
 
 #pragma mark - Private methods - handling fetch commands
 
-- (void)_displayObjects:(NSArray *)fetchedObjects keyPaths:(NSArray *)keyPaths
+- (NSArray *)_tryFetchWithError:(NSError **)errorPtr
 {
-	QLog(@"key paths to display: %@", keyPaths);
+	NSDictionary *errorInfo;
 
-	// Clear out the table view.
-	self.fetchedResultsArrayController.content = nil;
+	// Require the entity name to be a non-empty identifier.
+	NSDictionary *captureGroups = [self _matchPattern:@"%ident%" toEntireString:self.entityName];
+	if (captureGroups == nil) {
+		errorInfo = @{ NSLocalizedDescriptionKey : @"Entity name is not a valid identifier." };
+		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+		return nil;
+	}
+
+	// Try to make an NSPredicate, if one was specified.
+	NSPredicate *predicate = nil;
+	if (self.predicateString.length) {
+		@try {
+			predicate = [NSPredicate predicateWithFormat:self.predicateString];
+		}
+		@catch (NSException *ex) {
+			if ([ex.name isEqualToString:NSInvalidArgumentException]) {
+				errorInfo = @{ NSLocalizedDescriptionKey : @"Invalid predicate string." };
+				*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+				return nil;
+			} else {
+				@throw ex;
+			}
+		}
+	}
+
+	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
+	req.predicate = predicate;
+	if (self.distinct) {
+		req.returnsDistinctResults = YES;
+		req.resultType = NSDictionaryResultType;
+		req.propertiesToFetch = [self _parseKeyPathsStringWithError:NULL];
+	}
+
+	// Try to execute the fetch.
+	NSArray *fetchedObjects;
+	@try {
+		fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:errorPtr];
+	}
+	@catch (NSException *ex) {
+		NSString *errorMessage = [NSString stringWithFormat:@"Exception during attempt to fetch data: %@. Error: %@.", ex, (errorPtr ? *errorPtr : @"unknown")];
+		errorInfo = @{ NSLocalizedDescriptionKey : errorMessage };
+		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+		return nil;
+	}
+
+	// If we got this far, all was successful.
+	return fetchedObjects;
+}
+
+- (NSArray *)_parseKeyPathsStringWithError:(NSError **)errorPtr
+{
+	NSMutableArray *keyPaths = [NSMutableArray array];
+	NSDictionary *errorInfo;
+	NSArray *commaSeparatedComponents = [self.keyPathsString componentsSeparatedByString:@","];
+	for (__strong NSString *expectedKeyPath in commaSeparatedComponents) {
+		expectedKeyPath = [expectedKeyPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		if (![self _matchPattern:@"%keypath%" toEntireString:expectedKeyPath]) {
+			NSString *errorMessage = [NSString stringWithFormat:@"'%@' is not a key path.", expectedKeyPath];
+			errorInfo = @{ NSLocalizedDescriptionKey : errorMessage };
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+			return nil;
+		} else {
+			[keyPaths addObject:expectedKeyPath];
+		}
+	}
+	if (keyPaths.count == 0) {
+		errorInfo = @{ NSLocalizedDescriptionKey : @"At least one key path must be specified." };
+		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+		return nil;
+	}
+	return keyPaths;
+}
+
+// Reconstructs the table columns based on the key paths they're supposed to display.
+// Does nothing if the key paths haven't changed since the last time we did this.  This way, if the user had spent time setting column widths and sort orders, those settings won't get blown away.
+// **NOTE:** This logic only works if the table view is cell-based.  The code would have to be changed if we were to make it view-based.
+- (void)_reconstructTableColumnsWithKeyPaths:(NSArray *)keyPathsForTableColumns
+{
+	if ([keyPathsForTableColumns isEqualToArray:self.keyPathsUsedByTableView]) {
+		return;
+	}
+
 	for (NSTableColumn *tableColumn in [self.fetchedResultsTableView.tableColumns copy]) {
 		[self.fetchedResultsTableView removeTableColumn:tableColumn];
 	}
-
-	// Reconstruct the table columns based on the key paths they're supposed to display.
-	// **NOTE:** This logic only works if the table view is cell-based.  It would have to be changed if we were to make it view-based.
 	NSMutableArray *sortDescriptors = [NSMutableArray array];
-	for (NSString *keyPath in keyPaths) {
+	for (NSString *keyPath in keyPathsForTableColumns) {
 		NSTableColumn *tableColumn = [[NSTableColumn alloc] initWithIdentifier:keyPath];
 		tableColumn.title = keyPath;
 		tableColumn.sortDescriptorPrototype = [NSSortDescriptor sortDescriptorWithKey:keyPath ascending:YES];
@@ -141,106 +257,24 @@
 		[self.fetchedResultsTableView addTableColumn:tableColumn];
 	}
 
-	// Repopulate the table view by plugging the array into array controller.
+	self.keyPathsUsedByTableView = keyPathsForTableColumns;
+}
+
+- (void)_populateTableViewWithObjects:(NSArray *)fetchedObjects keyPaths:(NSArray *)keyPathsForTableColumns
+{
+	// Remove all table rows, so the table view won't try to display objects that aren't compatible with the new key paths.
+	self.fetchedResultsArrayController.content = nil;
+
+	// Reconstruct table columns.
+	[self _reconstructTableColumnsWithKeyPaths:keyPathsForTableColumns];
+
+	// Repopulate the table view by plugging the objects into array controller.
+	NSMutableArray *sortDescriptors = [NSMutableArray array];
+	for (NSTableColumn *tableColumn in self.fetchedResultsTableView.tableColumns) {
+		[sortDescriptors addObject:tableColumn.sortDescriptorPrototype];
+	}
 	self.fetchedResultsArrayController.sortDescriptors = sortDescriptors;
 	self.fetchedResultsArrayController.content = fetchedObjects;
-}
-
-- (BOOL)_tryFetchModelObjectsCommand:(NSString *)commandString
-{
-	QLog(@"%@", @"trying plain fetch...");
-
-	// Try to parse the command string.
-	NSString *pattern = (@"FETCH \"(%ident%)\""
-						 @"(?: WHERE \"(%lit%)\")?"
-						 @" DISPLAY \"(%keypath%(?:(?:,\\s*%keypath%)*))\"");
-	NSDictionary *captureGroups = [self _matchPattern:pattern toEntireString:commandString];
-	if (captureGroups == nil) {
-		return NO;
-	}
-
-	// Construct the specified array of objects.
-	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:captureGroups[@1]];
-	req.predicate = [NSPredicate predicateWithFormat:captureGroups[@2]];
-	NSError *error;
-	NSArray *fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:&error];
-
-	if (fetchedObjects == nil) {
-		QLog(@"Error in plain fetch: %@", error);
-		return NO;
-	}
-
-	// Plug the objects into the table view.
-	NSCharacterSet *separators = [NSCharacterSet characterSetWithCharactersInString:@" \t\r\n,"];
-	NSMutableArray *keyPaths = [[captureGroups[@3] componentsSeparatedByCharactersInSet:separators] mutableCopy];
-	[keyPaths removeObject:@""];
-	[self _displayObjects:fetchedObjects keyPaths:keyPaths];
-
-	return YES;
-}
-
-- (BOOL)_tryFetchDistinctValuesForOneKeyPathCommand:(NSString *)commandString
-{
-	QLog(@"%@", @"trying fetch distinct...");
-
-	// Try to parse the command string.
-	NSString *pattern = (@"DISTINCT  \"(%ident%)\\.(%keypath%)\""
-						 @"(?:  WHERE  \"(%lit%)\")?");
-	NSDictionary *captureGroups = [self _matchPattern:pattern toEntireString:commandString];
-	if (captureGroups == nil) {
-		return NO;
-	}
-
-	// Construct the specified array of objects.
-	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:captureGroups[@1]];
-	req.predicate = [NSPredicate predicateWithFormat:captureGroups[@3]];
-	NSError *error;
-	NSArray *fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:&error];
-
-	if (fetchedObjects == nil) {
-		QLog(@"Error in fetch distinct: %@", error);
-		return NO;
-	}
-
-	NSArray *unsortedValues = [fetchedObjects valueForKeyPath:captureGroups[@2]];
-	NSArray *distinctValues = [[NSSet setWithArray:unsortedValues] allObjects];
-
-	// Plug the objects into the table view.
-	[self _displayObjects:distinctValues keyPaths:@[@"self"]];
-	self.fetchedResultsTableView.tableColumns[0].title = [NSString stringWithFormat:@"%@.%@", captureGroups[@1], captureGroups[@2]];
-
-	return YES;
-}
-
-- (BOOL)_tryFetchCountCommand:(NSString *)commandString
-{
-	QLog(@"%@", @"trying fetch count...");
-
-	// Try to parse the command string.
-	NSString *pattern = (@"COUNT  \"(%ident%)\""
-						 @"(?:  WHERE  \"(%lit%)\")?");
-	NSDictionary *captureGroups = [self _matchPattern:pattern toEntireString:commandString];
-	if (captureGroups == nil) {
-		return NO;
-	}
-
-	// Construct the specified array of objects.
-	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:captureGroups[@1]];
-	req.predicate = [NSPredicate predicateWithFormat:captureGroups[@2]];
-	req.resultType = NSCountResultType;
-	NSError *error;
-	NSArray *fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:&error];
-
-	if (fetchedObjects == nil) {
-		QLog(@"Error in fetch count: %@", error);
-		return NO;
-	}
-
-	// Plug the objects into the table view.
-	[self _displayObjects:fetchedObjects keyPaths:@[@"self"]];
-	self.fetchedResultsTableView.tableColumns[0].title = @"count";
-
-	return YES;
 }
 
 - (void)_printValues:(NSArray *)keyPaths forObjects:(NSArray *)array

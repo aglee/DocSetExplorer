@@ -258,6 +258,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7335AA5D1CCD61BE00080E58 /* App-Specific Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "App-Specific Utilities";
+			sourceTree = "<group>";
+		};
 		7370BE9F1CC21BB400079C8E = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +291,7 @@
 			children = (
 				73C2162E1CC5BCA700F097B9 /* Utilities */,
 				73C215E91CC5BCA700F097B9 /* Data */,
+				7335AA5D1CCD61BE00080E58 /* App-Specific Utilities */,
 				7370BEAB1CC21BB400079C8E /* AppDelegate.h */,
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
 				736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */,

@@ -13,11 +13,13 @@
 @interface SimpleFetchWindowController : NSWindowController
 
 @property (strong) DocSetIndex *docSetIndex;
-@property (copy) NSString *fetchCommandString;
+@property (copy) NSString *entityName;
+@property (copy) NSString *keyPathsString;
+@property (assign) BOOL distinct;
+@property (copy) NSString *predicateString;
 
 #pragma mark - Action methods
 
 - (IBAction)fetch:(id)sender;
-- (IBAction)selectQueryText:(id)sender;
 
 @end
