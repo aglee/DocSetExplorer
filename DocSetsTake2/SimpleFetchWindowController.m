@@ -38,9 +38,9 @@
 
 - (void)windowDidLoad
 {
-	self.fetchCommandString = (@"FETCH \"Token\""
-							   @" WHERE \"language.fullName = 'Objective-C'\""
-							   @" DISPLAY \"tokenName, tokenType.typeName, container.containerName, parentNode.kName\"");
+	self.fetchCommandString = (@"FETCH \"Token\"\n\n"
+							   @"WHERE \"language.fullName = 'Objective-C'\"\n\n"
+							   @"DISPLAY \"tokenName, tokenType.typeName, container.containerName, parentNode.kName\"");
 	[self selectQueryText:nil];
 }
 
@@ -62,11 +62,6 @@
 // Returns nil if invalid pattern.
 - (NSDictionary *)_matchPattern:(NSString *)pattern toEntireString:(NSString *)inputString
 {
-	if (inputString == nil) {
-		QLog(@"%@", @"Can't handle nil input string");
-		return nil;  //TODO: Revisit how to handle nil.
-	}
-
 	// Assume leading and trailing whitespace can be ignored, and remove it from both the input string and the pattern.
 	inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	if (inputString.length == 0) {
@@ -212,6 +207,7 @@
 
 	// Plug the objects into the table view.
 	[self _displayObjects:distinctValues keyPaths:@[@"self"]];
+	self.fetchedResultsTableView.tableColumns[0].title = [NSString stringWithFormat:@"%@.%@", captureGroups[@1], captureGroups[@2]];
 
 	return YES;
 }
@@ -242,6 +238,7 @@
 
 	// Plug the objects into the table view.
 	[self _displayObjects:fetchedObjects keyPaths:@[@"self"]];
+	self.fetchedResultsTableView.tableColumns[0].title = @"count";
 
 	return YES;
 }
