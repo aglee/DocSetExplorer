@@ -1,5 +1,5 @@
 //
-//  SimpleFetchViewController.h
+//  SimpleFetchWindowController.h
 //  DocSetsTake2
 //
 //  Created by Andy Lee on 4/18/16.
@@ -10,7 +10,7 @@
 
 @class DocSetIndex;
 
-@interface SimpleFetchViewController : NSViewController
+@interface SimpleFetchWindowController : NSWindowController
 
 @property (strong) DocSetIndex *docSetIndex;
 @property (copy) NSString *fetchCommandString;

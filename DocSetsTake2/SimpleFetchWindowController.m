@@ -1,31 +1,31 @@
 //
-//  SimpleFetchViewController.m
+//  SimpleFetchWindowController.m
 //  DocSetsTake2
 //
 //  Created by Andy Lee on 4/18/16.
 //  Copyright © 2016 Andy Lee. All rights reserved.
 //
 
-#import "SimpleFetchViewController.h"
+#import "SimpleFetchWindowController.h"
 #import "DocSetIndex.h"
 #import "QuietLog.h"
 
-@interface SimpleFetchViewController ()
+@interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedResultsArrayController;
 @property (weak) IBOutlet NSTableView *fetchedResultsTableView;
 @end
 
 #pragma mark -
 
-@implementation SimpleFetchViewController
+@implementation SimpleFetchWindowController
 
 #pragma mark - Action methods
 
 - (IBAction)fetch:(id)sender
 {
-	if (![self _tryPlainFetchCommand:self.fetchCommandString]) {
-		[self _tryFetchDistinctCommand:self.fetchCommandString];
-	}
+	[self _tryFetchModelObjectsCommand:self.fetchCommandString]
+	|| [self _tryFetchDistinctValuesForOneKeyPathCommand:self.fetchCommandString]
+	|| [self _tryFetchCountCommand:self.fetchCommandString];
 }
 
 #pragma mark - Private methods - regexes
@@ -135,7 +135,7 @@
 	self.fetchedResultsArrayController.content = fetchedObjects;
 }
 
-- (BOOL)_tryPlainFetchCommand:(NSString *)commandString
+- (BOOL)_tryFetchModelObjectsCommand:(NSString *)commandString
 {
 	QLog(@"%@", @"trying plain fetch...");
 
@@ -149,7 +149,15 @@
 	}
 
 	// Construct the specified array of objects.
-	NSArray *fetchedObjects = [self.docSetIndex fetchEntity:captureGroups[@1] sort:nil where:captureGroups[@2]];
+	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:captureGroups[@1]];
+	req.predicate = [NSPredicate predicateWithFormat:captureGroups[@2]];
+	NSError *error;
+	NSArray *fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:&error];
+
+	if (fetchedObjects == nil) {
+		QLog(@"Error in plain fetch: %@", error);
+		return NO;
+	}
 
 	// Plug the objects into the table view.
 	NSCharacterSet *separators = [NSCharacterSet characterSetWithCharactersInString:@" \t\r\n,"];
@@ -160,12 +168,12 @@
 	return YES;
 }
 
-- (BOOL)_tryFetchDistinctCommand:(NSString *)commandString
+- (BOOL)_tryFetchDistinctValuesForOneKeyPathCommand:(NSString *)commandString
 {
 	QLog(@"%@", @"trying fetch distinct...");
 
 	// Try to parse the command string.
-	NSString *pattern = (@"FETCH  DISTINCT  \"(%ident%)\\.(%keypath%)\""
+	NSString *pattern = (@"DISTINCT  \"(%ident%)\\.(%keypath%)\""
 						 @"(?:  WHERE  \"(%lit%)\")?");
 	NSDictionary *captureGroups = [self _matchPattern:pattern toEntireString:commandString];
 	if (captureGroups == nil) {
@@ -173,14 +181,73 @@
 	}
 
 	// Construct the specified array of objects.
-	NSArray *fetchedObjects = [self.docSetIndex fetchEntity:captureGroups[@1] sort:nil where:captureGroups[@3]];
+	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:captureGroups[@1]];
+	req.predicate = [NSPredicate predicateWithFormat:captureGroups[@3]];
+	NSError *error;
+	NSArray *fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:&error];
+
+	if (fetchedObjects == nil) {
+		QLog(@"Error in fetch distinct: %@", error);
+		return NO;
+	}
+
 	NSArray *unsortedValues = [fetchedObjects valueForKeyPath:captureGroups[@2]];
 	NSArray *distinctValues = [[NSSet setWithArray:unsortedValues] allObjects];
 
 	// Plug the objects into the table view.
 	[self _displayObjects:distinctValues keyPaths:@[@"self"]];
-	
+
 	return YES;
+}
+
+- (BOOL)_tryFetchCountCommand:(NSString *)commandString
+{
+	QLog(@"%@", @"trying fetch count...");
+
+	// Try to parse the command string.
+	NSString *pattern = (@"COUNT  \"(%ident%)\""
+						 @"(?:  WHERE  \"(%lit%)\")?");
+	NSDictionary *captureGroups = [self _matchPattern:pattern toEntireString:commandString];
+	if (captureGroups == nil) {
+		return NO;
+	}
+
+	// Construct the specified array of objects.
+	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:captureGroups[@1]];
+	req.predicate = [NSPredicate predicateWithFormat:captureGroups[@2]];
+	req.resultType = NSCountResultType;
+	NSError *error;
+	NSArray *fetchedObjects = [self.docSetIndex.managedObjectContext executeFetchRequest:req error:&error];
+
+	if (fetchedObjects == nil) {
+		QLog(@"Error in fetch count: %@", error);
+		return NO;
+	}
+
+	// Plug the objects into the table view.
+	[self _displayObjects:fetchedObjects keyPaths:@[@"self"]];
+
+	return YES;
+}
+
+- (void)_printValues:(NSArray *)keyPaths forObjects:(NSArray *)array
+{
+	if (array == nil) {
+		QLog(@"array is nil");
+		return;
+	}
+
+	[array enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger objectIndex, BOOL * _Nonnull stop) {
+		NSMutableString *valuesString = [NSMutableString stringWithFormat:@"[%lu] %@", (unsigned long)objectIndex, [obj className]];
+
+		for (NSString *kp in keyPaths) {
+			[valuesString appendFormat:@" [%@]", [obj valueForKeyPath:kp]];
+		}
+
+		QLog(@"%@", valuesString);
+	}];
+
+	QLog(@"%@ objects", @(array.count));
 }
 
 @end
