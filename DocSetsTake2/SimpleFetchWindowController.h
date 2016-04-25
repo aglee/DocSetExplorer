@@ -18,8 +18,14 @@
 @property (assign) BOOL distinct;
 @property (copy) NSString *predicateString;
 
+#pragma mark - Using plists for fetch parameters
+
+- (NSDictionary *)fetchParametersAsPlist;
+- (void)takeFetchParametersFromPlist:(NSDictionary *)plist;
+
 #pragma mark - Action methods
 
 - (IBAction)fetch:(id)sender;
+- (IBAction)useSavedFetch:(id)sender;
 
 @end

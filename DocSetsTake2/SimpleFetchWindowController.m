@@ -26,6 +26,21 @@
 
 @implementation SimpleFetchWindowController
 
+#pragma mark - Using plists for fetch parameters
+
+- (NSDictionary *)fetchParametersAsPlist
+{
+	return [self dictionaryWithValuesForKeys:@[ @"entityName",
+												@"keyPathsString",
+												@"distinct",
+												@"predicateString" ]];
+}
+
+- (void)takeFetchParametersFromPlist:(NSDictionary *)plist
+{
+	[self setValuesForKeysWithDictionary:plist];
+}
+
 #pragma mark - Action methods
 
 - (IBAction)fetch:(id)sender
@@ -77,6 +92,40 @@
 	}
 }
 
+- (IBAction)useSavedFetch:(id)sender
+{
+	NSInteger savedFetchIndex = sender ? (((NSMenuItem *)sender).tag - 1000) : 0;
+	[self _useSavedFetchWithIndex:savedFetchIndex];
+}
+
+- (void)_useSavedFetchWithIndex:(NSInteger)savedFetchIndex
+{
+	NSArray *savedFetches = @[
+							  // A basic Token query:
+							  @{ @"entityName"		: @"Token",
+								 @"keyPathsString"	:(@"tokenName,"
+													  @"tokenType.typeName,"
+													  @"metainformation.declaredIn.frameworkName"),
+								 @"predicateString"	: @"language.fullName = 'Objective-C'" },
+
+							  // A basic NodeURL query:
+							  @{ @"entityName"		: @"NodeURL",
+								 @"keyPathsString"	:(@"node.kName,"
+													  @"node.kNodeType,"
+													  @"node.kDocumentType,"
+													  @"path,"
+													  @"anchor"),
+								 @"predicateString" : @"" },
+							  ];
+	if (savedFetchIndex < 0 || savedFetchIndex >= savedFetches.count) {
+		QLog(@"+++ [ODD] %s Array index %@ is out of bounds for savedFetches", savedFetchIndex);
+		return;
+	}
+	[self takeFetchParametersFromPlist:savedFetches[savedFetchIndex]];
+	[self fetch:nil];
+}
+
+
 #pragma mark - <NSTableViewDelegate> methods
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
@@ -105,9 +154,7 @@
 
 - (void)windowDidLoad
 {
-	self.entityName = @"Token";
-	self.keyPathsString = @"tokenName, tokenType.typeName, metainformation.declaredIn.frameworkName";
-	self.predicateString = @"language.fullName = 'Objective-C'";
+	[self _useSavedFetchWithIndex:0];
 }
 
 #pragma mark - Private methods - regexes

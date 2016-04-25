@@ -624,13 +624,24 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="DocSet" id="6q1-62-Fh1">
+                <menuItem title="Fetch" id="6q1-62-Fh1">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="DocSet" id="tHj-qG-sIR">
+                    <menu key="submenu" title="Fetch" id="tHj-qG-sIR">
                         <items>
                             <menuItem title="Fetch" keyEquivalent="r" id="zxs-2x-E8f">
                                 <connections>
                                     <action selector="fetch:" target="-1" id="k9W-bX-2px"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="nBl-I6-h0h"/>
+                            <menuItem title="Fetch Tokens" tag="1000" keyEquivalent="1" id="Aas-6v-wBa">
+                                <connections>
+                                    <action selector="useSavedFetch:" target="-1" id="e8z-ri-E6g"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Fetch NodeURLs" tag="1001" keyEquivalent="2" id="wkU-NO-FNX">
+                                <connections>
+                                    <action selector="useSavedFetch:" target="-1" id="t2u-Yy-Dlw"/>
                                 </connections>
                             </menuItem>
                         </items>
