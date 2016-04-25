@@ -362,8 +362,8 @@
 
 	if ([selectedObject isKindOfClass:[DSAToken class]]) {
 		return [self.docSetIndex documentationURLForToken:(DSAToken *)selectedObject];
-	} else if ([selectedObject isKindOfClass:[DSANode class]]) {
-		return [self.docSetIndex documentationURLForNode:(DSANode *)selectedObject];
+	} else if ([selectedObject isKindOfClass:[DSANodeURL class]]) {
+		return [self.docSetIndex documentationURLForNodeURL:(DSANodeURL *)selectedObject];
 	}
 
 	return nil;
