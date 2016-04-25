@@ -20,4 +20,9 @@
 /*! docSetPath should be a path to a .docset bundle. */
 - (instancetype)initWithDocSetPath:(NSString *)docSetPath NS_DESIGNATED_INITIALIZER;
 
+#pragma mark - Queries
+
+- (NSURL *)documentationURLForToken:(DSAToken *)token;
+- (NSURL *)documentationURLForNode:(DSANode *)node;
+
 @end

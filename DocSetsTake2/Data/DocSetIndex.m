@@ -26,7 +26,7 @@
 {
 	self = [super init];
 	if (self) {
-		_docSetPath = docSetPath;
+		_docSetPath = docSetPath;  //TODO: Fail if doesn't look like a docset bundle.
 	}
 	return self;
 }
@@ -91,6 +91,54 @@
 	_managedObjectContext.persistentStoreCoordinator = coordinator;
 
 	return _managedObjectContext;
+}
+
+#pragma mark - Queries
+
+- (NSString *)_documentsDirPath
+{
+	return [self.docSetPath stringByAppendingPathComponent:@"Contents/Resources/Documents"];
+}
+
+- (NSURL *)documentationURLForToken:(DSAToken *)token
+{
+	NSString *pathString = [self _documentsDirPath];
+	pathString = [pathString stringByAppendingPathComponent:token.metainformation.file.path];
+	NSURL *url = [NSURL fileURLWithPath:pathString];
+	NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+	urlComponents.fragment = token.metainformation.anchor;
+
+	return [urlComponents URL];
+}
+
+- (NSURL *)documentationURLForNode:(DSANode *)node
+{
+	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"NodeURL"];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"node = %@", node];
+	fetchRequest.predicate = predicate;
+	NSError *error;
+	NSArray *fetchResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+
+	if (fetchResults == nil) {
+		QLog(@"+++ [ERROR] %s Fetch failed with error '%@'", __PRETTY_FUNCTION__, error);  //TODO: Handle fetch error.
+		return nil;
+	}
+	if (fetchResults.count == 0) {
+		QLog(@"[ODD] %s Got no NodeURL objects in fetch result", __PRETTY_FUNCTION__, error);
+		return nil;
+	}
+	if (fetchResults.count > 1) {
+		QLog(@"[ODD] %s Got multiple NodeURL objects in fetch result", __PRETTY_FUNCTION__, error);
+		return nil;
+	}
+
+	DSANodeURL *nodeURLInfo = (DSANodeURL *)fetchResults.firstObject;
+	//QLog(@"+++ [INFO] NodeURL says: baseURL=[%@], path=[%@], fileName=[%@], anchor=[%@] (compare with token's anchor=[%@])", nodeURLInfo.baseURL, nodeURLInfo.path, nodeURLInfo.fileName, nodeURLInfo.anchor, token.metainformation.anchor);
+
+	NSString *pathString = [self _documentsDirPath];  //TODO: Handle fallback to online URL if local docset has not been installed.
+	pathString = [pathString stringByAppendingPathComponent:nodeURLInfo.path];
+
+	return [NSURL fileURLWithPath:pathString];
 }
 
 @end

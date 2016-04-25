@@ -8,13 +8,16 @@
 
 #import "SimpleFetchWindowController.h"
 #import "DocSetIndex.h"
+#import "DocSetModel.h"
 #import "QuietLog.h"
+#import <WebKit/WebKit.h>
 
 #define MyErrorDomain @"com.appkido.DocSetsTake2"
 
 @interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedResultsArrayController;
 @property (weak) IBOutlet NSTableView *fetchedResultsTableView;
+@property (weak) IBOutlet WebView *documentationWebView;
 @property (strong) NSArray *keyPathsUsedByTableView;
 
 @end
@@ -72,6 +75,30 @@
 	if (error) {
 		[self presentError:error];
 	}
+}
+
+#pragma mark - <NSTableViewDelegate> methods
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+	if (aNotification.object != self.fetchedResultsTableView) {
+		QLog(@"[ODD] %s Unexpected table view %@", aNotification.object);
+		return;
+	}
+
+	NSURL *docURL = [self _documentationURLOfSelectedItem];
+	QLog(@"+++ Documentation URL for selected item is %@", docURL);
+	if (docURL) {
+		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];
+		[self.documentationWebView.mainFrame loadRequest:urlRequest];
+	} else {
+		[self.documentationWebView.mainFrame loadHTMLString:@"<h1>N/A</h1>" baseURL:nil];  //TODO: Show something nice when there is no doc to display.
+	}
+}
+
+- (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+{
+	return NO;
 }
 
 #pragma mark - <NSWindowDelegate> methods
@@ -275,6 +302,24 @@
 	}
 	self.fetchedResultsArrayController.sortDescriptors = sortDescriptors;
 	self.fetchedResultsArrayController.content = fetchedObjects;
+}
+
+- (NSURL *)_documentationURLOfSelectedItem
+{
+	NSIndexSet *selectedRowIndexes = self.fetchedResultsTableView.selectedRowIndexes;
+	if (selectedRowIndexes.count != 1) {
+		return nil;
+	}
+	NSInteger selectedRow = [selectedRowIndexes firstIndex];
+	id selectedObject = self.fetchedResultsArrayController.arrangedObjects[selectedRow];
+
+	if ([selectedObject isKindOfClass:[DSAToken class]]) {
+		return [self.docSetIndex documentationURLForToken:(DSAToken *)selectedObject];
+	} else if ([selectedObject isKindOfClass:[DSANode class]]) {
+		return [self.docSetIndex documentationURLForNode:(DSANode *)selectedObject];
+	}
+
+	return nil;
 }
 
 - (void)_printValues:(NSArray *)keyPaths forObjects:(NSArray *)array

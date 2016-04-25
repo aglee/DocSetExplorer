@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		7335AA5F1CCDB04900080E58 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7335AA5E1CCDB04900080E58 /* WebKit.framework */; };
 		736AB61E1CC58C9500C4376C /* SimpleFetchWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */; };
 		736AB61F1CC58C9500C4376C /* SimpleFetchWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* SimpleFetchWindowController.xib */; };
 		7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAC1CC21BB400079C8E /* AppDelegate.m */; };
@@ -148,6 +149,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7335AA5E1CCDB04900080E58 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFetchWindowController.h; sourceTree = "<group>"; };
 		736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFetchWindowController.m; sourceTree = "<group>"; };
 		736AB61D1CC58C9500C4376C /* SimpleFetchWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleFetchWindowController.xib; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7335AA5F1CCDB04900080E58 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +271,7 @@
 		7370BE9F1CC21BB400079C8E = {
 			isa = PBXGroup;
 			children = (
+				7335AA5E1CCDB04900080E58 /* WebKit.framework */,
 				7370BEDB1CC21C0600079C8E /* README.txt */,
 				7370BEAA1CC21BB400079C8E /* DocSetsTake2 */,
 				7370BEC11CC21BB500079C8E /* DocSetsTake2Tests */,
