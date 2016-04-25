@@ -103,17 +103,17 @@
 	NSArray *savedFetches = @[
 							  // A basic Token query:
 							  @{ @"entityName"		: @"Token",
-								 @"keyPathsString"	:(@"tokenName,"
-													  @"tokenType.typeName,"
+								 @"keyPathsString"	:(@"tokenName, "
+													  @"tokenType.typeName, "
 													  @"metainformation.declaredIn.frameworkName"),
 								 @"predicateString"	: @"language.fullName = 'Objective-C'" },
 
 							  // A basic NodeURL query:
 							  @{ @"entityName"		: @"NodeURL",
-								 @"keyPathsString"	:(@"node.kName,"
-													  @"node.kNodeType,"
-													  @"node.kDocumentType,"
-													  @"path,"
+								 @"keyPathsString"	:(@"node.kName, "
+													  @"node.kNodeType, "
+													  @"node.kDocumentType, "
+													  @"path, "
 													  @"anchor"),
 								 @"predicateString" : @"" },
 							  ];
