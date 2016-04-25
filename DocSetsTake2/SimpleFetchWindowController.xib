@@ -20,293 +20,305 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="6RG-XG-WuU">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="175" y="189" width="1070" height="716"/>
+            <rect key="contentRect" x="175" y="189" width="971" height="623"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="xX4-c7-PNg">
-                <rect key="frame" x="0.0" y="0.0" width="1070" height="716"/>
+                <rect key="frame" x="0.0" y="0.0" width="971" height="623"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="f1z-bW-oOg">
-                        <rect key="frame" x="18" y="679" width="47" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Entity:" id="spM-wc-fyA">
-                            <font key="font" size="13" name=".AppleSystemUIFontBold"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8BZ-Iu-H26">
-                        <rect key="frame" x="18" y="611" width="137" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Predicate (optional):" id="c4c-KA-78I">
-                            <font key="font" size="13" name=".AppleSystemUIFontBold"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="gI6-tL-LdR">
-                        <rect key="frame" x="20" y="543" width="445" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" id="LN8-lx-SzE">
-                            <rect key="frame" x="1" y="1" width="428" height="58"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="GWU-vD-TiT">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="58"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="428" height="58"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                    <attributedString key="textStorage">
-                                        <fragment content="predicate">
-                                            <attributes>
-                                                <font key="NSFont" size="13" name="Courier"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                    <tabStops>
-                                                        <textTab alignment="left" location="28">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="56">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="84">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="112">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="140">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="168">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="196">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="224">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="252">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="280">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="308">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="336">
-                                                            <options/>
-                                                        </textTab>
-                                                    </tabStops>
-                                                </paragraphStyle>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="428" height="58"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="predicateString" id="1rE-bT-x2f">
-                                            <dictionary key="options">
-                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Uge-Ps-fV0">
-                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1RD-2X-SzC">
-                            <rect key="frame" x="429" y="1" width="15" height="58"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                    </scrollView>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="TUJ-sm-Tjp">
-                        <rect key="frame" x="473" y="502" width="577" height="169"/>
+                    <customView id="jCw-iQ-3XL">
+                        <rect key="frame" x="0.0" y="363" width="971" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" id="JeY-BH-ZxT">
-                            <rect key="frame" x="1" y="0.0" width="575" height="168"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" headerView="2Ou-gO-pwN" id="O4m-s9-3mk" userLabel="Fetched Results Table View">
-                                    <rect key="frame" x="0.0" y="0.0" width="575" height="145"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <size key="intercellSpacing" width="3" height="2"/>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                                    <connections>
-                                        <binding destination="zLx-OZ-XLy" name="selectionIndexes" keyPath="selectionIndexes" id="lay-vO-Mg0"/>
-                                        <binding destination="zLx-OZ-XLy" name="sortDescriptors" keyPath="sortDescriptors" id="VgY-fH-PHe"/>
-                                        <outlet property="delegate" destination="-2" id="1rK-ru-Cxe"/>
-                                    </connections>
-                                </tableView>
-                            </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ERe-BH-uWP">
-                            <rect key="frame" x="1" y="368" width="289" height="15"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="OHG-tl-VPJ">
-                            <rect key="frame" x="224" y="17" width="15" height="102"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <tableHeaderView key="headerView" id="2Ou-gO-pwN">
-                            <rect key="frame" x="0.0" y="0.0" width="575" height="23"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </tableHeaderView>
-                    </scrollView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OvK-yi-X9b">
-                        <rect key="frame" x="471" y="679" width="202" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Results:" id="Es7-9W-Sym">
-                            <font key="font" size="13" name=".AppleSystemUIFontBold"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="zLx-OZ-XLy" name="displayPatternValue1" keyPath="arrangedObjects.@count" id="fbH-Vf-GSY">
-                                <dictionary key="options">
-                                    <string key="NSDisplayPattern">%{value1}@ Results</string>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5B3-TI-YmQ">
-                        <rect key="frame" x="194" y="679" width="73" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Key paths:" id="i1q-mY-JKI">
-                            <font key="font" size="13" name=".AppleSystemUIFontBold"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="f0b-8O-s7N">
-                        <rect key="frame" x="196" y="611" width="269" height="60"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" id="UuC-rU-AOO">
-                            <rect key="frame" x="1" y="1" width="252" height="58"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" textReplacement="YES" spellingCorrection="YES" smartInsertDelete="YES" id="lay-Hl-Cq2">
-                                    <rect key="frame" x="0.0" y="0.0" width="252" height="58"/>
+                        <subviews>
+                            <popUpButton verticalHuggingPriority="750" id="VWQ-S6-fGU">
+                                <rect key="frame" x="95" y="216" width="173" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="TokenType" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="lkp-lX-9FM" id="nxg-Tp-Ndi">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="0QW-LM-iCo">
+                                        <items>
+                                            <menuItem title="APILanguage" id="XHg-cs-te8"/>
+                                            <menuItem title="Container" id="0fK-2g-YKs"/>
+                                            <menuItem title="DistributionVersion" id="JMP-8u-RyR"/>
+                                            <menuItem title="DocSet" id="ari-ib-QE9"/>
+                                            <menuItem title="DownloadableFile" id="goz-Pc-K0x"/>
+                                            <menuItem title="FilePath" id="e9X-Ka-XR5"/>
+                                            <menuItem title="Header" id="zHM-Jl-zGy"/>
+                                            <menuItem title="Node" id="UG5-vT-yEI"/>
+                                            <menuItem title="NodeURL" id="UbV-PV-BkV"/>
+                                            <menuItem title="NodeUUID" id="pxd-tb-kzC"/>
+                                            <menuItem title="OrderedSubnode" id="toe-1X-Cog"/>
+                                            <menuItem title="Parameter" id="DKd-cK-5p0"/>
+                                            <menuItem title="ReturnValue" id="Rrc-zb-wFB"/>
+                                            <menuItem title="Token" id="Zzx-tZ-NJK"/>
+                                            <menuItem title="TokenGroup" id="NJm-ZO-NXv"/>
+                                            <menuItem title="TokenMetainformation" id="HxK-XA-rgY"/>
+                                            <menuItem title="TokenType" state="on" id="lkp-lX-9FM"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="-2" name="selectedValue" keyPath="entityName" id="Qiw-06-Dei"/>
+                                </connections>
+                            </popUpButton>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="f0b-8O-s7N">
+                                <rect key="frame" x="97" y="151" width="269" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="UuC-rU-AOO">
+                                    <rect key="frame" x="1" y="1" width="252" height="58"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" textReplacement="YES" spellingCorrection="YES" smartInsertDelete="YES" id="lay-Hl-Cq2">
+                                            <rect key="frame" x="0.0" y="0.0" width="252" height="58"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="252" height="58"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="key paths">
+                                                    <attributes>
+                                                        <font key="NSFont" size="13" name="Courier"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="252" height="58"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="keyPathsString" id="4LF-NL-bMS">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="252" height="58"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                    <attributedString key="textStorage">
-                                        <fragment content="key paths">
-                                            <attributes>
-                                                <font key="NSFont" size="13" name="Courier"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="252" height="58"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="keyPathsString" id="4LF-NL-bMS">
-                                            <dictionary key="options">
-                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="ssE-00-mYB">
-                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="YyB-ux-PBX">
-                            <rect key="frame" x="253" y="1" width="15" height="58"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                    </scrollView>
-                    <button id="Iyt-mi-7gN">
-                        <rect key="frame" x="398" y="677" width="69" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Distinct" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ALR-En-tTC">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <binding destination="-2" name="value" keyPath="distinct" id="ibs-UM-M2j"/>
-                        </connections>
-                    </button>
-                    <webView id="h9W-jt-Ml4">
-                        <rect key="frame" x="20" y="187" width="1030" height="282"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="ssE-00-mYB">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="YyB-ux-PBX">
+                                    <rect key="frame" x="253" y="1" width="15" height="58"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button id="Iyt-mi-7gN">
+                                <rect key="frame" x="95" y="127" width="69" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Distinct" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ALR-En-tTC">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="distinct" id="ibs-UM-M2j"/>
+                                </connections>
+                            </button>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="TUJ-sm-Tjp">
+                                <rect key="frame" x="374" y="20" width="577" height="195"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <clipView key="contentView" id="JeY-BH-ZxT">
+                                    <rect key="frame" x="1" y="0.0" width="1383" height="194"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" headerView="2Ou-gO-pwN" id="O4m-s9-3mk" userLabel="Fetched Results Table View">
+                                            <rect key="frame" x="0.0" y="0.0" width="575" height="171"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="zLx-OZ-XLy" name="selectionIndexes" keyPath="selectionIndexes" id="lay-vO-Mg0"/>
+                                                <binding destination="zLx-OZ-XLy" name="sortDescriptors" keyPath="sortDescriptors" id="VgY-fH-PHe"/>
+                                                <outlet property="delegate" destination="-2" id="1rK-ru-Cxe"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ERe-BH-uWP">
+                                    <rect key="frame" x="1" y="368" width="289" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="OHG-tl-VPJ">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="2Ou-gO-pwN">
+                                    <rect key="frame" x="0.0" y="0.0" width="575" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="gI6-tL-LdR">
+                                <rect key="frame" x="97" y="61" width="269" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <clipView key="contentView" id="LN8-lx-SzE">
+                                    <rect key="frame" x="1" y="1" width="252" height="58"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="GWU-vD-TiT">
+                                            <rect key="frame" x="0.0" y="0.0" width="252" height="58"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="252" height="58"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="predicate">
+                                                    <attributes>
+                                                        <font key="NSFont" size="13" name="Courier"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                            <tabStops>
+                                                                <textTab alignment="left" location="28">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="56">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="84">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="112">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="140">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="168">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="196">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="224">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="252">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="280">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="308">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="336">
+                                                                    <options/>
+                                                                </textTab>
+                                                            </tabStops>
+                                                        </paragraphStyle>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="252" height="58"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="predicateString" id="1rE-bT-x2f">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Uge-Ps-fV0">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1RD-2X-SzC">
+                                    <rect key="frame" x="253" y="1" width="15" height="58"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8BZ-Iu-H26">
+                                <rect key="frame" x="20" y="104" width="71" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Predicate:" id="c4c-KA-78I">
+                                    <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OvK-yi-X9b">
+                                <rect key="frame" x="372" y="221" width="202" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Results:" id="Es7-9W-Sym">
+                                    <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="zLx-OZ-XLy" name="displayPatternValue1" keyPath="arrangedObjects.@count" id="fbH-Vf-GSY">
+                                        <dictionary key="options">
+                                            <string key="NSDisplayPattern">%{value1}@ Results</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5B3-TI-YmQ">
+                                <rect key="frame" x="18" y="194" width="73" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Key paths:" id="i1q-mY-JKI">
+                                    <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="f1z-bW-oOg">
+                                <rect key="frame" x="44" y="221" width="47" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Entity:" id="spM-wc-fyA">
+                                    <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" id="J55-5b-C4C">
+                                <rect key="frame" x="297" y="13" width="75" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Fetch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IiA-lR-X5n">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="fetch:" target="-2" id="4AD-Vc-mxr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </customView>
+                    <customView id="OUn-YH-Cbc">
+                        <rect key="frame" x="0.0" y="0.0" width="971" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
-                            <nil key="identifier"/>
-                        </webPreferences>
-                    </webView>
-                    <popUpButton verticalHuggingPriority="750" id="VWQ-S6-fGU">
-                        <rect key="frame" x="18" y="647" width="173" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" title="TokenType" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="lkp-lX-9FM" id="nxg-Tp-Ndi">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="0QW-LM-iCo">
-                                <items>
-                                    <menuItem title="APILanguage" id="XHg-cs-te8"/>
-                                    <menuItem title="Container" id="0fK-2g-YKs"/>
-                                    <menuItem title="DistributionVersion" id="JMP-8u-RyR"/>
-                                    <menuItem title="DocSet" id="ari-ib-QE9"/>
-                                    <menuItem title="DownloadableFile" id="goz-Pc-K0x"/>
-                                    <menuItem title="FilePath" id="e9X-Ka-XR5"/>
-                                    <menuItem title="Header" id="zHM-Jl-zGy"/>
-                                    <menuItem title="Node" id="UG5-vT-yEI"/>
-                                    <menuItem title="NodeURL" id="UbV-PV-BkV"/>
-                                    <menuItem title="NodeUUID" id="pxd-tb-kzC"/>
-                                    <menuItem title="OrderedSubnode" id="toe-1X-Cog"/>
-                                    <menuItem title="Parameter" id="DKd-cK-5p0"/>
-                                    <menuItem title="ReturnValue" id="Rrc-zb-wFB"/>
-                                    <menuItem title="Token" id="Zzx-tZ-NJK"/>
-                                    <menuItem title="TokenGroup" id="NJm-ZO-NXv"/>
-                                    <menuItem title="TokenMetainformation" id="HxK-XA-rgY"/>
-                                    <menuItem title="TokenType" state="on" id="lkp-lX-9FM"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                        <connections>
-                            <binding destination="-2" name="selectedValue" keyPath="entityName" id="Qiw-06-Dei"/>
-                        </connections>
-                    </popUpButton>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="7w5-yT-nGz">
-                        <rect key="frame" x="18" y="477" width="108" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Documentation:" id="z23-10-7oc">
-                            <font key="font" size="13" name=".AppleSystemUIFontBold"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button verticalHuggingPriority="750" id="J55-5b-C4C">
-                        <rect key="frame" x="396" y="495" width="75" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Fetch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IiA-lR-X5n">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="fetch:" target="-2" id="4AD-Vc-mxr"/>
-                        </connections>
-                    </button>
+                        <subviews>
+                            <webView id="h9W-jt-Ml4">
+                                <rect key="frame" x="20" y="20" width="931" height="282"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="7w5-yT-nGz">
+                                <rect key="frame" x="18" y="310" width="108" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Documentation:" id="z23-10-7oc">
+                                    <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </customView>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="Apb-j2-olr"/>
             </connections>
-            <point key="canvasLocation" x="358" y="321"/>
+            <point key="canvasLocation" x="308.5" y="274.5"/>
         </window>
     </objects>
 </document>
