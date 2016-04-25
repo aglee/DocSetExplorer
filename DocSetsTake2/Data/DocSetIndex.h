@@ -22,7 +22,6 @@
 
 #pragma mark - Queries
 
-- (NSURL *)documentationURLForToken:(DSAToken *)token;
-- (NSURL *)documentationURLForNodeURL:(DSANodeURL *)nodeURLInfo;
+- (NSURL *)documentationURLForObject:(id)obj;
 
 @end

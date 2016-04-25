@@ -95,12 +95,25 @@
 
 #pragma mark - Queries
 
+- (NSURL *)documentationURLForObject:(id)obj
+{
+	if ([obj isKindOfClass:[DSAToken class]]) {
+		return [self _documentationURLForToken:(DSAToken *)obj];
+	} else if ([obj isKindOfClass:[DSANodeURL class]]) {
+		return [self _documentationURLForNodeURL:(DSANodeURL *)obj];
+	}
+
+	return nil;
+}
+
+#pragma mark - Private methods
+
 - (NSString *)_documentsDirPath
 {
 	return [self.docSetPath stringByAppendingPathComponent:@"Contents/Resources/Documents"];
 }
 
-- (NSURL *)documentationURLForToken:(DSAToken *)token
+- (NSURL *)_documentationURLForToken:(DSAToken *)token
 {
 	NSString *pathString = [self _documentsDirPath];
 	pathString = [pathString stringByAppendingPathComponent:token.metainformation.file.path];
@@ -114,7 +127,7 @@
 	return url;
 }
 
-- (NSURL *)documentationURLForNodeURL:(DSANodeURL *)nodeURLInfo
+- (NSURL *)_documentationURLForNodeURL:(DSANodeURL *)nodeURLInfo
 {
 	NSString *pathString = [self _documentsDirPath];  //TODO: Handle fallback to online URL if local docset has not been installed.
 	pathString = [pathString stringByAppendingPathComponent:nodeURLInfo.path];
