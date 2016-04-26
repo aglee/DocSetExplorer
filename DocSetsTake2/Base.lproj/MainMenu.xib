@@ -634,12 +634,12 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="nBl-I6-h0h"/>
-                            <menuItem title="Fetch Tokens" tag="1000" keyEquivalent="1" id="Aas-6v-wBa">
+                            <menuItem title="Example: Fetch Tokens" tag="1000" keyEquivalent="1" id="Aas-6v-wBa">
                                 <connections>
                                     <action selector="useSavedFetch:" target="-1" id="e8z-ri-E6g"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Fetch NodeURLs" tag="1001" keyEquivalent="2" id="wkU-NO-FNX">
+                            <menuItem title="Example: Fetch NodeURLs" tag="1001" keyEquivalent="2" id="wkU-NO-FNX">
                                 <connections>
                                     <action selector="useSavedFetch:" target="-1" id="t2u-Yy-Dlw"/>
                                 </connections>
