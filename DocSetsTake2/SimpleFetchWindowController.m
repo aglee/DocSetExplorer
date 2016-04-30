@@ -9,6 +9,7 @@
 #import "SimpleFetchWindowController.h"
 #import "DocSetIndex.h"
 #import "DocSetModel.h"
+#import "MOBItem.h"
 #import "QuietLog.h"
 #import <WebKit/WebKit.h>
 
@@ -17,7 +18,10 @@
 @interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedObjectsArrayController;
 @property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
+@property (weak) IBOutlet NSBrowser *browserView;
 @property (weak) IBOutlet WebView *documentationWebView;
+
+@property (strong) MOBItem *rootBrowserItem;
 @end
 
 #pragma mark -
@@ -86,15 +90,38 @@
 	[self _useSavedFetchWithIndex:savedFetchIndex];
 }
 
+#pragma mark - <NSBrowserDelegate> methods
+
+- (id)rootItemForBrowser:(NSBrowser *)browser
+{
+	return self.rootBrowserItem;
+}
+
+- (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item
+{
+	return ((MOBItem *)item).childItems.count;
+}
+
+- (id)browser:(NSBrowser *)browser child:(NSInteger)index ofItem:(id)item
+{
+	return ((MOBItem *)item).childItems[index];
+}
+
+- (id)browser:(NSBrowser *)browser objectValueForItem:(id)item
+{
+	return ((MOBItem *)item).displayedTitle;
+}
+
+- (BOOL)browser:(NSBrowser *)browser isLeafItem:(id)item
+{
+	return (((MOBItem *)item).childItems == nil);
+
+}
+
 #pragma mark - <NSTableViewDelegate> methods
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	if (aNotification.object != self.fetchedObjectsTableView) {
-		QLog(@"[ODD] %s Unexpected table view %@", aNotification.object);
-		return;
-	}
-
 	id selectedObject = nil;
 	NSIndexSet *selectedRowIndexes = self.fetchedObjectsTableView.selectedRowIndexes;
 	if (selectedRowIndexes.count == 1) {
@@ -102,6 +129,17 @@
 		selectedObject = self.fetchedObjectsArrayController.arrangedObjects[selectedRow];
 	}
 
+	// Update the browser view to reflect the selected object.
+	if (selectedObject == nil) {
+		self.rootBrowserItem = nil;
+	} else {
+		MOBItem *item = [[MOBItem alloc] init];
+		item.managedObject = selectedObject;
+		self.rootBrowserItem = item;
+	}
+	[self.browserView loadColumnZero];
+
+	// Update the web view to reflect the selected object.
 	NSURL *docURL = [self.docSetIndex documentationURLForObject:selectedObject];
 	QLog(@"+++ Documentation URL for selected item is %@", docURL);
 	if (docURL) {
@@ -121,7 +159,18 @@
 
 - (void)windowDidLoad
 {
-	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
+//	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
+
+//	self.entityName = @"TokenType";
+//	self.keyPathsString = @"typeName";
+//	[self fetch:nil];
+
+	self.entityName = @"Token";
+	self.keyPathsString = @"tokenName, tokenType.typeName";
+	self.predicateString = @"tokenName like '*Select*'";
+	[self fetch:nil];
+
+	self.browserView.defaultColumnWidth = 100;
 }
 
 #pragma mark - Private methods - regexes

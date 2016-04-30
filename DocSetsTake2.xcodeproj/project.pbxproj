@@ -21,6 +21,24 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		732936071CD457E000D6DE21 /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */; };
+		732936081CD457E000D6DE21 /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */; };
+		732936091CD457E000D6DE21 /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */; };
+		7329360A1CD457E000D6DE21 /* MOBIndexedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FE1CD457E000D6DE21 /* MOBIndexedItem.m */; };
+		7329360B1CD457E000D6DE21 /* MOBIndexedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FE1CD457E000D6DE21 /* MOBIndexedItem.m */; };
+		7329360C1CD457E000D6DE21 /* MOBIndexedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FE1CD457E000D6DE21 /* MOBIndexedItem.m */; };
+		7329360D1CD457E000D6DE21 /* MOBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936001CD457E000D6DE21 /* MOBItem.m */; };
+		7329360E1CD457E000D6DE21 /* MOBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936001CD457E000D6DE21 /* MOBItem.m */; };
+		7329360F1CD457E000D6DE21 /* MOBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936001CD457E000D6DE21 /* MOBItem.m */; };
+		732936101CD457E000D6DE21 /* MOBPropertyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936021CD457E000D6DE21 /* MOBPropertyItem.m */; };
+		732936111CD457E000D6DE21 /* MOBPropertyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936021CD457E000D6DE21 /* MOBPropertyItem.m */; };
+		732936121CD457E000D6DE21 /* MOBPropertyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936021CD457E000D6DE21 /* MOBPropertyItem.m */; };
+		732936131CD457E000D6DE21 /* MOBToManyRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936041CD457E000D6DE21 /* MOBToManyRelationshipItem.m */; };
+		732936141CD457E000D6DE21 /* MOBToManyRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936041CD457E000D6DE21 /* MOBToManyRelationshipItem.m */; };
+		732936151CD457E000D6DE21 /* MOBToManyRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936041CD457E000D6DE21 /* MOBToManyRelationshipItem.m */; };
+		732936161CD457E000D6DE21 /* MOBToOneRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936061CD457E000D6DE21 /* MOBToOneRelationshipItem.m */; };
+		732936171CD457E000D6DE21 /* MOBToOneRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936061CD457E000D6DE21 /* MOBToOneRelationshipItem.m */; };
+		732936181CD457E000D6DE21 /* MOBToOneRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732936061CD457E000D6DE21 /* MOBToOneRelationshipItem.m */; };
 		7335AA5F1CCDB04900080E58 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7335AA5E1CCDB04900080E58 /* WebKit.framework */; };
 		736AB61E1CC58C9500C4376C /* SimpleFetchWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */; };
 		736AB61F1CC58C9500C4376C /* SimpleFetchWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* SimpleFetchWindowController.xib */; };
@@ -149,6 +167,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		732935FB1CD457E000D6DE21 /* MOBAttributeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAttributeItem.h; sourceTree = "<group>"; };
+		732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAttributeItem.m; sourceTree = "<group>"; };
+		732935FD1CD457E000D6DE21 /* MOBIndexedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBIndexedItem.h; sourceTree = "<group>"; };
+		732935FE1CD457E000D6DE21 /* MOBIndexedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBIndexedItem.m; sourceTree = "<group>"; };
+		732935FF1CD457E000D6DE21 /* MOBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBItem.h; sourceTree = "<group>"; };
+		732936001CD457E000D6DE21 /* MOBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBItem.m; sourceTree = "<group>"; };
+		732936011CD457E000D6DE21 /* MOBPropertyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBPropertyItem.h; sourceTree = "<group>"; };
+		732936021CD457E000D6DE21 /* MOBPropertyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBPropertyItem.m; sourceTree = "<group>"; };
+		732936031CD457E000D6DE21 /* MOBToManyRelationshipItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBToManyRelationshipItem.h; sourceTree = "<group>"; };
+		732936041CD457E000D6DE21 /* MOBToManyRelationshipItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBToManyRelationshipItem.m; sourceTree = "<group>"; };
+		732936051CD457E000D6DE21 /* MOBToOneRelationshipItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBToOneRelationshipItem.h; sourceTree = "<group>"; };
+		732936061CD457E000D6DE21 /* MOBToOneRelationshipItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBToOneRelationshipItem.m; sourceTree = "<group>"; };
 		7335AA5E1CCDB04900080E58 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFetchWindowController.h; sourceTree = "<group>"; };
 		736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFetchWindowController.m; sourceTree = "<group>"; };
@@ -261,11 +291,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7335AA5D1CCD61BE00080E58 /* App-Specific Utilities */ = {
+		732935FA1CD457E000D6DE21 /* Managed Object Browser Items */ = {
 			isa = PBXGroup;
 			children = (
+				732935FB1CD457E000D6DE21 /* MOBAttributeItem.h */,
+				732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */,
+				732935FD1CD457E000D6DE21 /* MOBIndexedItem.h */,
+				732935FE1CD457E000D6DE21 /* MOBIndexedItem.m */,
+				732935FF1CD457E000D6DE21 /* MOBItem.h */,
+				732936001CD457E000D6DE21 /* MOBItem.m */,
+				732936011CD457E000D6DE21 /* MOBPropertyItem.h */,
+				732936021CD457E000D6DE21 /* MOBPropertyItem.m */,
+				732936031CD457E000D6DE21 /* MOBToManyRelationshipItem.h */,
+				732936041CD457E000D6DE21 /* MOBToManyRelationshipItem.m */,
+				732936051CD457E000D6DE21 /* MOBToOneRelationshipItem.h */,
+				732936061CD457E000D6DE21 /* MOBToOneRelationshipItem.m */,
 			);
-			path = "App-Specific Utilities";
+			path = "Managed Object Browser Items";
 			sourceTree = "<group>";
 		};
 		7370BE9F1CC21BB400079C8E = {
@@ -295,7 +337,7 @@
 			children = (
 				73C2162E1CC5BCA700F097B9 /* Utilities */,
 				73C215E91CC5BCA700F097B9 /* Data */,
-				7335AA5D1CCD61BE00080E58 /* App-Specific Utilities */,
+				732935FA1CD457E000D6DE21 /* Managed Object Browser Items */,
 				7370BEAB1CC21BB400079C8E /* AppDelegate.h */,
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
 				736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */,
@@ -590,9 +632,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C216551CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
+				732936161CD457E000D6DE21 /* MOBToOneRelationshipItem.m in Sources */,
 				73C2166D1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
 				73C2165E1CC5BCA700F097B9 /* TokenType.m in Sources */,
+				732936131CD457E000D6DE21 /* MOBToManyRelationshipItem.m in Sources */,
 				736AB61E1CC58C9500C4376C /* SimpleFetchWindowController.m in Sources */,
+				7329360A1CD457E000D6DE21 /* MOBIndexedItem.m in Sources */,
+				732936101CD457E000D6DE21 /* MOBPropertyItem.m in Sources */,
 				73C2163D1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
 				73C2164F1CC5BCA700F097B9 /* Header.m in Sources */,
 				73C216791CC5BCA700F097B9 /* _FilePath.m in Sources */,
@@ -604,6 +650,8 @@
 				73C216671CC5BCA700F097B9 /* _DocSet.m in Sources */,
 				7370BEB01CC21BB400079C8E /* main.m in Sources */,
 				73C2164C1CC5BCA700F097B9 /* FilePath.m in Sources */,
+				7329360D1CD457E000D6DE21 /* MOBItem.m in Sources */,
+				732936071CD457E000D6DE21 /* MOBAttributeItem.m in Sources */,
 				73C216341CC5BCA700F097B9 /* APILanguage.m in Sources */,
 				73C216761CC5BCA700F097B9 /* _DSAToken.m in Sources */,
 				73C2167C1CC5BCA700F097B9 /* _Header.m in Sources */,
@@ -640,7 +688,9 @@
 				73C216921CC5BCA700F097B9 /* QuietLog.m in Sources */,
 				73C2166E1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
 				73C2163E1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
+				7329360E1CD457E000D6DE21 /* MOBItem.m in Sources */,
 				73C216711CC5BCA700F097B9 /* _DSANode.m in Sources */,
+				7329360B1CD457E000D6DE21 /* MOBIndexedItem.m in Sources */,
 				73C216441CC5BCA700F097B9 /* DSANode.m in Sources */,
 				73C216471CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
 				73C2168C1CC5BCA700F097B9 /* _TokenType.m in Sources */,
@@ -649,12 +699,16 @@
 				73C216651CC5BCA700F097B9 /* _Container.m in Sources */,
 				73C2166B1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
 				73C2167D1CC5BCA700F097B9 /* _Header.m in Sources */,
+				732936081CD457E000D6DE21 /* MOBAttributeItem.m in Sources */,
+				732936141CD457E000D6DE21 /* MOBToManyRelationshipItem.m in Sources */,
 				73C216831CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
 				73C216501CC5BCA700F097B9 /* Header.m in Sources */,
 				73C216891CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */,
+				732936171CD457E000D6DE21 /* MOBToOneRelationshipItem.m in Sources */,
 				73C2165F1CC5BCA700F097B9 /* TokenType.m in Sources */,
 				73C2164D1CC5BCA700F097B9 /* FilePath.m in Sources */,
 				73C216621CC5BCA700F097B9 /* _APILanguage.m in Sources */,
+				732936111CD457E000D6DE21 /* MOBPropertyItem.m in Sources */,
 				73C216861CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
 				73C2164A1CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				73C216351CC5BCA700F097B9 /* APILanguage.m in Sources */,
@@ -682,7 +736,9 @@
 				73C2166F1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
 				73C2163F1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
 				73C216721CC5BCA700F097B9 /* _DSANode.m in Sources */,
+				7329360F1CD457E000D6DE21 /* MOBItem.m in Sources */,
 				73C216451CC5BCA700F097B9 /* DSANode.m in Sources */,
+				7329360C1CD457E000D6DE21 /* MOBIndexedItem.m in Sources */,
 				73C216481CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
 				73C2168D1CC5BCA700F097B9 /* _TokenType.m in Sources */,
 				73C2165A1CC5BCA700F097B9 /* TokenGroup.m in Sources */,
@@ -691,12 +747,16 @@
 				73C2166C1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
 				73C2167E1CC5BCA700F097B9 /* _Header.m in Sources */,
 				73C216841CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
+				732936091CD457E000D6DE21 /* MOBAttributeItem.m in Sources */,
+				732936151CD457E000D6DE21 /* MOBToManyRelationshipItem.m in Sources */,
 				73C216511CC5BCA700F097B9 /* Header.m in Sources */,
 				73C2168A1CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */,
 				73C216601CC5BCA700F097B9 /* TokenType.m in Sources */,
+				732936181CD457E000D6DE21 /* MOBToOneRelationshipItem.m in Sources */,
 				73C2164E1CC5BCA700F097B9 /* FilePath.m in Sources */,
 				73C216631CC5BCA700F097B9 /* _APILanguage.m in Sources */,
 				73C216871CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
+				732936121CD457E000D6DE21 /* MOBPropertyItem.m in Sources */,
 				73C2164B1CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				73C216361CC5BCA700F097B9 /* APILanguage.m in Sources */,
 				73C216541CC5BCA700F097B9 /* NodeUUID.m in Sources */,
