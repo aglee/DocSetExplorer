@@ -281,8 +281,10 @@
 		return [self.docSetIndex.managedObjectContext executeFetchRequest:fetchRequest error:errorPtr];
 	}
 	@catch (NSException *ex) {
-		NSString *errorMessage = [NSString stringWithFormat:@"Exception during attempt to fetch data: %@. Error: %@.", ex, (errorPtr ? *errorPtr : @"unknown")];
-		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : errorMessage }];
+		if (errorPtr) {
+			NSString *errorMessage = [NSString stringWithFormat:@"Exception during attempt to fetch data: %@. Error: %@.", ex, (errorPtr ? *errorPtr : @"unknown")];
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : errorMessage }];
+		}
 		return nil;
 	}
 }
@@ -292,7 +294,9 @@
 	// Require the entity name to be a non-empty identifier.
 	NSDictionary *captureGroups = [self _matchPattern:@"%ident%" toEntireString:self.entityName];
 	if (captureGroups == nil) {
-		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Entity name is not a valid identifier." }];
+		if (errorPtr) {
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Entity name is not a valid identifier." }];
+		}
 		return nil;
 	}
 
@@ -318,8 +322,9 @@
 	}
 	@catch (NSException *ex) {
 		if ([ex.name isEqualToString:NSInvalidArgumentException]) {
-			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Invalid predicate string." }];
-			return nil;
+			if (errorPtr) {
+				*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Invalid predicate string." }];
+			}
 		} else {
 			@throw ex;
 		}
@@ -335,17 +340,21 @@
 	for (__strong NSString *expectedKeyPath in commaSeparatedComponents) {
 		expectedKeyPath = [expectedKeyPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		if (![self _matchPattern:@"%keypath%" toEntireString:expectedKeyPath]) {
-			NSString *errorMessage = [NSString stringWithFormat:@"'%@' is not a key path.  Make sure to comma-separate key paths.", expectedKeyPath];
-			errorInfo = @{ NSLocalizedDescriptionKey : errorMessage };
-			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+			if (errorPtr) {
+				NSString *errorMessage = [NSString stringWithFormat:@"'%@' is not a key path.  Make sure to comma-separate key paths.", expectedKeyPath];
+				errorInfo = @{ NSLocalizedDescriptionKey : errorMessage };
+				*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+			}
 			return nil;
 		} else {
 			[keyPaths addObject:expectedKeyPath];
 		}
 	}
 	if (keyPaths.count == 0) {
-		errorInfo = @{ NSLocalizedDescriptionKey : @"One or more comma-separated key paths must be specified." };
-		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+		if (errorPtr) {
+			errorInfo = @{ NSLocalizedDescriptionKey : @"One or more comma-separated key paths must be specified." };
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:errorInfo];
+		}
 		return nil;
 	}
 	return keyPaths;
@@ -394,7 +403,9 @@
 		return YES;
 	}
 	@catch (NSException *ex) {
-		*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : ex.description }];
+		if (errorPtr) {
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : ex.description }];
+		}
 		return NO;
 	}
 }
