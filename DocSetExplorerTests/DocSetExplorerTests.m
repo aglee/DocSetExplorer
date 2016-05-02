@@ -1,6 +1,6 @@
 //
-//  DocSetsTake2Tests.m
-//  DocSetsTake2Tests
+//  DocSetExplorerTests.m
+//  DocSetExplorerTests
 //
 //  Created by Andy Lee on 4/16/16.
 //  Copyright © 2016 Andy Lee. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface DocSetsTake2Tests : XCTestCase
+@interface DocSetExplorerTests : XCTestCase
 
 @end
 
-@implementation DocSetsTake2Tests
+@implementation DocSetExplorerTests
 
 - (void)setUp {
     [super setUp];

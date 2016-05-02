@@ -46,8 +46,8 @@
 		7370BEB01CC21BB400079C8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAF1CC21BB400079C8E /* main.m */; };
 		7370BEB51CC21BB400079C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB41CC21BB400079C8E /* Assets.xcassets */; };
 		7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB61CC21BB400079C8E /* MainMenu.xib */; };
-		7370BEC31CC21BB500079C8E /* DocSetsTake2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetsTake2Tests.m */; };
-		7370BECE1CC21BB500079C8E /* DocSetsTake2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */; };
+		7370BEC31CC21BB500079C8E /* DocSetExplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetExplorerTests.m */; };
+		7370BECE1CC21BB500079C8E /* DocSetExplorerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */; };
 		73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
@@ -155,14 +155,14 @@
 			containerPortal = 7370BEA01CC21BB400079C8E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7370BEA71CC21BB400079C8E;
-			remoteInfo = DocSetsTake2;
+			remoteInfo = DocSetExplorer;
 		};
 		7370BECA1CC21BB500079C8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7370BEA01CC21BB400079C8E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7370BEA71CC21BB400079C8E;
-			remoteInfo = DocSetsTake2;
+			remoteInfo = DocSetExplorer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -183,18 +183,18 @@
 		736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFetchWindowController.h; sourceTree = "<group>"; };
 		736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFetchWindowController.m; sourceTree = "<group>"; };
 		736AB61D1CC58C9500C4376C /* SimpleFetchWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleFetchWindowController.xib; sourceTree = "<group>"; };
-		7370BEA81CC21BB400079C8E /* DocSetsTake2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocSetsTake2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7370BEA81CC21BB400079C8E /* DocSetExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocSetExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7370BEAB1CC21BB400079C8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7370BEAC1CC21BB400079C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7370BEAF1CC21BB400079C8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7370BEB41CC21BB400079C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7370BEB71CC21BB400079C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7370BEB91CC21BB400079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7370BEBE1CC21BB500079C8E /* DocSetsTake2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocSetsTake2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7370BEC21CC21BB500079C8E /* DocSetsTake2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetsTake2Tests.m; sourceTree = "<group>"; };
+		7370BEBE1CC21BB500079C8E /* DocSetExplorer.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocSetExplorer.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7370BEC21CC21BB500079C8E /* DocSetExplorerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerTests.m; sourceTree = "<group>"; };
 		7370BEC41CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7370BEC91CC21BB500079C8E /* DocSetsTake2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocSetsTake2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetsTake2UITests.m; sourceTree = "<group>"; };
+		7370BEC91CC21BB500079C8E /* DocSetExplorer.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocSetExplorer.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerUITests.m; sourceTree = "<group>"; };
 		7370BECF1CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7370BEDB1CC21C0600079C8E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
@@ -315,9 +315,9 @@
 			children = (
 				7335AA5E1CCDB04900080E58 /* WebKit.framework */,
 				7370BEDB1CC21C0600079C8E /* README.txt */,
-				7370BEAA1CC21BB400079C8E /* DocSetsTake2 */,
-				7370BEC11CC21BB500079C8E /* DocSetsTake2Tests */,
-				7370BECC1CC21BB500079C8E /* DocSetsTake2UITests */,
+				7370BEAA1CC21BB400079C8E /* DocSetExplorer */,
+				7370BEC11CC21BB500079C8E /* DocSetExplorerTests */,
+				7370BECC1CC21BB500079C8E /* DocSetExplorerUITests */,
 				7370BEA91CC21BB400079C8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -325,14 +325,14 @@
 		7370BEA91CC21BB400079C8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7370BEA81CC21BB400079C8E /* DocSetsTake2.app */,
-				7370BEBE1CC21BB500079C8E /* DocSetsTake2Tests.xctest */,
-				7370BEC91CC21BB500079C8E /* DocSetsTake2UITests.xctest */,
+				7370BEA81CC21BB400079C8E /* DocSetExplorer.app */,
+				7370BEBE1CC21BB500079C8E /* DocSetExplorer.xctest */,
+				7370BEC91CC21BB500079C8E /* DocSetExplorer.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7370BEAA1CC21BB400079C8E /* DocSetsTake2 */ = {
+		7370BEAA1CC21BB400079C8E /* DocSetExplorer */ = {
 			isa = PBXGroup;
 			children = (
 				73C2162E1CC5BCA700F097B9 /* Utilities */,
@@ -348,7 +348,7 @@
 				7370BEB91CC21BB400079C8E /* Info.plist */,
 				7370BEAE1CC21BB400079C8E /* Supporting Files */,
 			);
-			path = DocSetsTake2;
+			path = DocSetExplorer;
 			sourceTree = "<group>";
 		};
 		7370BEAE1CC21BB400079C8E /* Supporting Files */ = {
@@ -359,22 +359,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7370BEC11CC21BB500079C8E /* DocSetsTake2Tests */ = {
+		7370BEC11CC21BB500079C8E /* DocSetExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
-				7370BEC21CC21BB500079C8E /* DocSetsTake2Tests.m */,
+				7370BEC21CC21BB500079C8E /* DocSetExplorerTests.m */,
 				7370BEC41CC21BB500079C8E /* Info.plist */,
 			);
-			path = DocSetsTake2Tests;
+			path = DocSetExplorerTests;
 			sourceTree = "<group>";
 		};
-		7370BECC1CC21BB500079C8E /* DocSetsTake2UITests */ = {
+		7370BECC1CC21BB500079C8E /* DocSetExplorerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7370BECD1CC21BB500079C8E /* DocSetsTake2UITests.m */,
+				7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */,
 				7370BECF1CC21BB500079C8E /* Info.plist */,
 			);
-			path = DocSetsTake2UITests;
+			path = DocSetExplorerUITests;
 			sourceTree = "<group>";
 		};
 		73C215E91CC5BCA700F097B9 /* Data */ = {
@@ -484,9 +484,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7370BEA71CC21BB400079C8E /* DocSetsTake2 */ = {
+		7370BEA71CC21BB400079C8E /* DocSetExplorer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7370BED21CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetsTake2" */;
+			buildConfigurationList = 7370BED21CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetExplorer" */;
 			buildPhases = (
 				7370BEA41CC21BB400079C8E /* Sources */,
 				7370BEA51CC21BB400079C8E /* Frameworks */,
@@ -496,14 +496,14 @@
 			);
 			dependencies = (
 			);
-			name = DocSetsTake2;
-			productName = DocSetsTake2;
-			productReference = 7370BEA81CC21BB400079C8E /* DocSetsTake2.app */;
+			name = DocSetExplorer;
+			productName = DocSetExplorer;
+			productReference = 7370BEA81CC21BB400079C8E /* DocSetExplorer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7370BEBD1CC21BB500079C8E /* DocSetsTake2Tests */ = {
+		7370BEBD1CC21BB500079C8E /* DocSetExplorerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7370BED51CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetsTake2Tests" */;
+			buildConfigurationList = 7370BED51CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetExplorerTests" */;
 			buildPhases = (
 				7370BEBA1CC21BB500079C8E /* Sources */,
 				7370BEBB1CC21BB500079C8E /* Frameworks */,
@@ -514,14 +514,14 @@
 			dependencies = (
 				7370BEC01CC21BB500079C8E /* PBXTargetDependency */,
 			);
-			name = DocSetsTake2Tests;
-			productName = DocSetsTake2Tests;
-			productReference = 7370BEBE1CC21BB500079C8E /* DocSetsTake2Tests.xctest */;
+			name = DocSetExplorerTests;
+			productName = DocSetExplorerTests;
+			productReference = 7370BEBE1CC21BB500079C8E /* DocSetExplorer.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7370BEC81CC21BB500079C8E /* DocSetsTake2UITests */ = {
+		7370BEC81CC21BB500079C8E /* DocSetExplorerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7370BED81CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetsTake2UITests" */;
+			buildConfigurationList = 7370BED81CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetExplorerUITests" */;
 			buildPhases = (
 				7370BEC51CC21BB500079C8E /* Sources */,
 				7370BEC61CC21BB500079C8E /* Frameworks */,
@@ -532,9 +532,9 @@
 			dependencies = (
 				7370BECB1CC21BB500079C8E /* PBXTargetDependency */,
 			);
-			name = DocSetsTake2UITests;
-			productName = DocSetsTake2UITests;
-			productReference = 7370BEC91CC21BB500079C8E /* DocSetsTake2UITests.xctest */;
+			name = DocSetExplorerUITests;
+			productName = DocSetExplorerUITests;
+			productReference = 7370BEC91CC21BB500079C8E /* DocSetExplorer.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -562,7 +562,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7370BEA31CC21BB400079C8E /* Build configuration list for PBXProject "DocSetsTake2" */;
+			buildConfigurationList = 7370BEA31CC21BB400079C8E /* Build configuration list for PBXProject "DocSetExplorer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -575,9 +575,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7370BEA71CC21BB400079C8E /* DocSetsTake2 */,
-				7370BEBD1CC21BB500079C8E /* DocSetsTake2Tests */,
-				7370BEC81CC21BB500079C8E /* DocSetsTake2UITests */,
+				7370BEA71CC21BB400079C8E /* DocSetExplorer */,
+				7370BEBD1CC21BB500079C8E /* DocSetExplorerTests */,
+				7370BEC81CC21BB500079C8E /* DocSetExplorerUITests */,
 				730DE7E31CC3F0CA00557D4C /* Mogenerator */,
 			);
 		};
@@ -622,7 +622,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "mogenerator --model DocSetsTake2/DocSetModel.xcdatamodeld/DocSetModel.xcdatamodel --machine-dir DocSetsTake2/DocSetModel/Machine --human-dir DocSetsTake2/DocSetModel/Human --includeh DocSetsTake2/DocSetModel/DocSetModel.h --template-var arc=true";
+			shellScript = "mogenerator --model DocSetExplorer/DocSetModel.xcdatamodeld/DocSetModel.xcdatamodel --machine-dir DocSetExplorer/DocSetModel/Machine --human-dir DocSetExplorer/DocSetModel/Human --includeh DocSetExplorer/DocSetModel/DocSetModel.h --template-var arc=true";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -716,7 +716,7 @@
 				73C216381CC5BCA700F097B9 /* Container.m in Sources */,
 				73C216801CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
 				73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
-				7370BEC31CC21BB500079C8E /* DocSetsTake2Tests.m in Sources */,
+				7370BEC31CC21BB500079C8E /* DocSetExplorerTests.m in Sources */,
 				73C216561CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
 				73C216411CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
 				73C2165C1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
@@ -763,7 +763,7 @@
 				73C216391CC5BCA700F097B9 /* Container.m in Sources */,
 				73C216811CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
 				73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
-				7370BECE1CC21BB500079C8E /* DocSetsTake2UITests.m in Sources */,
+				7370BECE1CC21BB500079C8E /* DocSetExplorerUITests.m in Sources */,
 				73C216571CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
 				73C216421CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
 				73C2165D1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
@@ -775,12 +775,12 @@
 /* Begin PBXTargetDependency section */
 		7370BEC01CC21BB500079C8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7370BEA71CC21BB400079C8E /* DocSetsTake2 */;
+			target = 7370BEA71CC21BB400079C8E /* DocSetExplorer */;
 			targetProxy = 7370BEBF1CC21BB500079C8E /* PBXContainerItemProxy */;
 		};
 		7370BECB1CC21BB500079C8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7370BEA71CC21BB400079C8E /* DocSetsTake2 */;
+			target = 7370BEA71CC21BB400079C8E /* DocSetExplorer */;
 			targetProxy = 7370BECA1CC21BB500079C8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -898,11 +898,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DocSetsTake2/Info.plist;
+				INFOPLIST_FILE = DocSetExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetsTake2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DocSetsTake2/Utilities/DocSetsTake2-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetExplorer;
+				PRODUCT_NAME = DocSetExplorer;
+				SWIFT_OBJC_BRIDGING_HEADER = "DocSetExplorer/Utilities/DocSetExplorer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -913,11 +913,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DocSetsTake2/Info.plist;
+				INFOPLIST_FILE = DocSetExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetsTake2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DocSetsTake2/Utilities/DocSetsTake2-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetExplorer;
+				PRODUCT_NAME = DocSetExplorer;
+				SWIFT_OBJC_BRIDGING_HEADER = "DocSetExplorer/Utilities/DocSetExplorer-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -927,13 +927,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DocSetsTake2Tests/Info.plist;
+				INFOPLIST_FILE = DocSetExplorerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetsTake2Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DocSetsTake2/Utilities/DocSetsTake2Tests-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetExplorerTests;
+				PRODUCT_NAME = DocSetExplorer;
+				SWIFT_OBJC_BRIDGING_HEADER = "DocSetExplorer/Utilities/DocSetExplorerTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocSetsTake2.app/Contents/MacOS/DocSetsTake2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocSetExplorer.app/Contents/MacOS/DocSetExplorer";
 			};
 			name = Debug;
 		};
@@ -943,12 +943,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DocSetsTake2Tests/Info.plist;
+				INFOPLIST_FILE = DocSetExplorerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetsTake2Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DocSetsTake2/Utilities/DocSetsTake2Tests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocSetsTake2.app/Contents/MacOS/DocSetsTake2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetExplorerTests;
+				PRODUCT_NAME = DocSetExplorer;
+				SWIFT_OBJC_BRIDGING_HEADER = "DocSetExplorer/Utilities/DocSetExplorerTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocSetExplorer.app/Contents/MacOS/DocSetExplorer";
 			};
 			name = Release;
 		};
@@ -957,13 +957,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DocSetsTake2UITests/Info.plist;
+				INFOPLIST_FILE = DocSetExplorerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetsTake2UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DocSetsTake2/Utilities/DocSetsTake2UITests-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetExplorerUITests;
+				PRODUCT_NAME = DocSetExplorer;
+				SWIFT_OBJC_BRIDGING_HEADER = "DocSetExplorer/Utilities/DocSetExplorerUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_TARGET_NAME = DocSetsTake2;
+				TEST_TARGET_NAME = DocSetExplorer;
 			};
 			name = Debug;
 		};
@@ -972,12 +972,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DocSetsTake2UITests/Info.plist;
+				INFOPLIST_FILE = DocSetExplorerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetsTake2UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DocSetsTake2/Utilities/DocSetsTake2UITests-Bridging-Header.h";
-				TEST_TARGET_NAME = DocSetsTake2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appkido.DocSetExplorerUITests;
+				PRODUCT_NAME = DocSetExplorer;
+				SWIFT_OBJC_BRIDGING_HEADER = "DocSetExplorer/Utilities/DocSetExplorerUITests-Bridging-Header.h";
+				TEST_TARGET_NAME = DocSetExplorer;
 			};
 			name = Release;
 		};
@@ -993,7 +993,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7370BEA31CC21BB400079C8E /* Build configuration list for PBXProject "DocSetsTake2" */ = {
+		7370BEA31CC21BB400079C8E /* Build configuration list for PBXProject "DocSetExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7370BED01CC21BB500079C8E /* Debug */,
@@ -1002,7 +1002,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7370BED21CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetsTake2" */ = {
+		7370BED21CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7370BED31CC21BB500079C8E /* Debug */,
@@ -1011,7 +1011,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7370BED51CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetsTake2Tests" */ = {
+		7370BED51CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetExplorerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7370BED61CC21BB500079C8E /* Debug */,
@@ -1020,7 +1020,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7370BED81CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetsTake2UITests" */ = {
+		7370BED81CC21BB500079C8E /* Build configuration list for PBXNativeTarget "DocSetExplorerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7370BED91CC21BB500079C8E /* Debug */,

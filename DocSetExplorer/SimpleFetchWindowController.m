@@ -1,6 +1,6 @@
 //
 //  SimpleFetchWindowController.m
-//  DocSetsTake2
+//  DocSetExplorer
 //
 //  Created by Andy Lee on 4/18/16.
 //  Copyright © 2016 Andy Lee. All rights reserved.
@@ -13,7 +13,7 @@
 #import "QuietLog.h"
 #import <WebKit/WebKit.h>
 
-#define MyErrorDomain @"com.appkido.DocSetsTake2"
+#define MyErrorDomain @"com.appkido.DocSetExplorer"
 
 @interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedObjectsArrayController;
