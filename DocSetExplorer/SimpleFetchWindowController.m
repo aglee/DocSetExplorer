@@ -130,7 +130,7 @@
 	}
 
 	// Update the browser view to reflect the selected object.
-	if (selectedObject == nil) {
+	if (selectedObject == nil || ![selectedObject isKindOfClass:[NSManagedObject class]]) {
 		self.rootBrowserItem = nil;
 	} else {
 		MOBItem *item = [[MOBItem alloc] init];
