@@ -90,6 +90,24 @@
 	[self _useSavedFetchWithIndex:savedFetchIndex];
 }
 
+#pragma mark - NSWindowController methods
+
+- (void)windowDidLoad
+{
+//	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
+
+//	self.entityName = @"TokenType";
+//	self.keyPathsString = @"typeName";
+//	[self fetch:nil];
+
+	self.entityName = @"Token";
+	self.keyPathsString = @"tokenName, tokenType.typeName";
+	self.predicateString = @"tokenName like '*Select*'";
+	[self fetch:nil];
+
+	self.browserView.defaultColumnWidth = 100;
+}
+
 #pragma mark - <NSBrowserDelegate> methods
 
 - (id)rootItemForBrowser:(NSBrowser *)browser
@@ -153,24 +171,6 @@
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
 	return NO;
-}
-
-#pragma mark - <NSWindowDelegate> methods
-
-- (void)windowDidLoad
-{
-//	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
-
-//	self.entityName = @"TokenType";
-//	self.keyPathsString = @"typeName";
-//	[self fetch:nil];
-
-	self.entityName = @"Token";
-	self.keyPathsString = @"tokenName, tokenType.typeName";
-	self.predicateString = @"tokenName like '*Select*'";
-	[self fetch:nil];
-
-	self.browserView.defaultColumnWidth = 100;
 }
 
 #pragma mark - Private methods - regexes
