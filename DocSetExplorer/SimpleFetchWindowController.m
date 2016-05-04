@@ -9,7 +9,7 @@
 #import "SimpleFetchWindowController.h"
 #import "DocSetIndex.h"
 #import "DocSetModel.h"
-#import "MOBItem.h"
+#import "MOBrowserViewController.h"
 #import "QuietLog.h"
 #import <WebKit/WebKit.h>
 
@@ -18,10 +18,10 @@
 @interface SimpleFetchWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedObjectsArrayController;
 @property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
-@property (weak) IBOutlet NSBrowser *browserView;
 @property (weak) IBOutlet WebView *documentationWebView;
+@property (weak) IBOutlet NSView *moBrowserContainerView;
 
-@property (strong) MOBItem *rootBrowserItem;
+@property (strong) MOBrowserViewController *moBrowserViewController;
 @end
 
 #pragma mark -
@@ -94,6 +94,11 @@
 
 - (void)windowDidLoad
 {
+	[super windowDidLoad];
+
+	self.moBrowserViewController = [[MOBrowserViewController alloc] initWithNibName:@"MOBrowserViewController" bundle:nil];
+	[self _fillView:self.moBrowserContainerView withSubview:self.moBrowserViewController.view];
+
 //	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
 
 //	self.entityName = @"TokenType";
@@ -104,36 +109,6 @@
 	self.keyPathsString = @"tokenName, tokenType.typeName";
 	self.predicateString = @"tokenName like '*Select*'";
 	[self fetch:nil];
-
-	self.browserView.defaultColumnWidth = 100;
-}
-
-#pragma mark - <NSBrowserDelegate> methods
-
-- (id)rootItemForBrowser:(NSBrowser *)browser
-{
-	return self.rootBrowserItem;
-}
-
-- (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item
-{
-	return ((MOBItem *)item).childItems.count;
-}
-
-- (id)browser:(NSBrowser *)browser child:(NSInteger)index ofItem:(id)item
-{
-	return ((MOBItem *)item).childItems[index];
-}
-
-- (id)browser:(NSBrowser *)browser objectValueForItem:(id)item
-{
-	return ((MOBItem *)item).displayedTitle;
-}
-
-- (BOOL)browser:(NSBrowser *)browser isLeafItem:(id)item
-{
-	return (((MOBItem *)item).childItems == nil);
-
 }
 
 #pragma mark - <NSTableViewDelegate> methods
@@ -149,13 +124,10 @@
 
 	// Update the browser view to reflect the selected object.
 	if (selectedObject == nil || ![selectedObject isKindOfClass:[NSManagedObject class]]) {
-		self.rootBrowserItem = nil;
+		self.moBrowserViewController.managedObject = nil;
 	} else {
-		MOBItem *item = [[MOBItem alloc] init];
-		item.managedObject = selectedObject;
-		self.rootBrowserItem = item;
+		self.moBrowserViewController.managedObject = selectedObject;
 	}
-	[self.browserView loadColumnZero];
 
 	// Update the web view to reflect the selected object.
 	NSURL *docURL = [self.docSetIndex documentationURLForObject:selectedObject];
@@ -171,6 +143,15 @@
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
 	return NO;
+}
+
+#pragma mark - Private methods - misc
+
+- (void)_fillView:(NSView *)outerView withSubview:(NSView *)innerView
+{
+	[outerView addSubview:innerView];
+	innerView.frame = outerView.bounds;
+	innerView.autoresizingMask = NSViewWidthSizable |  NSViewHeightSizable;
 }
 
 #pragma mark - Private methods - regexes

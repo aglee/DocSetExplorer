@@ -10,7 +10,7 @@
 
 @class DocSetIndex;
 
-@interface SimpleFetchWindowController : NSWindowController <NSTableViewDelegate, NSBrowserDelegate>
+@interface SimpleFetchWindowController : NSWindowController <NSTableViewDelegate>
 
 @property (strong) DocSetIndex *docSetIndex;
 @property (copy) NSString *entityName;

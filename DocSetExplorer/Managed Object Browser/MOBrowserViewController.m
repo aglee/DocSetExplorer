@@ -10,13 +10,45 @@
 #import "MOBItem.h"
 #import "QuietLog.h"
 
+@interface MOBrowserViewController ()
+@property (strong) MOBItem *rootBrowserItem;
+@end
+
 @implementation MOBrowserViewController
+
+#pragma mark - Getters and setters
+
+- (NSManagedObject *)managedObject
+{
+	return self.rootBrowserItem.managedObject;
+}
+
+- (void)setManagedObject:(NSManagedObject *)managedObject
+{
+	if (managedObject) {
+		MOBItem *browserItem = [[MOBItem alloc] init];
+		browserItem.managedObject = managedObject;
+		self.rootBrowserItem = browserItem;
+	} else {
+		self.rootBrowserItem = nil;
+	}
+	[self.objectBrowserView loadColumnZero];
+}
 
 #pragma mark - Action methods
 
 - (IBAction)doBrowserAction:(id)sender
 {
 	QLog(@"+++ %s", __PRETTY_FUNCTION__);
+}
+
+#pragma mark - NSViewController methods
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+
+	self.objectBrowserView.defaultColumnWidth = 100;
 }
 
 #pragma mark - <NSBrowserDelegate> methods

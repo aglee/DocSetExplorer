@@ -8,13 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class MOBItem;
-
 @interface MOBrowserViewController : NSViewController <NSBrowserDelegate>
 
 @property (weak) IBOutlet NSBrowser *objectBrowserView;
 @property (weak) IBOutlet NSScrollView *detailScrollView;
-@property (strong) MOBItem *rootBrowserItem;
+@property (strong) NSManagedObject *managedObject;
 
 - (IBAction)doBrowserAction:(id)sender;
 
