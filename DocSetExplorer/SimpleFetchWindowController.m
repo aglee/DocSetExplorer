@@ -99,6 +99,9 @@
 	self.moBrowserViewController = [[MOBrowserViewController alloc] initWithNibName:@"MOBrowserViewController" bundle:nil];
 	[self _fillView:self.moBrowserContainerView withSubview:self.moBrowserViewController.view];
 
+	// Turn off JavaScript, which interferes by hiding stuff we don't want to hide.
+	self.documentationWebView.preferences.javaScriptEnabled = NO;
+
 //	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
 
 //	self.entityName = @"TokenType";
