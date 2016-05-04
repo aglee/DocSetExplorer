@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		7315E6B91CD970D0004DE0FB /* MOBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6B71CD970D0004DE0FB /* MOBrowserViewController.m */; };
+		7315E6BA1CD970D0004DE0FB /* MOBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7315E6B81CD970D0004DE0FB /* MOBrowserViewController.xib */; };
 		732936071CD457E000D6DE21 /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */; };
 		732936081CD457E000D6DE21 /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */; };
 		732936091CD457E000D6DE21 /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */; };
@@ -167,6 +169,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7315E6B61CD970D0004DE0FB /* MOBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBrowserViewController.h; sourceTree = "<group>"; };
+		7315E6B71CD970D0004DE0FB /* MOBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBrowserViewController.m; sourceTree = "<group>"; };
+		7315E6B81CD970D0004DE0FB /* MOBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOBrowserViewController.xib; sourceTree = "<group>"; };
 		732935FB1CD457E000D6DE21 /* MOBAttributeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAttributeItem.h; sourceTree = "<group>"; };
 		732935FC1CD457E000D6DE21 /* MOBAttributeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAttributeItem.m; sourceTree = "<group>"; };
 		732935FD1CD457E000D6DE21 /* MOBIndexedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBIndexedItem.h; sourceTree = "<group>"; };
@@ -343,6 +348,9 @@
 				736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */,
 				736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */,
 				736AB61D1CC58C9500C4376C /* SimpleFetchWindowController.xib */,
+				7315E6B61CD970D0004DE0FB /* MOBrowserViewController.h */,
+				7315E6B71CD970D0004DE0FB /* MOBrowserViewController.m */,
+				7315E6B81CD970D0004DE0FB /* MOBrowserViewController.xib */,
 				7370BEB41CC21BB400079C8E /* Assets.xcassets */,
 				7370BEB61CC21BB400079C8E /* MainMenu.xib */,
 				7370BEB91CC21BB400079C8E /* Info.plist */,
@@ -591,6 +599,7 @@
 				7370BEB51CC21BB400079C8E /* Assets.xcassets in Resources */,
 				736AB61F1CC58C9500C4376C /* SimpleFetchWindowController.xib in Resources */,
 				7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */,
+				7315E6BA1CD970D0004DE0FB /* MOBrowserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +677,7 @@
 				73C216611CC5BCA700F097B9 /* _APILanguage.m in Sources */,
 				73C216581CC5BCA700F097B9 /* TokenGroup.m in Sources */,
 				73C216641CC5BCA700F097B9 /* _Container.m in Sources */,
+				7315E6B91CD970D0004DE0FB /* MOBrowserViewController.m in Sources */,
 				73C216521CC5BCA700F097B9 /* NodeUUID.m in Sources */,
 				73C216731CC5BCA700F097B9 /* _DSANodeURL.m in Sources */,
 				73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */,

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MOBrowserViewController">
+            <connections>
+                <outlet property="detailScrollView" destination="6Kk-zj-AfB" id="hXT-1t-0Rq"/>
+                <outlet property="objectBrowserView" destination="oli-X5-sMH" id="sHi-jI-95Y"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="382"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <splitView dividerStyle="paneSplitter" id="qzW-HT-2jf">
+                    <rect key="frame" x="0.0" y="0.0" width="458" height="382"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <customView id="Fa8-TM-MT2" userLabel="Browser Pane">
+                            <rect key="frame" x="0.0" y="0.0" width="458" height="186"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <browser verticalHuggingPriority="750" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="100" minColumnWidth="100" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="auto" id="oli-X5-sMH">
+                                    <rect key="frame" x="0.0" y="0.0" width="458" height="208"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </browser>
+                            </subviews>
+                        </customView>
+                        <customView id="gZt-tR-f3D" userLabel="Detail Pane">
+                            <rect key="frame" x="0.0" y="196" width="458" height="186"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="6Kk-zj-AfB">
+                                    <rect key="frame" x="0.0" y="0.0" width="458" height="186"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <clipView key="contentView" id="QGe-YM-w8b">
+                                        <rect key="frame" x="1" y="1" width="441" height="169"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view id="1BT-bM-3bf">
+                                                <rect key="frame" x="0.0" y="0.0" width="441" height="169"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                        </subviews>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="632-re-PQO">
+                                        <rect key="frame" x="1" y="170" width="441" height="15"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="5zA-56-so3">
+                                        <rect key="frame" x="442" y="1" width="15" height="169"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                </scrollView>
+                            </subviews>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="250"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                </splitView>
+            </subviews>
+            <point key="canvasLocation" x="-52" y="-24"/>
+        </customView>
+    </objects>
+</document>
