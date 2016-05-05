@@ -13,5 +13,5 @@
  
 	Each child item is an MOBIndexedItem representing one object on the "many" side of the relationship.
  */
-@interface MOBToManyRelationshipItem : MOBToOneRelationshipItem
+@interface MOBToManyRelationshipItem : MOBPropertyItem
 @end
