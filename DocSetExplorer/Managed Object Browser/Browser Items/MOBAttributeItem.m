@@ -19,7 +19,7 @@
 
 - (NSString *)displayedTitle
 {
-	return [NSString stringWithFormat:@"%@ : %@", self.propertyName, [self.managedObject valueForKey:self.propertyName]];
+	return [NSString stringWithFormat:@"%@ : %@", self.propertyName, self.propertyValue];
 }
 
 @end

@@ -7,41 +7,35 @@
 //
 
 #import "MOBToManyRelationshipItem.h"
-#import "MOBIndexedItem.h"
-
-@interface MOBToManyRelationshipItem ()
-@property (copy) NSArray *relatedObjectItems;
-@end
+#import "MOBIndexedObjectItem.h"
 
 @implementation MOBToManyRelationshipItem
+
+@synthesize childItems = _childItems;
 
 #pragma mark - Getters and setters
 
 - (NSArray *)childItems
 {
-	if (self.relatedObjectItems == nil) {
+	if (_childItems == nil) {
 		NSMutableArray *items = [NSMutableArray array];
-		NSSet *relatedObjects = [self.managedObject valueForKey:self.propertyName];
-		NSInteger objectIndex = 0;
-
-		for (NSManagedObject *obj in relatedObjects) {
-			MOBIndexedItem *item = [[MOBIndexedItem alloc] init];
-			item.managedObject = obj;
+		NSSet *relatedObjects = self.propertyValue;
+		for (NSInteger objectIndex = 0; objectIndex < relatedObjects.count; objectIndex++) {
+			MOBIndexedObjectItem *item = [[MOBIndexedObjectItem alloc] init];
+			item.managedObject = self.managedObject;
 			item.propertyName = self.propertyName;
 			item.objectIndex = objectIndex;
+
 			[items addObject:item];
-
-			objectIndex++;
 		}
-
-		self.relatedObjectItems = items;
+		_childItems = items;
 	}
-	return self.relatedObjectItems;
+	return _childItems;
 }
 
 - (NSString *)displayedTitle
 {
-	return [NSString stringWithFormat:@"%@ (%@)", self.propertyName, @(self.childItems.count)];
+	return [NSString stringWithFormat:@"%@ (%zd)", self.propertyName, self.childItems.count];
 }
 
 @end

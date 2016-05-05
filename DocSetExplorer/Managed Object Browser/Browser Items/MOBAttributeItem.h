@@ -6,12 +6,11 @@
 //  Copyright © 2016 Andy Lee. All rights reserved.
 //
 
-#import "MOBPropertyItem.h"
+#import "MOBItem.h"
 
 /*!
-	managedObject is the owning object of which we are a property.
-	
-	childItems returns nil, indicating we are a leaf node.
+ * Represents and attribute of a managed object.  Returns nil for childItems,
+ * indicating it is a leaf node in the NSBrowser.
  */
-@interface MOBAttributeItem : MOBPropertyItem
+@interface MOBAttributeItem : MOBItem
 @end

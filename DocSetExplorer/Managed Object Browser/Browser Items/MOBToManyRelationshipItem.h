@@ -6,12 +6,11 @@
 //  Copyright © 2016 Andy Lee. All rights reserved.
 //
 
-#import "MOBToOneRelationshipItem.h"
+#import "MOBItem.h"
 
 /*!
-	Represents a to-many relationship.
- 
-	Each child item is an MOBIndexedItem representing one object on the "many" side of the relationship.
+ * childItems returns an array of MOBIndexedObjectItem instances that represents
+ * the value of a to-many relationship.
  */
-@interface MOBToManyRelationshipItem : MOBPropertyItem
+@interface MOBToManyRelationshipItem : MOBItem
 @end

@@ -60,6 +60,8 @@
 			fetchRequest.returnsDistinctResults = YES;
 			fetchRequest.resultType = NSDictionaryResultType;
 			fetchRequest.propertiesToFetch = keyPaths;
+//		} else {
+//			fetchRequest.returnsObjectsAsFaults = NO;
 		}
 	}
 
@@ -127,9 +129,9 @@
 
 	// Update the browser view to reflect the selected object.
 	if (selectedObject == nil || ![selectedObject isKindOfClass:[NSManagedObject class]]) {
-		self.moBrowserViewController.managedObject = nil;
+		self.moBrowserViewController.rootObject = nil;
 	} else {
-		self.moBrowserViewController.managedObject = selectedObject;
+		self.moBrowserViewController.rootObject = selectedObject;
 	}
 
 	// Update the web view to reflect the selected object.

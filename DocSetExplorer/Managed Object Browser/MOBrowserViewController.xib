@@ -3,11 +3,12 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MOBrowserViewController">
             <connections>
-                <outlet property="detailScrollView" destination="6Kk-zj-AfB" id="hXT-1t-0Rq"/>
+                <outlet property="detailWebView" destination="1rr-no-QZp" id="iy9-Ya-0k5"/>
                 <outlet property="objectBrowserView" destination="oli-X5-sMH" id="sHi-jI-95Y"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -40,28 +41,13 @@
                             <rect key="frame" x="0.0" y="196" width="458" height="186"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="6Kk-zj-AfB">
+                                <webView id="1rr-no-QZp">
                                     <rect key="frame" x="0.0" y="0.0" width="458" height="186"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <clipView key="contentView" id="QGe-YM-w8b">
-                                        <rect key="frame" x="1" y="1" width="441" height="169"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <view id="1BT-bM-3bf">
-                                                <rect key="frame" x="0.0" y="0.0" width="441" height="169"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                        </subviews>
-                                    </clipView>
-                                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="632-re-PQO">
-                                        <rect key="frame" x="1" y="170" width="441" height="15"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </scroller>
-                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="5zA-56-so3">
-                                        <rect key="frame" x="442" y="1" width="15" height="169"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </scroller>
-                                </scrollView>
+                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                        <nil key="identifier"/>
+                                    </webPreferences>
+                                </webView>
                             </subviews>
                         </customView>
                     </subviews>

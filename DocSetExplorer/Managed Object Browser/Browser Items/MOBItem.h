@@ -9,16 +9,26 @@
 #import <Cocoa/Cocoa.h>
 
 /*!
-	Use MOBItem for root object, thus does not correspond to a cell in the browser view.  managedObject is that object.  childItems is one for each property that is an attribute, to-one, or to-many.  We don't display fetched properties, at least not currently.  TODO: Would this be hard?
+ * Abstract class used by MOBBrowserViewController for the "item" objects in its
+ * NSBrowser.  An MOBItem represents the property propertyName of the object
+ * managedObject.
+ *
+ * If propertyName is nil, the MOBItem represents managedObject itself.  You can
+ * can think of nil as equivalent to the property name "self".  The root object
+ * of the NSBrowser has a nil propertyName.
+ *
+ * If the item is an MOBAttributeItem, it returns nil for childItems, indicating
+ * it is a leaf node in the NSBrowser.
+ *
+ * displayedTitle is what the NSBrowser displays in the cell for this item.
  */
 @interface MOBItem : NSObject
 
-@property (copy, readonly) NSString *displayedTitle;
-
-/*! Meaning depends on which class, see subclass docs. */
 @property (strong) NSManagedObject *managedObject;
-
-/*! Meaning depends on which class.  Leaf nodes in the hierarchy return nil. */
+@property (copy) NSString *propertyName;
+@property (strong, readonly) id propertyValue;
+/*! Subclasses must override. */
 @property (copy, readonly) NSArray<MOBItem *> *childItems;
+@property (copy, readonly) NSString *displayedTitle;
 
 @end
