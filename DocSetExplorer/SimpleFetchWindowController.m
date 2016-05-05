@@ -120,12 +120,7 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	id selectedObject = nil;
-	NSIndexSet *selectedRowIndexes = self.fetchedObjectsTableView.selectedRowIndexes;
-	if (selectedRowIndexes.count == 1) {
-		NSInteger selectedRow = [selectedRowIndexes firstIndex];
-		selectedObject = self.fetchedObjectsArrayController.arrangedObjects[selectedRow];
-	}
+	id selectedObject = self.fetchedObjectsArrayController.selectedObjects.firstObject;
 
 	// Update the browser view to reflect the selected object.
 	if (selectedObject == nil || ![selectedObject isKindOfClass:[NSManagedObject class]]) {
