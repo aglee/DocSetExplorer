@@ -120,6 +120,50 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
+- (NSString *)_documentsDirPath
+{
+	return [self.docSetIndex.docSetPath stringByAppendingPathComponent:@"Contents/Resources/Documents"];
+}
+
+- (NSURL *)_documentationURLForObject:(id)obj
+{
+	if ([obj isKindOfClass:[DSAToken class]]) {
+		return [self _documentationURLForToken:(DSAToken *)obj];
+	} else if ([obj isKindOfClass:[DSANodeURL class]]) {
+		return [self _documentationURLForNodeURL:(DSANodeURL *)obj];
+	}
+
+	return nil;
+}
+
+- (NSURL *)_documentationURLForToken:(DSAToken *)token
+{
+	NSString *pathString = [self _documentsDirPath];
+	pathString = [pathString stringByAppendingPathComponent:token.metainformation.file.path];
+	NSURL *url = [NSURL fileURLWithPath:pathString];
+	if (token.metainformation.anchor) {
+		NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+		urlComponents.fragment = token.metainformation.anchor;
+		url = [urlComponents URL];
+	}
+
+	return url;
+}
+
+- (NSURL *)_documentationURLForNodeURL:(DSANodeURL *)nodeURLInfo
+{
+	NSString *pathString = [self _documentsDirPath];  //TODO: Handle fallback to online URL if local docset has not been installed.
+	pathString = [pathString stringByAppendingPathComponent:nodeURLInfo.path];
+	NSURL *url = [NSURL fileURLWithPath:pathString];;
+	if (nodeURLInfo.anchor) {
+		NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+		urlComponents.fragment = nodeURLInfo.anchor;
+		url = [urlComponents URL];
+	}
+
+	return url;
+}
+
 	id selectedObject = self.fetchedObjectsArrayController.selectedObjects.firstObject;
 
 	// Update the browser view to reflect the selected object.
@@ -130,7 +174,7 @@
 	}
 
 	// Update the web view to reflect the selected object.
-	NSURL *docURL = [self.docSetIndex documentationURLForObject:selectedObject];
+	NSURL *docURL = [self _documentationURLForObject:selectedObject];
 	QLog(@"+++ Documentation URL for selected item is %@", docURL);
 	if (docURL) {
 		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];

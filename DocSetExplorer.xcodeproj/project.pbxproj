@@ -37,6 +37,10 @@
 		7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB61CC21BB400079C8E /* MainMenu.xib */; };
 		7370BEC31CC21BB500079C8E /* DocSetExplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetExplorerTests.m */; };
 		7370BECE1CC21BB500079C8E /* DocSetExplorerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */; };
+		73BECE5D1CDC2C71009DCCD9 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE5A1CDC2C71009DCCD9 /* Parameter.m */; };
+		73BECE5E1CDC2C71009DCCD9 /* ReturnValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE5C1CDC2C71009DCCD9 /* ReturnValue.m */; };
+		73BECE631CDC2C8C009DCCD9 /* _Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE601CDC2C8C009DCCD9 /* _Parameter.m */; };
+		73BECE641CDC2C8C009DCCD9 /* _ReturnValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */; };
 		73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
@@ -187,6 +191,14 @@
 		7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerUITests.m; sourceTree = "<group>"; };
 		7370BECF1CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7370BEDB1CC21C0600079C8E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		73BECE591CDC2C71009DCCD9 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
+		73BECE5A1CDC2C71009DCCD9 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
+		73BECE5B1CDC2C71009DCCD9 /* ReturnValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnValue.h; sourceTree = "<group>"; };
+		73BECE5C1CDC2C71009DCCD9 /* ReturnValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnValue.m; sourceTree = "<group>"; };
+		73BECE5F1CDC2C8C009DCCD9 /* _Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Parameter.h; sourceTree = "<group>"; };
+		73BECE601CDC2C8C009DCCD9 /* _Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Parameter.m; sourceTree = "<group>"; };
+		73BECE611CDC2C8C009DCCD9 /* _ReturnValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _ReturnValue.h; sourceTree = "<group>"; };
+		73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ReturnValue.m; sourceTree = "<group>"; };
 		73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
 		73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
 		73C215ED1CC5BCA700F097B9 /* DocSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetModel.h; sourceTree = "<group>"; };
@@ -424,6 +436,10 @@
 				73C216041CC5BCA700F097B9 /* NodeUUID.m */,
 				73C216051CC5BCA700F097B9 /* OrderedSubnode.h */,
 				73C216061CC5BCA700F097B9 /* OrderedSubnode.m */,
+				73BECE591CDC2C71009DCCD9 /* Parameter.h */,
+				73BECE5A1CDC2C71009DCCD9 /* Parameter.m */,
+				73BECE5B1CDC2C71009DCCD9 /* ReturnValue.h */,
+				73BECE5C1CDC2C71009DCCD9 /* ReturnValue.m */,
 				73C216071CC5BCA700F097B9 /* TokenGroup.h */,
 				73C216081CC5BCA700F097B9 /* TokenGroup.m */,
 				73C216091CC5BCA700F097B9 /* TokenMetainformation.h */,
@@ -461,6 +477,10 @@
 				73C216231CC5BCA700F097B9 /* _NodeUUID.m */,
 				73C216241CC5BCA700F097B9 /* _OrderedSubnode.h */,
 				73C216251CC5BCA700F097B9 /* _OrderedSubnode.m */,
+				73BECE5F1CDC2C8C009DCCD9 /* _Parameter.h */,
+				73BECE601CDC2C8C009DCCD9 /* _Parameter.m */,
+				73BECE611CDC2C8C009DCCD9 /* _ReturnValue.h */,
+				73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */,
 				73C216261CC5BCA700F097B9 /* _TokenGroup.h */,
 				73C216271CC5BCA700F097B9 /* _TokenGroup.m */,
 				73C216281CC5BCA700F097B9 /* _TokenMetainformation.h */,
@@ -640,6 +660,7 @@
 				73C216791CC5BCA700F097B9 /* _FilePath.m in Sources */,
 				73C216821CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
 				73C2166A1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
+				73BECE631CDC2C8C009DCCD9 /* _Parameter.m in Sources */,
 				73C2163A1CC5BCA700F097B9 /* DocSet.m in Sources */,
 				73C2165B1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
 				73C216911CC5BCA700F097B9 /* QuietLog.m in Sources */,
@@ -653,6 +674,7 @@
 				73C2167C1CC5BCA700F097B9 /* _Header.m in Sources */,
 				73C216401CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
 				73C216461CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
+				73BECE5E1CDC2C71009DCCD9 /* ReturnValue.m in Sources */,
 				73C2167F1CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
 				7315E6CF1CD97F04004DE0FB /* MOBItem.m in Sources */,
 				7315E6CD1CD97F04004DE0FB /* MOBAttributeItem.m in Sources */,
@@ -669,6 +691,8 @@
 				73C216641CC5BCA700F097B9 /* _Container.m in Sources */,
 				7315E6D31CD97F04004DE0FB /* MOBrowserViewController.m in Sources */,
 				73C216521CC5BCA700F097B9 /* NodeUUID.m in Sources */,
+				73BECE641CDC2C8C009DCCD9 /* _ReturnValue.m in Sources */,
+				73BECE5D1CDC2C71009DCCD9 /* Parameter.m in Sources */,
 				73C216731CC5BCA700F097B9 /* _DSANodeURL.m in Sources */,
 				73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
 				73C216491CC5BCA700F097B9 /* DSAToken.m in Sources */,
