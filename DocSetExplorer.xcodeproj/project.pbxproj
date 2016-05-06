@@ -347,7 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				73C2162E1CC5BCA700F097B9 /* Utilities */,
-				73C215E91CC5BCA700F097B9 /* Data */,
+				73C215E91CC5BCA700F097B9 /* DocSet Data */,
 				7315E6BC1CD97F04004DE0FB /* Managed Object Browser */,
 				7370BEAB1CC21BB400079C8E /* AppDelegate.h */,
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
@@ -388,7 +388,7 @@
 			path = DocSetExplorerUITests;
 			sourceTree = "<group>";
 		};
-		73C215E91CC5BCA700F097B9 /* Data */ = {
+		73C215E91CC5BCA700F097B9 /* DocSet Data */ = {
 			isa = PBXGroup;
 			children = (
 				73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */,
@@ -396,7 +396,7 @@
 				73C215EC1CC5BCA700F097B9 /* DocSetModel */,
 				73C2162C1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld */,
 			);
-			path = Data;
+			path = "DocSet Data";
 			sourceTree = "<group>";
 		};
 		73C215EC1CC5BCA700F097B9 /* DocSetModel */ = {
