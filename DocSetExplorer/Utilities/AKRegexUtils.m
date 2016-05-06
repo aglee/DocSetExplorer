@@ -7,6 +7,7 @@
 //
 
 #import "AKRegexUtils.h"
+#import "QuietLog.h"
 
 @implementation AKRegexUtils
 
