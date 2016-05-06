@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		730DE7E31CC3F0CA00557D4C /* Mogenerator */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 730DE7E41CC3F0CA00557D4C /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
-			buildPhases = (
-				730DE7E71CC3F0F200557D4C /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = Mogenerator;
-			productName = Mogenerator;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		7315E6CD1CD97F04004DE0FB /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6BF1CD97F04004DE0FB /* MOBAttributeItem.m */; };
 		7315E6CE1CD97F04004DE0FB /* MOBIndexedObjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6C11CD97F04004DE0FB /* MOBIndexedObjectItem.m */; };
@@ -565,9 +551,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Andy Lee";
 				TargetAttributes = {
-					730DE7E31CC3F0CA00557D4C = {
-						CreatedOnToolsVersion = 7.3;
-					};
 					7370BEA71CC21BB400079C8E = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -597,7 +580,6 @@
 				7370BEA71CC21BB400079C8E /* DocSetExplorer */,
 				7370BEBD1CC21BB500079C8E /* DocSetExplorerTests */,
 				7370BEC81CC21BB500079C8E /* DocSetExplorerUITests */,
-				730DE7E31CC3F0CA00557D4C /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -629,22 +611,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		730DE7E71CC3F0F200557D4C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "mogenerator --model DocSetExplorer/DocSetModel.xcdatamodeld/DocSetModel.xcdatamodel --machine-dir DocSetExplorer/DocSetModel/Machine --human-dir DocSetExplorer/DocSetModel/Human --includeh DocSetExplorer/DocSetModel/DocSetModel.h --template-var arc=true";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7370BEA41CC21BB400079C8E /* Sources */ = {
@@ -809,20 +775,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		730DE7E51CC3F0CA00557D4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		730DE7E61CC3F0CA00557D4C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		7370BED01CC21BB500079C8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -996,15 +948,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		730DE7E41CC3F0CA00557D4C /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				730DE7E51CC3F0CA00557D4C /* Debug */,
-				730DE7E61CC3F0CA00557D4C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7370BEA31CC21BB400079C8E /* Build configuration list for PBXProject "DocSetExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
