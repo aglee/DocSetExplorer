@@ -7,7 +7,7 @@
 //
 
 #import "SimpleFetchWindowController.h"
-#import "DocSetIndex.h"
+#import "DocSetIndex+DocSetExplorer.h"
 #import "DocSetModel.h"
 #import "MOBrowserViewController.h"
 #import "QuietLog.h"
@@ -20,6 +20,7 @@
 @property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
 @property (weak) IBOutlet WebView *documentationWebView;
 @property (weak) IBOutlet NSView *moBrowserContainerView;
+@property (strong) IBOutlet NSArrayController *availableDocSetsArrayController;
 
 @property (strong) MOBrowserViewController *moBrowserViewController;
 @end
@@ -27,6 +28,13 @@
 #pragma mark -
 
 @implementation SimpleFetchWindowController
+
+#pragma mark - Getters and setters
+
+- (DocSetIndex *)selectedDocSetIndex
+{
+	return self.availableDocSetsArrayController.selectedObjects.firstObject;
+}
 
 #pragma mark - Using plists for fetch parameters
 
@@ -45,6 +53,11 @@
 
 #pragma mark - Action methods
 
+- (IBAction)selectDocSet:(id)sender
+{
+	[self _updateToReflectSelectedDocSet];
+}
+
 - (IBAction)fetch:(id)sender
 {
 	NSError *error;
@@ -60,8 +73,6 @@
 			fetchRequest.returnsDistinctResults = YES;
 			fetchRequest.resultType = NSDictionaryResultType;
 			fetchRequest.propertiesToFetch = keyPaths;
-//		} else {
-//			fetchRequest.returnsObjectsAsFaults = NO;
 		}
 	}
 
@@ -98,12 +109,22 @@
 {
 	[super windowDidLoad];
 
+	// Initialize the list of available docsets.
+	NSSortDescriptor *sortByDocSetName = [NSSortDescriptor sortDescriptorWithKey:@"docSetName"
+																	   ascending:YES
+																		selector:@selector(caseInsensitiveCompare:)];
+	self.availableDocSetsArrayController.sortDescriptors = @[ sortByDocSetName ];
+	self.availableDocSetsArrayController.content = [DocSetIndex arrayWithStandardInstances];
+
+	// Initialize the managed object browser.
 	self.moBrowserViewController = [[MOBrowserViewController alloc] initWithNibName:@"MOBrowserViewController" bundle:nil];
 	[self _fillView:self.moBrowserContainerView withSubview:self.moBrowserViewController.view];
 
+	// Initialize the documentation view.
 	// Turn off JavaScript, which interferes by hiding stuff we don't want to hide.
 	self.documentationWebView.preferences.javaScriptEnabled = NO;
 
+	// Initialize fetch parameters.
 //	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
 
 //	self.entityName = @"TokenType";
@@ -111,8 +132,8 @@
 //	[self fetch:nil];
 
 	self.entityName = @"Token";
-	self.keyPathsString = @"tokenName, tokenType.typeName";
-	self.predicateString = @"tokenName like '*Select*'";
+	self.keyPathsString = @"tokenName, language.fullName, tokenType.typeName";
+	self.predicateString = @"tokenName like[c] '*view*'";
 	[self fetch:nil];
 }
 
@@ -120,50 +141,17 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-- (NSString *)_documentsDirPath
-{
-	return [self.docSetIndex.docSetPath stringByAppendingPathComponent:@"Contents/Resources/Documents"];
-}
+	NSTableView *whichTableView = aNotification.object;
 
-- (NSURL *)_documentationURLForObject:(id)obj
-{
-	if ([obj isKindOfClass:[DSAToken class]]) {
-		return [self _documentationURLForToken:(DSAToken *)obj];
-	} else if ([obj isKindOfClass:[DSANodeURL class]]) {
-		return [self _documentationURLForNodeURL:(DSANodeURL *)obj];
+	if (whichTableView == self.fetchedObjectsTableView) {
+		[self _updateToReflectSelectedFetchedObject];
+	} else {
+		QLog(@"+++ [ODD] Unexpected table view %@", whichTableView);
 	}
-
-	return nil;
 }
 
-- (NSURL *)_documentationURLForToken:(DSAToken *)token
+- (void)_updateToReflectSelectedFetchedObject
 {
-	NSString *pathString = [self _documentsDirPath];
-	pathString = [pathString stringByAppendingPathComponent:token.metainformation.file.path];
-	NSURL *url = [NSURL fileURLWithPath:pathString];
-	if (token.metainformation.anchor) {
-		NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
-		urlComponents.fragment = token.metainformation.anchor;
-		url = [urlComponents URL];
-	}
-
-	return url;
-}
-
-- (NSURL *)_documentationURLForNodeURL:(DSANodeURL *)nodeURLInfo
-{
-	NSString *pathString = [self _documentsDirPath];  //TODO: Handle fallback to online URL if local docset has not been installed.
-	pathString = [pathString stringByAppendingPathComponent:nodeURLInfo.path];
-	NSURL *url = [NSURL fileURLWithPath:pathString];;
-	if (nodeURLInfo.anchor) {
-		NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
-		urlComponents.fragment = nodeURLInfo.anchor;
-		url = [urlComponents URL];
-	}
-
-	return url;
-}
-
 	id selectedObject = self.fetchedObjectsArrayController.selectedObjects.firstObject;
 
 	// Update the browser view to reflect the selected object.
@@ -174,14 +162,20 @@
 	}
 
 	// Update the web view to reflect the selected object.
-	NSURL *docURL = [self _documentationURLForObject:selectedObject];
+	NSURL *docURL = [self.selectedDocSetIndex documentationURLForObject:selectedObject];
 	QLog(@"+++ Documentation URL for selected item is %@", docURL);
 	if (docURL) {
 		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];
 		[self.documentationWebView.mainFrame loadRequest:urlRequest];
 	} else {
-		[self.documentationWebView.mainFrame loadHTMLString:@"<h1>N/A</h1>" baseURL:nil];  //TODO: Show something nice when there is no doc to display.
+		[self.documentationWebView.mainFrame loadHTMLString:@"<h1>?</h1>" baseURL:nil];
 	}
+}
+
+- (void)_updateToReflectSelectedDocSet
+{
+	DocSetIndex *docSetIndex = self.availableDocSetsArrayController.selectedObjects.firstObject;
+	QLog(@"+++ newly selected docset index %@", docSetIndex);
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
@@ -189,7 +183,7 @@
 	return NO;
 }
 
-#pragma mark - Private methods - misc
+#pragma mark - Private methods - init
 
 - (void)_fillView:(NSView *)outerView withSubview:(NSView *)innerView
 {
@@ -303,7 +297,7 @@
 - (NSArray *)_executeFetchRequest:(NSFetchRequest *)fetchRequest error:(NSError **)errorPtr
 {
 	@try {
-		return [self.docSetIndex.managedObjectContext executeFetchRequest:fetchRequest error:errorPtr];
+		return [self.selectedDocSetIndex.managedObjectContext executeFetchRequest:fetchRequest error:errorPtr];
 	}
 	@catch (NSException *ex) {
 		if (errorPtr) {

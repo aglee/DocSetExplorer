@@ -12,7 +12,7 @@
 
 @interface SimpleFetchWindowController : NSWindowController <NSTableViewDelegate>
 
-@property (strong) DocSetIndex *docSetIndex;
+@property (strong, readonly) DocSetIndex *selectedDocSetIndex;
 @property (copy) NSString *entityName;
 @property (copy) NSString *keyPathsString;
 @property (assign) BOOL distinct;
