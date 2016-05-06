@@ -29,8 +29,14 @@
 		73BECE641CDC2C8C009DCCD9 /* _ReturnValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */; };
 		73BECF021CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */; };
 		73BECF031CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */; };
+		73BECF061CDC7530009DCCD9 /* SimpleSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF051CDC7530009DCCD9 /* SimpleSearchViewController.m */; };
+		73BECF071CDC7530009DCCD9 /* SimpleSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF051CDC7530009DCCD9 /* SimpleSearchViewController.m */; };
+		73BECF0A1CDC7586009DCCD9 /* SearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF091CDC7586009DCCD9 /* SearchingViewController.m */; };
+		73BECF0B1CDC7586009DCCD9 /* SearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF091CDC7586009DCCD9 /* SearchingViewController.m */; };
 		73BECF121CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */; };
 		73BECF131CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */; };
+		73BECF1A1CDD1938009DCCD9 /* AdvancedSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF191CDD1938009DCCD9 /* AdvancedSearchViewController.m */; };
+		73BECF1B1CDD1938009DCCD9 /* AdvancedSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF191CDD1938009DCCD9 /* AdvancedSearchViewController.m */; };
 		73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
@@ -191,8 +197,14 @@
 		73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ReturnValue.m; sourceTree = "<group>"; };
 		73BECF001CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DocSetIndex+DocSetExplorer.h"; sourceTree = "<group>"; };
 		73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DocSetIndex+DocSetExplorer.m"; sourceTree = "<group>"; };
+		73BECF041CDC7530009DCCD9 /* SimpleSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSearchViewController.h; sourceTree = "<group>"; };
+		73BECF051CDC7530009DCCD9 /* SimpleSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSearchViewController.m; sourceTree = "<group>"; };
+		73BECF081CDC7586009DCCD9 /* SearchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchingViewController.h; sourceTree = "<group>"; };
+		73BECF091CDC7586009DCCD9 /* SearchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingViewController.m; sourceTree = "<group>"; };
 		73BECF101CDC7AE2009DCCD9 /* AKRegexUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRegexUtils.h; sourceTree = "<group>"; };
 		73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRegexUtils.m; sourceTree = "<group>"; };
+		73BECF181CDD1938009DCCD9 /* AdvancedSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedSearchViewController.h; sourceTree = "<group>"; };
+		73BECF191CDD1938009DCCD9 /* AdvancedSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedSearchViewController.m; sourceTree = "<group>"; };
 		73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
 		73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
 		73C215ED1CC5BCA700F097B9 /* DocSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetModel.h; sourceTree = "<group>"; };
@@ -347,6 +359,12 @@
 				7370BEAC1CC21BB400079C8E /* AppDelegate.m */,
 				73BECF001CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.h */,
 				73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */,
+				73BECF081CDC7586009DCCD9 /* SearchingViewController.h */,
+				73BECF091CDC7586009DCCD9 /* SearchingViewController.m */,
+				73BECF041CDC7530009DCCD9 /* SimpleSearchViewController.h */,
+				73BECF051CDC7530009DCCD9 /* SimpleSearchViewController.m */,
+				73BECF181CDD1938009DCCD9 /* AdvancedSearchViewController.h */,
+				73BECF191CDD1938009DCCD9 /* AdvancedSearchViewController.m */,
 				736AB61B1CC58C9500C4376C /* SimpleFetchWindowController.h */,
 				736AB61C1CC58C9500C4376C /* SimpleFetchWindowController.m */,
 				736AB61D1CC58C9500C4376C /* SimpleFetchWindowController.xib */,
@@ -634,6 +652,7 @@
 				73C2165E1CC5BCA700F097B9 /* TokenType.m in Sources */,
 				736AB61E1CC58C9500C4376C /* SimpleFetchWindowController.m in Sources */,
 				73C2163D1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
+				73BECF061CDC7530009DCCD9 /* SimpleSearchViewController.m in Sources */,
 				73C2164F1CC5BCA700F097B9 /* Header.m in Sources */,
 				73C216791CC5BCA700F097B9 /* _FilePath.m in Sources */,
 				73C216821CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
@@ -651,6 +670,7 @@
 				7315E6D11CD97F04004DE0FB /* MOBToManyRelationshipItem.m in Sources */,
 				73C2167C1CC5BCA700F097B9 /* _Header.m in Sources */,
 				73C216401CC5BCA700F097B9 /* DSADistributionVersion.m in Sources */,
+				73BECF1A1CDD1938009DCCD9 /* AdvancedSearchViewController.m in Sources */,
 				73C216461CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
 				73BECE5E1CDC2C71009DCCD9 /* ReturnValue.m in Sources */,
 				73C2167F1CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
@@ -673,6 +693,7 @@
 				73BECE641CDC2C8C009DCCD9 /* _ReturnValue.m in Sources */,
 				73BECE5D1CDC2C71009DCCD9 /* Parameter.m in Sources */,
 				73C216731CC5BCA700F097B9 /* _DSANodeURL.m in Sources */,
+				73BECF0A1CDC7586009DCCD9 /* SearchingViewController.m in Sources */,
 				73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
 				73C216491CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */,
@@ -697,6 +718,7 @@
 				73C216471CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
 				73C2168C1CC5BCA700F097B9 /* _TokenType.m in Sources */,
 				73BECF131CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */,
+				73BECF0B1CDC7586009DCCD9 /* SearchingViewController.m in Sources */,
 				73C216591CC5BCA700F097B9 /* TokenGroup.m in Sources */,
 				73C216681CC5BCA700F097B9 /* _DocSet.m in Sources */,
 				73C216651CC5BCA700F097B9 /* _Container.m in Sources */,
@@ -709,11 +731,13 @@
 				73C2164D1CC5BCA700F097B9 /* FilePath.m in Sources */,
 				73C216621CC5BCA700F097B9 /* _APILanguage.m in Sources */,
 				73C216861CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
+				73BECF1B1CDD1938009DCCD9 /* AdvancedSearchViewController.m in Sources */,
 				73C2164A1CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				73C216351CC5BCA700F097B9 /* APILanguage.m in Sources */,
 				73C216531CC5BCA700F097B9 /* NodeUUID.m in Sources */,
 				73C216381CC5BCA700F097B9 /* Container.m in Sources */,
 				73C216801CC5BCA700F097B9 /* _NodeUUID.m in Sources */,
+				73BECF071CDC7530009DCCD9 /* SimpleSearchViewController.m in Sources */,
 				73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */,
 				7370BEC31CC21BB500079C8E /* DocSetExplorerTests.m in Sources */,
 				73C216561CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
