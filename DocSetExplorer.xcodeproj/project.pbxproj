@@ -29,6 +29,8 @@
 		73BECE641CDC2C8C009DCCD9 /* _ReturnValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */; };
 		73BECF021CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */; };
 		73BECF031CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */; };
+		73BECF121CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */; };
+		73BECF131CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */; };
 		73C216311CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216321CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
 		73C216331CC5BCA700F097B9 /* DocSetIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */; };
@@ -189,6 +191,8 @@
 		73BECE621CDC2C8C009DCCD9 /* _ReturnValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ReturnValue.m; sourceTree = "<group>"; };
 		73BECF001CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DocSetIndex+DocSetExplorer.h"; sourceTree = "<group>"; };
 		73BECF011CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DocSetIndex+DocSetExplorer.m"; sourceTree = "<group>"; };
+		73BECF101CDC7AE2009DCCD9 /* AKRegexUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRegexUtils.h; sourceTree = "<group>"; };
+		73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRegexUtils.m; sourceTree = "<group>"; };
 		73C215EA1CC5BCA700F097B9 /* DocSetIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetIndex.h; sourceTree = "<group>"; };
 		73C215EB1CC5BCA700F097B9 /* DocSetIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetIndex.m; sourceTree = "<group>"; };
 		73C215ED1CC5BCA700F097B9 /* DocSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetModel.h; sourceTree = "<group>"; };
@@ -488,6 +492,8 @@
 			children = (
 				73C2162F1CC5BCA700F097B9 /* QuietLog.h */,
 				73C216301CC5BCA700F097B9 /* QuietLog.m */,
+				73BECF101CDC7AE2009DCCD9 /* AKRegexUtils.h */,
+				73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				73C216851CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
 				73C216701CC5BCA700F097B9 /* _DSANode.m in Sources */,
 				7315E6D01CD97F04004DE0FB /* MOBObjectItem.m in Sources */,
+				73BECF121CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */,
 				73C216371CC5BCA700F097B9 /* Container.m in Sources */,
 				73C216611CC5BCA700F097B9 /* _APILanguage.m in Sources */,
 				73C216581CC5BCA700F097B9 /* TokenGroup.m in Sources */,
@@ -689,6 +696,7 @@
 				73C216441CC5BCA700F097B9 /* DSANode.m in Sources */,
 				73C216471CC5BCA700F097B9 /* DSANodeURL.m in Sources */,
 				73C2168C1CC5BCA700F097B9 /* _TokenType.m in Sources */,
+				73BECF131CDC7AE2009DCCD9 /* AKRegexUtils.m in Sources */,
 				73C216591CC5BCA700F097B9 /* TokenGroup.m in Sources */,
 				73C216681CC5BCA700F097B9 /* _DocSet.m in Sources */,
 				73C216651CC5BCA700F097B9 /* _Container.m in Sources */,
