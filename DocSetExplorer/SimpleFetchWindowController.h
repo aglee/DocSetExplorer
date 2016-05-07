@@ -9,23 +9,17 @@
 #import <Cocoa/Cocoa.h>
 
 @class DocSetIndex;
+@class SearchingViewController;
 
 @interface SimpleFetchWindowController : NSWindowController <NSTableViewDelegate>
 
 @property (strong, readonly) DocSetIndex *selectedDocSetIndex;
-@property (copy) NSString *entityName;
-@property (copy) NSString *keyPathsString;
-@property (assign) BOOL distinct;
-@property (copy) NSString *predicateString;
 
-#pragma mark - Using plists for fetch parameters
-
-- (NSDictionary *)fetchParametersAsPlist;
-- (void)takeFetchParametersFromPlist:(NSDictionary *)plist;
+- (void)doSearchWithViewController:(SearchingViewController *)vc;
 
 #pragma mark - Action methods
 
-- (IBAction)fetch:(id)sender;
-- (IBAction)useSavedFetch:(id)sender;
+- (IBAction)doSearch:(id)sender;
+- (IBAction)useSavedSearch:(id)sender;
 
 @end

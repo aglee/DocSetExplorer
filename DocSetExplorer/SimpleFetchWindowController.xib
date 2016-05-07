@@ -8,11 +8,13 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SimpleFetchWindowController">
             <connections>
+                <outlet property="advancedSearchViewController" destination="SQP-8D-SLK" id="Hld-Qq-mDd"/>
                 <outlet property="availableDocSetsArrayController" destination="tZZ-wy-1nc" id="Zd9-6w-Wew"/>
                 <outlet property="documentationWebView" destination="h9W-jt-Ml4" id="BXJ-kp-vzU"/>
                 <outlet property="fetchedObjectsArrayController" destination="zLx-OZ-XLy" id="0kN-st-yhO"/>
                 <outlet property="fetchedObjectsTableView" destination="O4m-s9-3mk" id="dRN-4R-Ryj"/>
                 <outlet property="moBrowserContainerView" destination="0b6-Th-V7K" id="FkY-eM-90W"/>
+                <outlet property="simpleSearchViewController" destination="fha-K4-CUa" id="2h3-MH-gV2"/>
                 <outlet property="window" destination="6RG-XG-WuU" id="4Q0-en-M0i"/>
             </connections>
         </customObject>
@@ -49,7 +51,7 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <tabView id="LVD-0w-m5v" userLabel="Query Tabs">
+                                            <tabView id="LVD-0w-m5v" userLabel="Search Tabs">
                                                 <rect key="frame" x="-7" y="-10" width="346.5" height="549"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -59,83 +61,139 @@
                                                             <rect key="frame" x="10" y="33" width="326.5" height="503"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <customView id="GMN-OT-iY1" userLabel="Simple Query">
+                                                                <customView id="GMN-OT-iY1" userLabel="Simple Search">
                                                                     <rect key="frame" x="-3" y="-3" width="332.5" height="503"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" id="6Bm-DV-36A">
-                                                                            <rect key="frame" x="20" y="454" width="292" height="29"/>
+                                                                            <rect key="frame" x="20" y="429" width="292" height="29"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="*view*" drawsBackground="YES" id="vDI-zC-Mca">
                                                                                 <font key="font" metaFont="system" size="20"/>
                                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <action selector="doSearch:" target="fha-K4-CUa" id="Nb8-kq-tqD"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="searchString" id="q3S-cH-jZb"/>
+                                                                            </connections>
                                                                         </textField>
                                                                         <button id="PAA-c1-If4">
-                                                                            <rect key="frame" x="111" y="430" width="53" height="18"/>
+                                                                            <rect key="frame" x="126" y="405" width="53" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="Swift" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ThJ-iH-QQH">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="VRD-hB-KX3"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="includeSwift" id="QCm-mF-Jjf"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button id="q7h-Di-jgp">
-                                                                            <rect key="frame" x="111" y="410" width="95" height="18"/>
+                                                                            <rect key="frame" x="126" y="385" width="95" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="Objective-C" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0oj-mO-sqz">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="eDn-SE-gYP"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="includeObjectiveC" id="PMk-3L-w4d"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button id="dA7-ju-jhs">
-                                                                            <rect key="frame" x="111" y="390" width="32" height="18"/>
+                                                                            <rect key="frame" x="126" y="365" width="32" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="C" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oR8-BF-agA">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="xm2-JJ-Z1W"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="includeC" id="wLp-aC-tYu"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button id="2Dp-6D-MBN">
-                                                                            <rect key="frame" x="111" y="370" width="48" height="18"/>
+                                                                            <rect key="frame" x="126" y="345" width="48" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="C++" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jeJ-Rg-1FL">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="CGj-yY-ZGv"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="includeCPlusPlus" id="weN-xt-yV5"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button id="o03-w7-2e8">
-                                                                            <rect key="frame" x="111" y="350" width="86" height="18"/>
+                                                                            <rect key="frame" x="126" y="325" width="86" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="JavaScript" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Rws-LQ-9CM">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="au4-K3-ppJ"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="includeJavaScript" id="cVj-dW-qI6"/>
+                                                                            </connections>
                                                                         </button>
-                                                                        <button id="O40-eF-t8e">
-                                                                            <rect key="frame" x="19" y="429" width="66" height="18"/>
+                                                                        <button id="xjp-Nw-dug">
+                                                                            <rect key="frame" x="18" y="345" width="93" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <buttonCell key="cell" type="radio" title="Tokens" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="D23-YN-kNJ">
+                                                                            <buttonCell key="cell" type="check" title="Ignore case" bezelStyle="regularSquare" imagePosition="left" inset="2" id="9cd-d7-AhX">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
-                                                                        </button>
-                                                                        <button id="cPr-L1-t1f">
-                                                                            <rect key="frame" x="19" y="407" width="62" height="18"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <buttonCell key="cell" type="radio" title="Nodes" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="FZn-E6-wjt">
-                                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                                <font key="font" metaFont="system"/>
-                                                                            </buttonCell>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="ignoreCase" id="eNW-bT-NEk"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button verticalHuggingPriority="750" id="Trk-qj-g0B">
-                                                                            <rect key="frame" x="260" y="418" width="58" height="32"/>
+                                                                            <rect key="frame" x="260" y="393" width="58" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="push" title="Go" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rtQ-b4-cDT">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
+                                                                            <connections>
+                                                                                <action selector="doSearch:" target="fha-K4-CUa" id="Rfh-VE-4i9"/>
+                                                                            </connections>
                                                                         </button>
+                                                                        <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="uze-kc-C4w">
+                                                                            <rect key="frame" x="19" y="386" width="59" height="36"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            <size key="cellSize" width="59" height="18"/>
+                                                                            <buttonCell key="prototype" type="radio" title="Token" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="szu-Ai-rjH">
+                                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                <font key="font" metaFont="system"/>
+                                                                            </buttonCell>
+                                                                            <cells>
+                                                                                <column>
+                                                                                    <buttonCell type="radio" title="Token" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="D23-YN-kNJ">
+                                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                    </buttonCell>
+                                                                                    <buttonCell type="radio" title="Node" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="1" inset="2" id="RFO-VX-1au">
+                                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                    </buttonCell>
+                                                                                </column>
+                                                                            </cells>
+                                                                            <connections>
+                                                                                <binding destination="fha-K4-CUa" name="selectedTag" keyPath="entityTag" id="HQ3-YJ-1mm"/>
+                                                                            </connections>
+                                                                        </matrix>
+                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="daU-7Y-ne1">
+                                                                            <rect key="frame" x="18" y="466" width="54" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Search:" id="YZY-AM-V5C">
+                                                                                <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                     </subviews>
                                                                 </customView>
                                                             </subviews>
@@ -146,7 +204,7 @@
                                                             <rect key="frame" x="10" y="33" width="326.5" height="503"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <customView id="jCw-iQ-3XL" userLabel="Advanced Query">
+                                                                <customView id="jCw-iQ-3XL" userLabel="Advanced Search">
                                                                     <rect key="frame" x="-3" y="17" width="332.5" height="483"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -188,7 +246,7 @@
                                                                                 </menu>
                                                                             </popUpButtonCell>
                                                                             <connections>
-                                                                                <binding destination="-2" name="selectedValue" keyPath="entityName" id="Qiw-06-Dei"/>
+                                                                                <binding destination="SQP-8D-SLK" name="selectedValue" keyPath="entityName" id="Hs5-Vb-5iW"/>
                                                                             </connections>
                                                                         </popUpButton>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5B3-TI-YmQ">
@@ -225,7 +283,7 @@
                                                                                         <size key="minSize" width="200.5" height="94"/>
                                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                                         <connections>
-                                                                                            <binding destination="-2" name="value" keyPath="keyPathsString" id="4LF-NL-bMS">
+                                                                                            <binding destination="SQP-8D-SLK" name="value" keyPath="keyPathsString" id="fft-Tu-ZKW">
                                                                                                 <dictionary key="options">
                                                                                                     <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                                                                 </dictionary>
@@ -252,7 +310,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="-2" name="value" keyPath="distinct" id="ibs-UM-M2j"/>
+                                                                                <binding destination="SQP-8D-SLK" name="value" keyPath="distinct" id="3hB-6N-ZA4"/>
                                                                             </connections>
                                                                         </button>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8BZ-Iu-H26">
@@ -289,7 +347,7 @@
                                                                                         <size key="minSize" width="201" height="247"/>
                                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                                         <connections>
-                                                                                            <binding destination="-2" name="value" keyPath="predicateString" id="1rE-bT-x2f">
+                                                                                            <binding destination="SQP-8D-SLK" name="value" keyPath="predicateString" id="Wjf-Ba-bqk">
                                                                                                 <dictionary key="options">
                                                                                                     <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                                                                 </dictionary>
@@ -316,7 +374,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <action selector="fetch:" target="-2" id="4AD-Vc-mxr"/>
+                                                                                <action selector="doSearch:" target="SQP-8D-SLK" id="do3-22-PYD"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -478,5 +536,15 @@
             <point key="canvasLocation" x="195" y="260"/>
         </window>
         <arrayController objectClassName="DocSetIndex" id="tZZ-wy-1nc" userLabel="DocSets Array Controller"/>
+        <viewController id="fha-K4-CUa" customClass="SimpleSearchViewController">
+            <connections>
+                <outlet property="view" destination="GMN-OT-iY1" id="Pi1-l1-A7a"/>
+            </connections>
+        </viewController>
+        <viewController id="SQP-8D-SLK" customClass="AdvancedSearchViewController">
+            <connections>
+                <outlet property="view" destination="jCw-iQ-3XL" id="F7i-fL-srD"/>
+            </connections>
+        </viewController>
     </objects>
 </document>

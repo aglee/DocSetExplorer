@@ -7,10 +7,13 @@
 //
 
 #import "SimpleFetchWindowController.h"
+#import "AdvancedSearchViewController.h"
+#import "AKRegexUtils.h"
 #import "DocSetIndex+DocSetExplorer.h"
 #import "DocSetModel.h"
 #import "MOBrowserViewController.h"
 #import "QuietLog.h"
+#import "SimpleSearchViewController.h"
 #import <WebKit/WebKit.h>
 
 #define MyErrorDomain @"com.appkido.DocSetExplorer"
@@ -21,6 +24,8 @@
 @property (weak) IBOutlet WebView *documentationWebView;
 @property (weak) IBOutlet NSView *moBrowserContainerView;
 @property (strong) IBOutlet NSArrayController *availableDocSetsArrayController;
+@property (strong) IBOutlet SimpleSearchViewController *simpleSearchViewController;
+@property (strong) IBOutlet AdvancedSearchViewController *advancedSearchViewController;
 
 @property (strong) MOBrowserViewController *moBrowserViewController;
 @end
@@ -29,47 +34,20 @@
 
 @implementation SimpleFetchWindowController
 
-#pragma mark - Getters and setters
-
-- (DocSetIndex *)selectedDocSetIndex
-{
-	return self.availableDocSetsArrayController.selectedObjects.firstObject;
-}
-
-#pragma mark - Using plists for fetch parameters
-
-- (NSDictionary *)fetchParametersAsPlist
-{
-	return [self dictionaryWithValuesForKeys:@[ @"entityName",
-												@"keyPathsString",
-												@"distinct",
-												@"predicateString" ]];
-}
-
-- (void)takeFetchParametersFromPlist:(NSDictionary *)plist
-{
-	[self setValuesForKeysWithDictionary:plist];
-}
-
-#pragma mark - Action methods
-
-- (IBAction)selectDocSet:(id)sender
-{
-	[self _updateToReflectSelectedDocSet];
-}
-
-- (IBAction)fetch:(id)sender
+- (void)doSearchWithViewController:(SearchingViewController *)vc
 {
 	NSError *error;
 
 	// Try to parse the key paths string into an array.
-	NSArray *keyPaths = [self _parseKeyPathsStringWithError:&error];
+	NSArray *keyPaths = [self _parseKeyPaths:vc.keyPathsString error:&error];
 
 	// If that worked, try to construct the fetch request.
 	NSFetchRequest *fetchRequest;
 	if (keyPaths) {
-		fetchRequest = [self _createFetchRequestWithError:&error];
-		if (self.distinct) {
+		fetchRequest = [self _fetchRequestWithEntityName:vc.entityName
+										 predicateString:vc.predicateString
+												   error:&error];
+		if (vc.distinct) {
 			fetchRequest.returnsDistinctResults = YES;
 			fetchRequest.resultType = NSDictionaryResultType;
 			fetchRequest.propertiesToFetch = keyPaths;
@@ -97,10 +75,50 @@
 	}
 }
 
-- (IBAction)useSavedFetch:(id)sender
+#pragma mark - Getters and setters
+
+- (DocSetIndex *)selectedDocSetIndex
 {
-	NSInteger savedFetchIndex = sender ? (((NSMenuItem *)sender).tag - 1000) : 0;
-	[self _useSavedFetchWithIndex:savedFetchIndex];
+	return self.availableDocSetsArrayController.selectedObjects.firstObject;
+}
+
+#pragma mark - Using plists for fetch parameters
+
+- (NSDictionary *)searchParametersAsPlist
+{
+	return [self dictionaryWithValuesForKeys:@[ @"entityName",
+												@"keyPathsString",
+												@"distinct",
+												@"predicateString" ]];
+}
+
+- (void)takeSearchParametersFromPlist:(NSDictionary *)plist
+{
+	[self setValuesForKeysWithDictionary:plist];
+}
+
+#pragma mark - Action methods
+
+- (IBAction)selectDocSet:(id)sender
+{
+	[self _updateToReflectSelectedDocSet];
+}
+
+- (IBAction)doSearch:(id)sender
+{
+	if (!self.simpleSearchViewController.view.isHidden) {
+		[self doSearchWithViewController:self.simpleSearchViewController];
+	} else if (!self.advancedSearchViewController.view.isHidden) {
+		[self doSearchWithViewController:self.advancedSearchViewController];
+	} else {
+		QLog(@"+++ [ODD] %s Neither the simple nor advanced search view seems to be active.", __PRETTY_FUNCTION__);
+	}
+}
+
+- (IBAction)useSavedSearch:(id)sender
+{
+	NSInteger savedSearchIndex = sender ? (((NSMenuItem *)sender).tag - 1000) : 0;
+	[self _useSavedSearchWithIndex:savedSearchIndex];
 }
 
 #pragma mark - NSWindowController methods
@@ -123,18 +141,6 @@
 	// Initialize the documentation view.
 	// Turn off JavaScript, which interferes by hiding stuff we don't want to hide.
 	self.documentationWebView.preferences.javaScriptEnabled = NO;
-
-	// Initialize fetch parameters.
-//	[self takeFetchParametersFromPlist:[self _savedFetches][0]];
-
-//	self.entityName = @"TokenType";
-//	self.keyPathsString = @"typeName";
-//	[self fetch:nil];
-
-	self.entityName = @"Token";
-	self.keyPathsString = @"tokenName, language.fullName, tokenType.typeName";
-	self.predicateString = @"tokenName like[c] '*view*'";
-	[self fetch:nil];
 }
 
 #pragma mark - <NSTableViewDelegate> methods
@@ -192,173 +198,47 @@
 	innerView.autoresizingMask = NSViewWidthSizable |  NSViewHeightSizable;
 }
 
-#pragma mark - Private methods - regexes
+#pragma mark - Private methods - saved search parameters
 
-- (NSString *)_makeAllWhitespaceStretchyInPattern:(NSString *)pattern
+- (NSArray *)_savedSearches
 {
-	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\s+" options:0 error:NULL];
+	NSDictionary *exampleTokenSearch = @{ @"entityName" : @"Token",
+										  @"keyPathsString" : (@"tokenName, "
+															   @"tokenType.typeName, "
+															   @"metainformation.declaredIn.frameworkName"),
+										  @"predicateString" : @"language.fullName = 'Objective-C'" };
 
-	pattern = [regex stringByReplacingMatchesInString:pattern options:0 range:NSMakeRange(0, pattern.length) withTemplate:@"(?:\\\\s+)"];
+	NSDictionary *exampleNodeURLSearch = @{ @"entityName" : @"NodeURL",
+											@"keyPathsString" : (@"node.kName, "
+																 @"node.kNodeType, "
+																 @"node.kDocumentType, "
+																 @"path, "
+																 @"anchor"),
+											@"predicateString" : @"" };
 
-	return pattern;
+	return @[ exampleTokenSearch, exampleNodeURLSearch ];
 }
 
-// Replaces %ident%, %lit%, %keypath% with canned sub-patterns.
-// Ignores leading and trailing whitespace with \\s*.
-// Allows internal whitespace to be any length of any whitespace.
-// Returns dictionary with NSNumber keys indication position of capture group (1-based).
-// Returns nil if invalid pattern.
-- (NSDictionary *)_matchPattern:(NSString *)pattern toEntireString:(NSString *)inputString
+- (void)_useSavedSearchWithIndex:(NSInteger)savedSearchIndex
 {
-	// Assume leading and trailing whitespace can be ignored, and remove it from both the input string and the pattern.
-	inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	if (inputString.length == 0) {
-		QLog(@"%@", @"Can't handle empty string");
-		return nil;  //TODO: Revisit how to handle nil.
-	}
-	pattern = [pattern stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-	// Interpret any internal whitespace in the pattern as meaning "non-empty whitespace of any length".
-	pattern = [self _makeAllWhitespaceStretchyInPattern:pattern];
-
-	// Expand %...% placeholders.  Replace %keypath% before replacing %ident%, because the expansion of %keypath% contains "%ident%".
-	pattern = [pattern stringByReplacingOccurrencesOfString:@"%keypath%" withString:@"(?:(?:%ident%(?:\\.%ident%)*)(?:\\.@count)?)"];
-	pattern = [pattern stringByReplacingOccurrencesOfString:@"%ident%" withString:@"(?:[A-Za-z][0-9A-Za-z]*)"];
-	pattern = [pattern stringByReplacingOccurrencesOfString:@"%lit%" withString:@"(?:(?:[^\"]|(?:\\\"))*)"];
-
-	// Apply the regex to the input string.
-	NSError *error;
-	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
-
-	if (regex == nil) {
-		QLog(@"regex construction error: %@", error);
-		return nil;
-	}
-
-	NSRange rangeOfEntireString = NSMakeRange(0, inputString.length);
-	NSTextCheckingResult *matchResult = [regex firstMatchInString:inputString options:0 range:rangeOfEntireString];
-	if (matchResult == nil) {
-		QLog(@"%@", @"failed to match regex");
-		return nil;
-	} else if (!NSEqualRanges(matchResult.range, rangeOfEntireString)) {
-		QLog(@"%@", @"regex did not match entire string");
-		return nil;
-	}
-
-	// Collect all the capture groups that were matched.  We start iterating at 1 because the zeroeth capture group is the entire matching string.
-	NSMutableDictionary *captureGroupsByIndex = [NSMutableDictionary dictionary];
-	for (NSInteger rangeIndex = 1; rangeIndex < matchResult.numberOfRanges; rangeIndex++) {
-		NSRange captureGroupRange = [matchResult rangeAtIndex:rangeIndex];
-		if (captureGroupRange.location != NSNotFound) {
-			captureGroupsByIndex[@(rangeIndex)] = [inputString substringWithRange:captureGroupRange];
-		}
-	}
-	//	QLog(@"parse result: %@", captureGroupsByIndex);
-	[[captureGroupsByIndex.allKeys sortedArrayUsingSelector:@selector(compare:)] enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-		QLog(@"    @%@: [%@]", obj, captureGroupsByIndex[obj]);
-	}];
-
-	return captureGroupsByIndex;
-}
-
-#pragma mark - Private methods - saved fetch parameters
-
-- (NSArray *)_savedFetches
-{
-	NSDictionary *exampleTokenQuery = @{ @"entityName" : @"Token",
-										 @"keyPathsString" : (@"tokenName, "
-															  @"tokenType.typeName, "
-															  @"metainformation.declaredIn.frameworkName"),
-										 @"predicateString" : @"language.fullName = 'Objective-C'" };
-
-	NSDictionary *exampleNodeURLQuery = @{ @"entityName" : @"NodeURL",
-										   @"keyPathsString" : (@"node.kName, "
-																@"node.kNodeType, "
-																@"node.kDocumentType, "
-																@"path, "
-																@"anchor"),
-										   @"predicateString" : @"" };
-
-	return @[ exampleTokenQuery, exampleNodeURLQuery ];
-}
-
-- (void)_useSavedFetchWithIndex:(NSInteger)savedFetchIndex
-{
-	if (savedFetchIndex < 0 || savedFetchIndex >= [self _savedFetches].count) {
-		QLog(@"+++ [ODD] %s Array index %@ is out of bounds for savedFetches", savedFetchIndex);
+	if (savedSearchIndex < 0 || savedSearchIndex >= [self _savedSearches].count) {
+		QLog(@"+++ [ODD] %s Array index %@ is out of bounds for savedSearches", savedSearchIndex);
 		return;
 	}
-	[self takeFetchParametersFromPlist:[self _savedFetches][savedFetchIndex]];
-//	[self fetch:nil];
+	[self takeSearchParametersFromPlist:[self _savedSearches][savedSearchIndex]];
+//	[self doSearch:nil];
 }
 
 #pragma mark - Private methods - handling fetch commands
 
-- (NSArray *)_executeFetchRequest:(NSFetchRequest *)fetchRequest error:(NSError **)errorPtr
-{
-	@try {
-		return [self.selectedDocSetIndex.managedObjectContext executeFetchRequest:fetchRequest error:errorPtr];
-	}
-	@catch (NSException *ex) {
-		if (errorPtr) {
-			NSString *errorMessage = [NSString stringWithFormat:@"Exception during attempt to fetch data: %@. Error: %@.", ex, (errorPtr ? *errorPtr : @"unknown")];
-			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : errorMessage }];
-		}
-		return nil;
-	}
-}
-
-- (NSFetchRequest *)_createFetchRequestWithError:(NSError **)errorPtr
-{
-	// Require the entity name to be a non-empty identifier.
-	NSDictionary *captureGroups = [self _matchPattern:@"%ident%" toEntireString:self.entityName];
-	if (captureGroups == nil) {
-		if (errorPtr) {
-			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Entity name is not a valid identifier." }];
-		}
-		return nil;
-	}
-
-	// Try to make an NSPredicate, if one was specified.
-	NSPredicate *predicate = nil;
-	if (self.predicateString.length) {
-		predicate = [self _createPredicateWithError:errorPtr];
-		if (predicate == nil) {
-			return nil;
-		}
-	}
-
-	// If we got this far, everything is okay.
-	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
-	fetchRequest.predicate = predicate;
-	return fetchRequest;
-}
-
-- (NSPredicate *)_createPredicateWithError:(NSError **)errorPtr
-{
-	@try {
-		return [NSPredicate predicateWithFormat:self.predicateString];
-	}
-	@catch (NSException *ex) {
-		if ([ex.name isEqualToString:NSInvalidArgumentException]) {
-			if (errorPtr) {
-				*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Invalid predicate string." }];
-			}
-		} else {
-			@throw ex;
-		}
-		return nil;
-	}
-}
-
-- (NSArray *)_parseKeyPathsStringWithError:(NSError **)errorPtr
+- (NSArray *)_parseKeyPaths:(NSString *)keyPathsString error:(NSError **)errorPtr
 {
 	NSMutableArray *keyPaths = [NSMutableArray array];
 	NSDictionary *errorInfo;
-	NSArray *commaSeparatedComponents = [self.keyPathsString componentsSeparatedByString:@","];
+	NSArray *commaSeparatedComponents = [keyPathsString componentsSeparatedByString:@","];
 	for (__strong NSString *expectedKeyPath in commaSeparatedComponents) {
 		expectedKeyPath = [expectedKeyPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-		if (![self _matchPattern:@"%keypath%" toEntireString:expectedKeyPath]) {
+		if (![AKRegexUtils matchPattern:@"%keypath%" toEntireString:expectedKeyPath]) {
 			if (errorPtr) {
 				NSString *errorMessage = [NSString stringWithFormat:@"'%@' is not a key path.  Make sure to comma-separate key paths.", expectedKeyPath];
 				errorInfo = @{ NSLocalizedDescriptionKey : errorMessage };
@@ -377,6 +257,65 @@
 		return nil;
 	}
 	return keyPaths;
+}
+
+- (NSFetchRequest *)_fetchRequestWithEntityName:(NSString *)entityName
+								predicateString:(NSString *)predicateString
+										  error:(NSError **)errorPtr
+{
+	// Require the entity name to be a non-empty identifier.
+	NSDictionary *captureGroups = [AKRegexUtils matchPattern:@"%ident%" toEntireString:entityName];
+	if (captureGroups == nil) {
+		if (errorPtr) {
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Entity name is not a valid identifier." }];
+		}
+		return nil;
+	}
+
+	// Try to make an NSPredicate, if one was specified.
+	NSPredicate *predicate = nil;
+	if (predicateString.length) {
+		predicate = [self _predicateWithString:predicateString error:errorPtr];
+		if (predicate == nil) {
+			return nil;
+		}
+	}
+
+	// If we got this far, we can return a fetch request.
+	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+	fetchRequest.predicate = predicate;
+	return fetchRequest;
+}
+
+- (NSPredicate *)_predicateWithString:(NSString *)predicateString error:(NSError **)errorPtr
+{
+	@try {
+		return [NSPredicate predicateWithFormat:predicateString];
+	}
+	@catch (NSException *ex) {
+		if ([ex.name isEqualToString:NSInvalidArgumentException]) {
+			if (errorPtr) {
+				*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : @"Invalid predicate string." }];
+			}
+		} else {
+			@throw ex;
+		}
+		return nil;
+	}
+}
+
+- (NSArray *)_executeFetchRequest:(NSFetchRequest *)fetchRequest error:(NSError **)errorPtr
+{
+	@try {
+		return [self.selectedDocSetIndex.managedObjectContext executeFetchRequest:fetchRequest error:errorPtr];
+	}
+	@catch (NSException *ex) {
+		if (errorPtr) {
+			NSString *errorMessage = [NSString stringWithFormat:@"Exception during attempt to fetch data: %@. Error: %@.", ex, (errorPtr ? *errorPtr : @"unknown")];
+			*errorPtr = [NSError errorWithDomain:MyErrorDomain code:9999 userInfo:@{ NSLocalizedDescriptionKey : errorMessage }];
+		}
+		return nil;
+	}
 }
 
 // Tears down and re-adds table columns based on the key paths the table view is now being asked to display.
