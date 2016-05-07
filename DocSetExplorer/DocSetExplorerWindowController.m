@@ -213,14 +213,14 @@
 													@"tokenType.typeName, "
 													@"metainformation.declaredIn.frameworkName"),
 							   @"predicateString" : (@"language.fullName = 'Objective-C'"
-													 @" and tokenName like[c] 'View'") },
+													 @" and tokenName like[c] '*View*'") },
 							@{ @"entityName" : @"NodeURL",
 							   @"keyPathsString" : (@"node.kName, "
 													@"node.kNodeType, "
 													@"node.kDocumentType, "
 													@"path, "
 													@"anchor"),
-							   @"predicateString" : @"node.kName like[c] 'Guide'" },
+							   @"predicateString" : @"node.kName like[c] '*Guide*'" },
 							@{ @"entityName" : @"Token",
 							   @"keyPathsString" : @"tokenType.typeName",
 							   @"distinct" : @YES,
