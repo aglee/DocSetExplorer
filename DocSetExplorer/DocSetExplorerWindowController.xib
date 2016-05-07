@@ -88,7 +88,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="VRD-hB-KX3"/>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="canSearchByLanguage" id="Rod-R6-qlw"/>
                                                                                 <binding destination="fha-K4-CUa" name="value" keyPath="includeSwift" id="QCm-mF-Jjf"/>
                                                                             </connections>
                                                                         </button>
@@ -100,7 +100,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="eDn-SE-gYP"/>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="canSearchByLanguage" id="ELz-nd-TES"/>
                                                                                 <binding destination="fha-K4-CUa" name="value" keyPath="includeObjectiveC" id="PMk-3L-w4d"/>
                                                                             </connections>
                                                                         </button>
@@ -112,7 +112,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="xm2-JJ-Z1W"/>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="canSearchByLanguage" id="cfu-ZY-I9S"/>
                                                                                 <binding destination="fha-K4-CUa" name="value" keyPath="includeC" id="wLp-aC-tYu"/>
                                                                             </connections>
                                                                         </button>
@@ -124,7 +124,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="CGj-yY-ZGv"/>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="canSearchByLanguage" id="u7N-gf-vCo"/>
                                                                                 <binding destination="fha-K4-CUa" name="value" keyPath="includeCPlusPlus" id="weN-xt-yV5"/>
                                                                             </connections>
                                                                         </button>
@@ -136,7 +136,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="entityTag" id="au4-K3-ppJ"/>
+                                                                                <binding destination="fha-K4-CUa" name="enabled" keyPath="canSearchByLanguage" id="EJu-zh-QCs"/>
                                                                                 <binding destination="fha-K4-CUa" name="value" keyPath="includeJavaScript" id="cVj-dW-qI6"/>
                                                                             </connections>
                                                                         </button>

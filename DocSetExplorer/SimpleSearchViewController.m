@@ -11,15 +11,18 @@
 
 @implementation SimpleSearchViewController
 
+static const NSInteger SSVCEntityTagToken = 0;
+static const NSInteger SSVCEntityTagNode = 1;
+
 #pragma mark - Getters and setters
 
 - (NSString *)entityName
 {
 	switch (self.entityTag) {
-		case 0: {
+		case SSVCEntityTagToken: {
 			return @"Token";
 		}
-		case 1: {
+		case SSVCEntityTagNode: {
 			return @"NodeURL";
 		}
 		default: {
@@ -32,10 +35,10 @@
 - (NSString *)keyPathsString
 {
 	switch (self.entityTag) {
-		case 0: {
+		case SSVCEntityTagToken: {
 			return @"tokenName, language.fullName, tokenType.typeName";
 		}
-		case 1: {
+		case SSVCEntityTagNode: {
 			return @"node.kName, fileName, anchor, path";
 		}
 		default: {
@@ -55,7 +58,7 @@
 	NSString *pred = [self _predicateStringFragmentForStringMatch];
 
 	// We can only impose language constraints for tokens -- nodes don't have a language.
-	if (self.entityTag == 0) {
+	if (self.entityTag == SSVCEntityTagToken) {
 		NSMutableArray *langs = [NSMutableArray array];
 		if (self.includeSwift) {
 			[langs addObject:@"language.fullName = 'Swift'"];
@@ -80,6 +83,11 @@
 	return pred;
 }
 
+- (BOOL)canSearchByLanguage
+{
+	return self.entityTag == 0;
+}
+
 #pragma mark - NSViewController methods
 
 - (void)viewDidLoad
@@ -87,7 +95,7 @@
 	[super viewDidLoad];
 
 	self.searchString = @"*view*";
-	self.entityTag = 0;
+	self.entityTag = SSVCEntityTagToken;
 	self.ignoreCase = YES;
 	self.includeSwift = YES;
 	self.includeObjectiveC = YES;
@@ -96,17 +104,24 @@
 	self.includeJavaScript = YES;
 }
 
+#pragma mark - KVC methods
+
++ (NSSet *)keyPathsForValuesAffectingCanSearchByLanguage
+{
+	return [NSSet setWithObject:@"entityTag"];
+}
+
 #pragma mark - Private methods
 
 - (NSString *)_predicateStringFragmentForStringMatch
 {
 	NSString *nameOfValueToMatch;
 	switch (self.entityTag) {
-		case 0: {
+		case SSVCEntityTagToken: {
 			nameOfValueToMatch = @"tokenName";
 			break;
 		}
-		case 1: {
+		case SSVCEntityTagNode: {
 			nameOfValueToMatch = @"node.kName";
 			break;
 		}
