@@ -94,7 +94,7 @@ static const NSInteger SSVCEntityTagNode = 1;
 {
 	[super viewDidLoad];
 
-	self.searchString = @"*view*";
+	self.searchString = @"sample";
 	self.entityTag = SSVCEntityTagToken;
 	self.ignoreCase = YES;
 	self.includeSwift = YES;
@@ -141,7 +141,7 @@ static const NSInteger SSVCEntityTagNode = 1;
 	NSString *quotedString = self.searchString;
 	quotedString = [quotedString stringByReplacingOccurrencesOfString:@"'" withString:@"\'"];
 	quotedString = [quotedString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
-	return [NSString stringWithFormat:@"'%@'", quotedString];
+	return [NSString stringWithFormat:@"'*%@*'", quotedString];
 }
 
 @end
