@@ -36,7 +36,7 @@ static const NSInteger SSVCEntityTagNode = 1;
 {
 	switch (self.entityTag) {
 		case SSVCEntityTagToken: {
-			return @"tokenName, language.fullName, tokenType.typeName";
+			return @"tokenName, language.fullName, tokenType.typeName, metainformation.declaredIn.frameworkName";
 		}
 		case SSVCEntityTagNode: {
 			return @"node.kName, fileName, anchor, path";
