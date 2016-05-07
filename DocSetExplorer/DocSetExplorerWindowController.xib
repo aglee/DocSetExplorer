@@ -164,7 +164,7 @@
                                                                         </button>
                                                                         <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="uze-kc-C4w">
                                                                             <rect key="frame" x="19" y="386" width="59" height="36"/>
-                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             <size key="cellSize" width="59" height="18"/>
                                                                             <buttonCell key="prototype" type="radio" title="Token" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="szu-Ai-rjH">
