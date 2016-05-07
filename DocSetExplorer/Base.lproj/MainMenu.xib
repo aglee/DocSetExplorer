@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
@@ -618,29 +619,6 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="runToolbarCustomizationPalette:" target="-1" id="pQI-g3-MTW"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Fetch" id="6q1-62-Fh1">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Fetch" id="tHj-qG-sIR">
-                        <items>
-                            <menuItem title="Fetch" keyEquivalent="r" id="zxs-2x-E8f">
-                                <connections>
-                                    <action selector="doSearch:" target="-1" id="k9W-bX-2px"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="nBl-I6-h0h"/>
-                            <menuItem title="Example: Fetch Tokens" tag="1000" keyEquivalent="1" id="Aas-6v-wBa">
-                                <connections>
-                                    <action selector="useSavedSearch:" target="-1" id="e8z-ri-E6g"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Example: Fetch NodeURLs" tag="1001" keyEquivalent="2" id="wkU-NO-FNX">
-                                <connections>
-                                    <action selector="useSavedSearch:" target="-1" id="t2u-Yy-Dlw"/>
                                 </connections>
                             </menuItem>
                         </items>
