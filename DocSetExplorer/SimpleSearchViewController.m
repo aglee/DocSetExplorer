@@ -115,6 +115,10 @@ static const NSInteger SSVCEntityTagNode = 1;
 
 - (NSString *)_predicateStringFragmentForStringMatch
 {
+	if (self.searchString.length == 0) {
+		return @"1 = 1";
+	}
+
 	NSString *nameOfValueToMatch;
 	switch (self.entityTag) {
 		case SSVCEntityTagToken: {
