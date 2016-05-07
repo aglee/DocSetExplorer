@@ -186,7 +186,7 @@
 		7370BEC91CC21BB500079C8E /* DocSetExplorer.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocSetExplorer.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerUITests.m; sourceTree = "<group>"; };
 		7370BECF1CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7370BEDB1CC21C0600079C8E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		7370BEDB1CC21C0600079C8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		73BECE591CDC2C71009DCCD9 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
 		73BECE5A1CDC2C71009DCCD9 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
 		73BECE5B1CDC2C71009DCCD9 /* ReturnValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnValue.h; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				7335AA5E1CCDB04900080E58 /* WebKit.framework */,
-				7370BEDB1CC21C0600079C8E /* README.txt */,
+				7370BEDB1CC21C0600079C8E /* README.md */,
 				7370BEAA1CC21BB400079C8E /* DocSetExplorer */,
 				7370BEC11CC21BB500079C8E /* DocSetExplorerTests */,
 				7370BECC1CC21BB500079C8E /* DocSetExplorerUITests */,
