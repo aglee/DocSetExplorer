@@ -176,6 +176,22 @@
 	return NO;
 }
 
+#pragma mark - <NSSplitViewDelegate> methods
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)dividerIndex
+{
+	// Seems to work out okay if I constrain all panes to 300 in both directions.
+	return 300;
+}
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMax ofSubviewAt:(NSInteger)dividerIndex
+{
+	// Seems to work out okay if I constrain all panes to 300 in both directions.
+	return (splitView.isVertical
+			? NSMaxX(splitView.bounds) - 300
+			: NSMaxY(splitView.bounds) - 300);
+}
+
 #pragma mark - Private methods - init
 
 - (void)_fillView:(NSView *)outerView withSubview:(NSView *)innerView

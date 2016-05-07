@@ -11,7 +11,7 @@
 @class DocSetIndex;
 @class SearchingViewController;
 
-@interface DocSetExplorerWindowController : NSWindowController <NSTableViewDelegate>
+@interface DocSetExplorerWindowController : NSWindowController <NSTableViewDelegate, NSSplitViewDelegate>
 
 @property (strong, readonly) DocSetIndex *selectedDocSetIndex;
 
