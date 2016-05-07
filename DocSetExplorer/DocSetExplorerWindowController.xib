@@ -68,7 +68,7 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" id="6Bm-DV-36A">
-                                                                            <rect key="frame" x="20" y="429" width="292" height="29"/>
+                                                                            <rect key="frame" x="20" y="454" width="292" height="29"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="*view*" drawsBackground="YES" id="vDI-zC-Mca">
                                                                                 <font key="font" metaFont="system" size="20"/>
@@ -81,7 +81,7 @@
                                                                             </connections>
                                                                         </textField>
                                                                         <button id="PAA-c1-If4">
-                                                                            <rect key="frame" x="126" y="405" width="53" height="18"/>
+                                                                            <rect key="frame" x="126" y="430" width="53" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="Swift" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ThJ-iH-QQH">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -93,7 +93,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button id="q7h-Di-jgp">
-                                                                            <rect key="frame" x="126" y="385" width="95" height="18"/>
+                                                                            <rect key="frame" x="126" y="410" width="95" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="Objective-C" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0oj-mO-sqz">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -105,7 +105,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button id="dA7-ju-jhs">
-                                                                            <rect key="frame" x="126" y="365" width="32" height="18"/>
+                                                                            <rect key="frame" x="126" y="390" width="32" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="C" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oR8-BF-agA">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -117,7 +117,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button id="2Dp-6D-MBN">
-                                                                            <rect key="frame" x="126" y="345" width="48" height="18"/>
+                                                                            <rect key="frame" x="126" y="370" width="48" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="C++" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jeJ-Rg-1FL">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -129,7 +129,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button id="o03-w7-2e8">
-                                                                            <rect key="frame" x="126" y="325" width="86" height="18"/>
+                                                                            <rect key="frame" x="126" y="350" width="86" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="JavaScript" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Rws-LQ-9CM">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -141,7 +141,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button id="xjp-Nw-dug">
-                                                                            <rect key="frame" x="18" y="345" width="93" height="18"/>
+                                                                            <rect key="frame" x="18" y="370" width="93" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="Ignore case" bezelStyle="regularSquare" imagePosition="left" inset="2" id="9cd-d7-AhX">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -152,7 +152,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button verticalHuggingPriority="750" id="Trk-qj-g0B">
-                                                                            <rect key="frame" x="235" y="393" width="83" height="32"/>
+                                                                            <rect key="frame" x="235" y="418" width="83" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="push" title="Search" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rtQ-b4-cDT">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -163,7 +163,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="uze-kc-C4w">
-                                                                            <rect key="frame" x="19" y="386" width="59" height="36"/>
+                                                                            <rect key="frame" x="19" y="411" width="59" height="36"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             <size key="cellSize" width="59" height="18"/>
@@ -187,15 +187,6 @@
                                                                                 <binding destination="fha-K4-CUa" name="selectedTag" keyPath="entityTag" id="HQ3-YJ-1mm"/>
                                                                             </connections>
                                                                         </matrix>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="daU-7Y-ne1">
-                                                                            <rect key="frame" x="18" y="466" width="54" height="17"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Search:" id="YZY-AM-V5C">
-                                                                                <font key="font" size="13" name=".AppleSystemUIFontBold"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                     </subviews>
                                                                 </customView>
                                                             </subviews>
@@ -207,11 +198,11 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <customView id="jCw-iQ-3XL" userLabel="Advanced Search">
-                                                                    <rect key="frame" x="-3" y="17" width="332.5" height="483"/>
+                                                                    <rect key="frame" x="-3" y="91" width="332.5" height="409"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="f1z-bW-oOg">
-                                                                            <rect key="frame" x="41.5" y="446" width="47" height="17"/>
+                                                                            <rect key="frame" x="41.5" y="339" width="47" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Entity:" id="spM-wc-fyA">
                                                                                 <font key="font" size="13" name=".AppleSystemUIFontBold"/>
@@ -219,8 +210,17 @@
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
+                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="WeD-mP-UCx">
+                                                                            <rect key="frame" x="18" y="370" width="71" height="17"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Examples:" id="s6m-RF-tl4">
+                                                                                <font key="font" size="13" name=".AppleSystemUIFontBold"/>
+                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                         <popUpButton verticalHuggingPriority="750" id="VWQ-S6-fGU" userLabel="Entities Popup Button">
-                                                                            <rect key="frame" x="93" y="441" width="173" height="26"/>
+                                                                            <rect key="frame" x="93" y="334" width="173" height="26"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="nxg-Tp-Ndi">
                                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -252,7 +252,7 @@
                                                                             </connections>
                                                                         </popUpButton>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="5B3-TI-YmQ">
-                                                                            <rect key="frame" x="15.5" y="419" width="73" height="17"/>
+                                                                            <rect key="frame" x="15.5" y="312" width="73" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Key paths:" id="i1q-mY-JKI">
                                                                                 <font key="font" size="13" name=".AppleSystemUIFontBold"/>
@@ -261,7 +261,7 @@
                                                                             </textFieldCell>
                                                                         </textField>
                                                                         <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="f0b-8O-s7N" userLabel="Key Paths Scroll View">
-                                                                            <rect key="frame" x="95" y="340" width="217.5" height="96"/>
+                                                                            <rect key="frame" x="95" y="233" width="217.5" height="96"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <clipView key="contentView" id="UuC-rU-AOO">
                                                                                 <rect key="frame" x="1" y="1" width="200.5" height="94"/>
@@ -305,7 +305,7 @@
                                                                             </scroller>
                                                                         </scrollView>
                                                                         <button id="Iyt-mi-7gN" userLabel="Distinct Check Box">
-                                                                            <rect key="frame" x="93" y="316" width="69" height="18"/>
+                                                                            <rect key="frame" x="93" y="209" width="69" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="check" title="Distinct" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ALR-En-tTC">
                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -316,7 +316,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8BZ-Iu-H26">
-                                                                            <rect key="frame" x="18" y="293" width="71" height="17"/>
+                                                                            <rect key="frame" x="18" y="186" width="71" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Predicate:" id="c4c-KA-78I">
                                                                                 <font key="font" size="13" name=".AppleSystemUIFontBold"/>
@@ -325,17 +325,17 @@
                                                                             </textFieldCell>
                                                                         </textField>
                                                                         <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="gI6-tL-LdR" userLabel="Predicate Scroll View">
-                                                                            <rect key="frame" x="94.5" y="61" width="218" height="249"/>
+                                                                            <rect key="frame" x="94.5" y="83" width="218" height="120"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <clipView key="contentView" id="LN8-lx-SzE">
-                                                                                <rect key="frame" x="1" y="1" width="201" height="247"/>
+                                                                                <rect key="frame" x="1" y="1" width="201" height="118"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="GWU-vD-TiT">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="201" height="247"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="201" height="118"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                        <size key="minSize" width="201" height="247"/>
+                                                                                        <size key="minSize" width="201" height="118"/>
                                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                                         <attributedString key="textStorage">
                                                                                             <fragment content="predicate">
@@ -346,7 +346,7 @@
                                                                                             </fragment>
                                                                                         </attributedString>
                                                                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                        <size key="minSize" width="201" height="247"/>
+                                                                                        <size key="minSize" width="201" height="118"/>
                                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                                         <connections>
                                                                                             <binding destination="SQP-8D-SLK" name="value" keyPath="predicateString" id="Wjf-Ba-bqk">
@@ -364,12 +364,12 @@
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                             </scroller>
                                                                             <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="1RD-2X-SzC">
-                                                                                <rect key="frame" x="202" y="1" width="15" height="247"/>
+                                                                                <rect key="frame" x="202" y="1" width="15" height="118"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                             </scroller>
                                                                         </scrollView>
                                                                         <button verticalHuggingPriority="750" id="J55-5b-C4C">
-                                                                            <rect key="frame" x="235.5" y="13" width="83" height="32"/>
+                                                                            <rect key="frame" x="235.5" y="47" width="83" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                                             <buttonCell key="cell" type="push" title="Search" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IiA-lR-X5n">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -379,6 +379,34 @@
                                                                                 <action selector="doSearch:" target="SQP-8D-SLK" id="do3-22-PYD"/>
                                                                             </connections>
                                                                         </button>
+                                                                        <popUpButton verticalHuggingPriority="750" id="gZ7-dp-DHW">
+                                                                            <rect key="frame" x="92" y="365" width="151" height="26"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <popUpButtonCell key="cell" type="push" title="Example Searches" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="NLl-2F-eUd" id="vY2-PG-pyq">
+                                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                                <font key="font" metaFont="menu"/>
+                                                                                <menu key="menu" id="9mZ-f5-nHD">
+                                                                                    <items>
+                                                                                        <menuItem title="Example Searches" state="on" hidden="YES" enabled="NO" id="NLl-2F-eUd"/>
+                                                                                        <menuItem title="Search Objective-C Tokens for &quot;View&quot;" keyEquivalent="1" id="TDd-Ry-txB">
+                                                                                            <connections>
+                                                                                                <action selector="useSavedSearch:" target="-2" id="gii-Lw-4W3"/>
+                                                                                            </connections>
+                                                                                        </menuItem>
+                                                                                        <menuItem title="Search Nodes for &quot;Guide&quot;" tag="1" keyEquivalent="2" id="adL-Rn-19D">
+                                                                                            <connections>
+                                                                                                <action selector="useSavedSearch:" target="-2" id="Bhi-6e-C0x"/>
+                                                                                            </connections>
+                                                                                        </menuItem>
+                                                                                        <menuItem title="Show All Swift Token Types" tag="2" keyEquivalent="3" id="aad-y8-giT">
+                                                                                            <connections>
+                                                                                                <action selector="useSavedSearch:" target="-2" id="D1h-NY-5XY"/>
+                                                                                            </connections>
+                                                                                        </menuItem>
+                                                                                    </items>
+                                                                                </menu>
+                                                                            </popUpButtonCell>
+                                                                        </popUpButton>
                                                                     </subviews>
                                                                 </customView>
                                                             </subviews>
@@ -489,25 +517,25 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                                 <tabViewItems>
-                                                                    <tabViewItem label="Selected Object" identifier="1" id="5gv-oQ-G3x">
-                                                                        <view key="view" id="0b6-Th-V7K" userLabel="MO Browser Container View">
-                                                                            <rect key="frame" x="10" y="33" width="513.5" height="313"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                        </view>
-                                                                    </tabViewItem>
                                                                     <tabViewItem label="Documentation" identifier="2" id="wdC-8n-xL1">
                                                                         <view key="view" id="OIC-Fc-ten">
-                                                                            <rect key="frame" x="10" y="33" width="429" height="212.5"/>
+                                                                            <rect key="frame" x="10" y="33" width="513.5" height="313"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <webView id="h9W-jt-Ml4" userLabel="Doc Web View">
-                                                                                    <rect key="frame" x="-3" y="-3" width="435" height="220.5"/>
+                                                                                    <rect key="frame" x="-3" y="-3" width="519.5" height="321"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
                                                                                         <nil key="identifier"/>
                                                                                     </webPreferences>
                                                                                 </webView>
                                                                             </subviews>
+                                                                        </view>
+                                                                    </tabViewItem>
+                                                                    <tabViewItem label="Selected Object" identifier="1" id="5gv-oQ-G3x">
+                                                                        <view key="view" id="0b6-Th-V7K" userLabel="MO Browser Container View">
+                                                                            <rect key="frame" x="10" y="33" width="513.5" height="313"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         </view>
                                                                     </tabViewItem>
                                                                 </tabViewItems>

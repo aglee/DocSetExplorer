@@ -104,7 +104,7 @@
 
 - (IBAction)useSavedSearch:(id)sender
 {
-	NSInteger savedSearchIndex = sender ? (((NSMenuItem *)sender).tag - 1000) : 0;
+	NSInteger savedSearchIndex = ((NSMenuItem *)sender).tag;
 	[self _useSavedSearchWithIndex:savedSearchIndex];
 }
 
@@ -189,24 +189,27 @@
 
 - (NSArray *)_savedSearches
 {
+	static dispatch_once_t once;
 	static NSArray *s_savedSearches;
-	if (s_savedSearches == nil) {
-		NSDictionary *exampleTokenSearch = @{ @"entityName" : @"Token",
-											  @"keyPathsString" : (@"tokenName, "
-																   @"tokenType.typeName, "
-																   @"metainformation.declaredIn.frameworkName"),
-											  @"predicateString" : @"language.fullName = 'Objective-C'" };
-
-		NSDictionary *exampleNodeURLSearch = @{ @"entityName" : @"NodeURL",
-												@"keyPathsString" : (@"node.kName, "
-																	 @"node.kNodeType, "
-																	 @"node.kDocumentType, "
-																	 @"path, "
-																	 @"anchor"),
-												@"predicateString" : @"" };
-
-		s_savedSearches = @[ exampleTokenSearch, exampleNodeURLSearch ];
-	}
+	dispatch_once(&once, ^{
+		s_savedSearches = @[@{ @"entityName" : @"Token",
+							   @"keyPathsString" : (@"tokenName, "
+													@"tokenType.typeName, "
+													@"metainformation.declaredIn.frameworkName"),
+							   @"predicateString" : (@"language.fullName = 'Objective-C'"
+													 @" and tokenName like[c] 'View'") },
+							@{ @"entityName" : @"NodeURL",
+							   @"keyPathsString" : (@"node.kName, "
+													@"node.kNodeType, "
+													@"node.kDocumentType, "
+													@"path, "
+													@"anchor"),
+							   @"predicateString" : @"node.kName like[c] 'Guide'" },
+							@{ @"entityName" : @"Token",
+							   @"keyPathsString" : @"tokenType.typeName",
+							   @"distinct" : @YES,
+							   @"predicateString" : @"language.fullName = 'Swift'" }];
+	});
 	return s_savedSearches;
 }
 
