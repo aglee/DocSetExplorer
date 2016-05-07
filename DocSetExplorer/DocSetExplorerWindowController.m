@@ -1,12 +1,12 @@
 //
-//  SimpleFetchWindowController.m
+//  DocSetExplorerWindowController.m
 //  DocSetExplorer
 //
 //  Created by Andy Lee on 4/18/16.
 //  Copyright © 2016 Andy Lee. All rights reserved.
 //
 
-#import "SimpleFetchWindowController.h"
+#import "DocSetExplorerWindowController.h"
 #import "AdvancedSearchViewController.h"
 #import "AKRegexUtils.h"
 #import "DocSetIndex+DocSetExplorer.h"
@@ -18,7 +18,7 @@
 
 #define MyErrorDomain @"com.appkido.DocSetExplorer"
 
-@interface SimpleFetchWindowController ()
+@interface DocSetExplorerWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedObjectsArrayController;
 @property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
 @property (weak) IBOutlet WebView *documentationWebView;
@@ -32,7 +32,7 @@
 
 #pragma mark -
 
-@implementation SimpleFetchWindowController
+@implementation DocSetExplorerWindowController
 
 - (void)doSearchWithViewController:(SearchingViewController *)vc
 {

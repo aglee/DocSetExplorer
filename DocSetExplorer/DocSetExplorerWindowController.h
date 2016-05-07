@@ -1,5 +1,5 @@
 //
-//  SimpleFetchWindowController.h
+//  DocSetExplorerWindowController.h
 //  DocSetExplorer
 //
 //  Created by Andy Lee on 4/18/16.
@@ -11,7 +11,7 @@
 @class DocSetIndex;
 @class SearchingViewController;
 
-@interface SimpleFetchWindowController : NSWindowController <NSTableViewDelegate>
+@interface DocSetExplorerWindowController : NSWindowController <NSTableViewDelegate>
 
 @property (strong, readonly) DocSetIndex *selectedDocSetIndex;
 

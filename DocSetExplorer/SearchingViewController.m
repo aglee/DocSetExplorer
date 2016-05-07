@@ -7,7 +7,7 @@
 //
 
 #import "SearchingViewController.h"
-#import "SimpleFetchWindowController.h"
+#import "DocSetExplorerWindowController.h"
 
 @implementation SearchingViewController
 
@@ -20,7 +20,7 @@
 
 - (IBAction)doSearch:(id)sender
 {
-	SimpleFetchWindowController *wc = (SimpleFetchWindowController *)self.view.window.delegate;
+	DocSetExplorerWindowController *wc = (DocSetExplorerWindowController *)self.view.window.delegate;
 	[wc doSearchWithViewController:self];
 }
 
