@@ -94,7 +94,7 @@ static const NSInteger SSVCEntityTagNode = 1;
 {
 	[super viewDidLoad];
 
-	self.searchString = @"sample";
+	self.searchString = @"search";
 	self.entityTag = SSVCEntityTagToken;
 	self.ignoreCase = YES;
 	self.includeSwift = YES;
