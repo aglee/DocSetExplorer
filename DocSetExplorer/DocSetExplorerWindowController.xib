@@ -8,12 +8,14 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DocSetExplorerWindowController">
             <connections>
+                <outlet property="advancedSearchTabViewItem" destination="qbW-5C-FAG" id="pKZ-m4-8SF"/>
                 <outlet property="advancedSearchViewController" destination="SQP-8D-SLK" id="Hld-Qq-mDd"/>
                 <outlet property="availableDocSetsArrayController" destination="tZZ-wy-1nc" id="Zd9-6w-Wew"/>
                 <outlet property="documentationWebView" destination="h9W-jt-Ml4" id="BXJ-kp-vzU"/>
                 <outlet property="fetchedObjectsArrayController" destination="zLx-OZ-XLy" id="0kN-st-yhO"/>
                 <outlet property="fetchedObjectsTableView" destination="O4m-s9-3mk" id="dRN-4R-Ryj"/>
                 <outlet property="moBrowserContainerView" destination="0b6-Th-V7K" id="FkY-eM-90W"/>
+                <outlet property="simpleSearchTabViewItem" destination="Mbd-1D-P6g" id="GP8-vS-JwJ"/>
                 <outlet property="simpleSearchViewController" destination="fha-K4-CUa" id="2h3-MH-gV2"/>
                 <outlet property="window" destination="6RG-XG-WuU" id="4Q0-en-M0i"/>
             </connections>
@@ -51,7 +53,7 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <tabView id="LVD-0w-m5v" userLabel="Search Tabs">
+                                            <tabView id="LVD-0w-m5v" userLabel="Search Tab View">
                                                 <rect key="frame" x="-7" y="-10" width="346.5" height="549"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <font key="font" metaFont="system"/>

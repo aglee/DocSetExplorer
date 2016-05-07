@@ -20,6 +20,8 @@
 
 @interface DocSetExplorerWindowController ()
 @property (strong) IBOutlet NSArrayController *fetchedObjectsArrayController;
+@property (strong) IBOutlet NSTabViewItem *simpleSearchTabViewItem;
+@property (strong) IBOutlet NSTabViewItem *advancedSearchTabViewItem;
 @property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
 @property (weak) IBOutlet WebView *documentationWebView;
 @property (weak) IBOutlet NSView *moBrowserContainerView;
@@ -80,21 +82,6 @@
 - (DocSetIndex *)selectedDocSetIndex
 {
 	return self.availableDocSetsArrayController.selectedObjects.firstObject;
-}
-
-#pragma mark - Using plists for fetch parameters
-
-- (NSDictionary *)searchParametersAsPlist
-{
-	return [self dictionaryWithValuesForKeys:@[ @"entityName",
-												@"keyPathsString",
-												@"distinct",
-												@"predicateString" ]];
-}
-
-- (void)takeSearchParametersFromPlist:(NSDictionary *)plist
-{
-	[self setValuesForKeysWithDictionary:plist];
 }
 
 #pragma mark - Action methods
@@ -202,21 +189,25 @@
 
 - (NSArray *)_savedSearches
 {
-	NSDictionary *exampleTokenSearch = @{ @"entityName" : @"Token",
-										  @"keyPathsString" : (@"tokenName, "
-															   @"tokenType.typeName, "
-															   @"metainformation.declaredIn.frameworkName"),
-										  @"predicateString" : @"language.fullName = 'Objective-C'" };
+	static NSArray *s_savedSearches;
+	if (s_savedSearches == nil) {
+		NSDictionary *exampleTokenSearch = @{ @"entityName" : @"Token",
+											  @"keyPathsString" : (@"tokenName, "
+																   @"tokenType.typeName, "
+																   @"metainformation.declaredIn.frameworkName"),
+											  @"predicateString" : @"language.fullName = 'Objective-C'" };
 
-	NSDictionary *exampleNodeURLSearch = @{ @"entityName" : @"NodeURL",
-											@"keyPathsString" : (@"node.kName, "
-																 @"node.kNodeType, "
-																 @"node.kDocumentType, "
-																 @"path, "
-																 @"anchor"),
-											@"predicateString" : @"" };
+		NSDictionary *exampleNodeURLSearch = @{ @"entityName" : @"NodeURL",
+												@"keyPathsString" : (@"node.kName, "
+																	 @"node.kNodeType, "
+																	 @"node.kDocumentType, "
+																	 @"path, "
+																	 @"anchor"),
+												@"predicateString" : @"" };
 
-	return @[ exampleTokenSearch, exampleNodeURLSearch ];
+		s_savedSearches = @[ exampleTokenSearch, exampleNodeURLSearch ];
+	}
+	return s_savedSearches;
 }
 
 - (void)_useSavedSearchWithIndex:(NSInteger)savedSearchIndex
@@ -225,8 +216,12 @@
 		QLog(@"+++ [ODD] %s Array index %@ is out of bounds for savedSearches", savedSearchIndex);
 		return;
 	}
-	[self takeSearchParametersFromPlist:[self _savedSearches][savedSearchIndex]];
-//	[self doSearch:nil];
+
+	// Display the saved search parameters in the advanced-search pane.
+	NSDictionary *searchParams = [self _savedSearches][savedSearchIndex];
+	[self.advancedSearchViewController setValuesForKeysWithDictionary:searchParams];
+	NSTabView *tabView = self.advancedSearchTabViewItem.tabView;
+	[tabView selectTabViewItem:self.advancedSearchTabViewItem];
 }
 
 #pragma mark - Private methods - handling fetch commands
