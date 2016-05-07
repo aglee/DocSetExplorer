@@ -213,7 +213,7 @@
 - (void)_useSavedSearchWithIndex:(NSInteger)savedSearchIndex
 {
 	if (savedSearchIndex < 0 || savedSearchIndex >= [self _savedSearches].count) {
-		QLog(@"+++ [ODD] %s Array index %@ is out of bounds for savedSearches", savedSearchIndex);
+		QLog(@"+++ [ODD] %s Array index %@ is out of bounds for savedSearches", __PRETTY_FUNCTION__, savedSearchIndex);
 		return;
 	}
 
