@@ -78,7 +78,11 @@
                                                                             </textFieldCell>
                                                                             <connections>
                                                                                 <action selector="doSearch:" target="fha-K4-CUa" id="Nb8-kq-tqD"/>
-                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="searchString" id="q3S-cH-jZb"/>
+                                                                                <binding destination="fha-K4-CUa" name="value" keyPath="searchString" id="ghz-MP-2Nt">
+                                                                                    <dictionary key="options">
+                                                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                                    </dictionary>
+                                                                                </binding>
                                                                             </connections>
                                                                         </textField>
                                                                         <button id="PAA-c1-If4">
