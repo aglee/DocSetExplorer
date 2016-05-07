@@ -222,6 +222,9 @@
 	[self.advancedSearchViewController setValuesForKeysWithDictionary:searchParams];
 	NSTabView *tabView = self.advancedSearchTabViewItem.tabView;
 	[tabView selectTabViewItem:self.advancedSearchTabViewItem];
+
+	// Perform the search.
+	[self doSearchWithViewController:self.advancedSearchViewController];
 }
 
 #pragma mark - Private methods - handling fetch commands
