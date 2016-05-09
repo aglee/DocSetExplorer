@@ -23,7 +23,9 @@
 @property (strong) IBOutlet NSTabViewItem *simpleSearchTabViewItem;
 @property (strong) IBOutlet NSTabViewItem *advancedSearchTabViewItem;
 @property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
-@property (weak) IBOutlet WebView *documentationWebView;
+@property (weak) IBOutlet NSTextField *docPathField;
+@property (weak) IBOutlet NSTextField *docTitleField;
+@property (weak) IBOutlet WebView *docWebView;
 @property (weak) IBOutlet NSView *moBrowserContainerView;
 @property (strong) IBOutlet NSArrayController *availableDocSetsArrayController;
 @property (strong) IBOutlet SimpleSearchViewController *simpleSearchViewController;
@@ -127,7 +129,7 @@
 
 	// Initialize the documentation view.
 	// Turn off JavaScript, which interferes by hiding stuff we don't want to hide.
-	self.documentationWebView.preferences.javaScriptEnabled = NO;
+	self.docWebView.preferences.javaScriptEnabled = NO;
 }
 
 #pragma mark - <NSTableViewDelegate> methods
@@ -155,13 +157,28 @@
 	}
 
 	// Update the web view to reflect the selected object.
+	NSString *itemPath;
+	NSString *itemAnchor;
+	if ([selectedObject isKindOfClass:[DSAToken class]]) {
+		itemPath = ((DSAToken *)selectedObject).metainformation.file.path;
+		itemAnchor = ((DSAToken *)selectedObject).metainformation.anchor;
+	} else if ([selectedObject isKindOfClass:[DSANodeURL class]]) {
+		itemPath = ((DSANodeURL *)selectedObject).path;
+		itemAnchor = ((DSANodeURL *)selectedObject).anchor;
+	}
+	if (itemAnchor.length) {
+		itemPath = [NSString stringWithFormat:@"%@#%@", itemPath, itemAnchor];
+	}
+	self.docPathField.stringValue = (itemPath.length ? itemPath : @"?");
+	self.docTitleField.stringValue = @"";  // We will fill this in when we get it.
+
 	NSURL *docURL = [self.selectedDocSetIndex documentationURLForObject:selectedObject];
 	QLog(@"+++ Documentation URL for selected item is %@", docURL);
 	if (docURL) {
 		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];
-		[self.documentationWebView.mainFrame loadRequest:urlRequest];
+		[self.docWebView.mainFrame loadRequest:urlRequest];
 	} else {
-		[self.documentationWebView.mainFrame loadHTMLString:@"<h1>?</h1>" baseURL:nil];
+		[self.docWebView.mainFrame loadHTMLString:@"<h1>?</h1>" baseURL:nil];
 	}
 }
 
@@ -190,6 +207,13 @@
 	return (splitView.isVertical
 			? NSMaxX(splitView.bounds) - 300
 			: NSMaxY(splitView.bounds) - 300);
+}
+
+#pragma mark - <WebFrameLoadDelegate> methods
+
+- (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame
+{
+	self.docTitleField.stringValue = title;
 }
 
 #pragma mark - Private methods - init

@@ -11,7 +11,9 @@
                 <outlet property="advancedSearchTabViewItem" destination="qbW-5C-FAG" id="pKZ-m4-8SF"/>
                 <outlet property="advancedSearchViewController" destination="SQP-8D-SLK" id="Hld-Qq-mDd"/>
                 <outlet property="availableDocSetsArrayController" destination="tZZ-wy-1nc" id="Zd9-6w-Wew"/>
-                <outlet property="documentationWebView" destination="h9W-jt-Ml4" id="BXJ-kp-vzU"/>
+                <outlet property="docPathField" destination="opw-6s-GJr" id="Lld-1p-B89"/>
+                <outlet property="docTitleField" destination="KuE-fT-QtJ" id="d8p-1n-uuQ"/>
+                <outlet property="docWebView" destination="h9W-jt-Ml4" id="BXJ-kp-vzU"/>
                 <outlet property="fetchedObjectsArrayController" destination="zLx-OZ-XLy" id="0kN-st-yhO"/>
                 <outlet property="fetchedObjectsTableView" destination="O4m-s9-3mk" id="dRN-4R-Ryj"/>
                 <outlet property="moBrowserContainerView" destination="0b6-Th-V7K" id="FkY-eM-90W"/>
@@ -22,6 +24,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <arrayController objectClassName="DocSetIndex" id="tZZ-wy-1nc" userLabel="DocSets Array Controller"/>
         <arrayController id="zLx-OZ-XLy" userLabel="Fetched Objects Array Controller"/>
         <window title="DocSetExplorer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="6RG-XG-WuU">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -530,12 +533,33 @@
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <webView id="h9W-jt-Ml4" userLabel="Doc Web View">
-                                                                                    <rect key="frame" x="-3" y="-3" width="519.5" height="321"/>
+                                                                                    <rect key="frame" x="-3" y="-3" width="519.5" height="275"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
                                                                                         <nil key="identifier"/>
                                                                                     </webPreferences>
+                                                                                    <connections>
+                                                                                        <outlet property="frameLoadDelegate" destination="-2" id="Vtz-Bz-7UW"/>
+                                                                                    </connections>
                                                                                 </webView>
+                                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="opw-6s-GJr">
+                                                                                    <rect key="frame" x="15" y="299" width="484" height="11"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="IzP-26-EE1">
+                                                                                        <font key="font" metaFont="miniSystem"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="KuE-fT-QtJ">
+                                                                                    <rect key="frame" x="15" y="280" width="484" height="11"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="3St-Xi-bOb">
+                                                                                        <font key="font" metaFont="miniSystem"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
                                                                             </subviews>
                                                                         </view>
                                                                     </tabViewItem>
@@ -578,7 +602,6 @@
             </connections>
             <point key="canvasLocation" x="195" y="260"/>
         </window>
-        <arrayController objectClassName="DocSetIndex" id="tZZ-wy-1nc" userLabel="DocSets Array Controller"/>
         <viewController id="fha-K4-CUa" customClass="SimpleSearchViewController">
             <connections>
                 <outlet property="view" destination="GMN-OT-iY1" id="Pi1-l1-A7a"/>
