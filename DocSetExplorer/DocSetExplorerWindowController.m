@@ -212,6 +212,7 @@
 							   @"keyPathsString" : (@"tokenName, "
 													@"tokenType.typeName, "
 													@"metainformation.declaredIn.frameworkName"),
+							   @"distinct" : @NO,
 							   @"predicateString" : (@"language.fullName = 'Objective-C'"
 													 @" and tokenName like[c] '*View*'") },
 							@{ @"entityName" : @"NodeURL",
@@ -220,6 +221,7 @@
 													@"node.kDocumentType, "
 													@"path, "
 													@"anchor"),
+							   @"distinct" : @NO,
 							   @"predicateString" : @"node.kName like[c] '*Guide*'" },
 							@{ @"entityName" : @"Token",
 							   @"keyPathsString" : @"tokenType.typeName",
