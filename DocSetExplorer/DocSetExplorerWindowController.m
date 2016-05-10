@@ -126,10 +126,6 @@
 	// Initialize the managed object browser.
 	self.moBrowserViewController = [[MOBrowserViewController alloc] initWithNibName:@"MOBrowserViewController" bundle:nil];
 	[self _fillView:self.moBrowserContainerView withSubview:self.moBrowserViewController.view];
-
-	// Initialize the documentation view.
-	// Turn off JavaScript, which interferes by hiding stuff we don't want to hide.
-	self.docWebView.preferences.javaScriptEnabled = NO;
 }
 
 #pragma mark - <NSTableViewDelegate> methods
@@ -148,33 +144,42 @@
 - (void)_updateToReflectSelectedFetchedObject
 {
 	id selectedObject = self.fetchedObjectsArrayController.selectedObjects.firstObject;
+	NSURL *docURL = [self.selectedDocSetIndex documentationURLForObject:selectedObject];
 
-	// Update the browser view to reflect the selected object.
+	// Update the managed object browser.
 	if (selectedObject == nil || ![selectedObject isKindOfClass:[NSManagedObject class]]) {
 		self.moBrowserViewController.rootObject = nil;
 	} else {
 		self.moBrowserViewController.rootObject = selectedObject;
 	}
 
-	// Update the web view to reflect the selected object.
-	NSString *itemPath;
-	NSString *itemAnchor;
-	if ([selectedObject isKindOfClass:[DSAToken class]]) {
-		itemPath = ((DSAToken *)selectedObject).metainformation.file.path;
-		itemAnchor = ((DSAToken *)selectedObject).metainformation.anchor;
-	} else if ([selectedObject isKindOfClass:[DSANodeURL class]]) {
-		itemPath = ((DSANodeURL *)selectedObject).path;
-		itemAnchor = ((DSANodeURL *)selectedObject).anchor;
+	// Update docPathField.
+	if (!docURL.isFileURL) {
+		self.docPathField.stringValue = docURL.absoluteString;
+	} else {
+		NSString *itemPath;
+		NSString *itemAnchor;
+		if ([selectedObject isKindOfClass:[DSAToken class]]) {
+			itemPath = ((DSAToken *)selectedObject).metainformation.file.path;
+			itemAnchor = ((DSAToken *)selectedObject).metainformation.anchor;
+		} else if ([selectedObject isKindOfClass:[DSANodeURL class]]) {
+			itemPath = ((DSANodeURL *)selectedObject).path;
+			itemAnchor = ((DSANodeURL *)selectedObject).anchor;
+		}
+		if (itemAnchor.length) {
+			itemPath = [NSString stringWithFormat:@"%@#%@", itemPath, itemAnchor];
+		}
+		self.docPathField.stringValue = (itemPath.length ? itemPath : @"");
 	}
-	if (itemAnchor.length) {
-		itemPath = [NSString stringWithFormat:@"%@#%@", itemPath, itemAnchor];
-	}
-	self.docPathField.stringValue = (itemPath.length ? itemPath : @"?");
-	self.docTitleField.stringValue = @"";  // We will fill this in when we get it.
 
-	NSURL *docURL = [self.selectedDocSetIndex documentationURLForObject:selectedObject];
+	// Update docTitleField and docWebView.
+	self.docTitleField.stringValue = @"";  // We will fill this in as the web view loads.
 	QLog(@"+++ Documentation URL for selected item is %@", docURL);
 	if (docURL) {
+		// For local HTML files, turn off JavaScript, which interferes by hiding
+		// stuff we don't want to hide.
+		self.docWebView.preferences.javaScriptEnabled = !docURL.isFileURL;
+
 		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];
 		[self.docWebView.mainFrame loadRequest:urlRequest];
 	} else {

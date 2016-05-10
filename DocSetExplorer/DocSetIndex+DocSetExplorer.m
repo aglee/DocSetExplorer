@@ -43,7 +43,11 @@
 	if ([obj isKindOfClass:[DSAToken class]]) {
 		return [self _documentationURLForToken:(DSAToken *)obj];
 	} else if ([obj isKindOfClass:[DSANodeURL class]]) {
-		return [self _documentationURLForNodeURL:(DSANodeURL *)obj];
+		if (((DSANodeURL *)obj).baseURL) {
+			return [NSURL URLWithString:((DSANodeURL *)obj).baseURL];
+		} else {
+			return [self _documentationURLForNodeURL:(DSANodeURL *)obj];
+		}
 	}
 
 	return nil;
