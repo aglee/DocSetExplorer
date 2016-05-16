@@ -154,9 +154,9 @@
 	}
 
 	// Update docPathField.
-	if (!docURL.isFileURL) {
-		self.docPathField.stringValue = docURL.absoluteString;
-	} else {
+	if (docURL == nil) {
+		self.docPathField.stringValue = @"";
+	} else if (docURL.isFileURL) {
 		NSString *itemPath;
 		NSString *itemAnchor;
 		if ([selectedObject isKindOfClass:[DSAToken class]]) {
@@ -170,6 +170,8 @@
 			itemPath = [NSString stringWithFormat:@"%@#%@", itemPath, itemAnchor];
 		}
 		self.docPathField.stringValue = (itemPath.length ? itemPath : @"");
+	} else {
+		self.docPathField.stringValue = docURL.absoluteString;
 	}
 
 	// Update docTitleField and docWebView.
