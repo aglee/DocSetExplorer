@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730590371CF91489007958CB /* DSETextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 730590361CF91489007958CB /* DSETextView.m */; };
 		7315E6CD1CD97F04004DE0FB /* MOBAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6BF1CD97F04004DE0FB /* MOBAttributeItem.m */; };
 		7315E6CE1CD97F04004DE0FB /* MOBIndexedObjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6C11CD97F04004DE0FB /* MOBIndexedObjectItem.m */; };
 		7315E6CF1CD97F04004DE0FB /* MOBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6C31CD97F04004DE0FB /* MOBItem.m */; };
@@ -156,6 +157,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		730590351CF91489007958CB /* DSETextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSETextView.h; sourceTree = "<group>"; };
+		730590361CF91489007958CB /* DSETextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSETextView.m; sourceTree = "<group>"; };
 		7315E6BE1CD97F04004DE0FB /* MOBAttributeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAttributeItem.h; sourceTree = "<group>"; };
 		7315E6BF1CD97F04004DE0FB /* MOBAttributeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAttributeItem.m; sourceTree = "<group>"; };
 		7315E6C01CD97F04004DE0FB /* MOBIndexedObjectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBIndexedObjectItem.h; sourceTree = "<group>"; };
@@ -512,6 +515,8 @@
 				73C216301CC5BCA700F097B9 /* QuietLog.m */,
 				73BECF101CDC7AE2009DCCD9 /* AKRegexUtils.h */,
 				73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */,
+				730590351CF91489007958CB /* DSETextView.h */,
+				730590361CF91489007958CB /* DSETextView.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -657,6 +662,7 @@
 				73C216791CC5BCA700F097B9 /* _FilePath.m in Sources */,
 				73C216821CC5BCA700F097B9 /* _OrderedSubnode.m in Sources */,
 				73C2166A1CC5BCA700F097B9 /* _DownloadableFile.m in Sources */,
+				730590371CF91489007958CB /* DSETextView.m in Sources */,
 				73BECE631CDC2C8C009DCCD9 /* _Parameter.m in Sources */,
 				73C2163A1CC5BCA700F097B9 /* DocSet.m in Sources */,
 				73C2165B1CC5BCA700F097B9 /* TokenMetainformation.m in Sources */,
