@@ -24,6 +24,8 @@
 		7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB61CC21BB400079C8E /* MainMenu.xib */; };
 		7370BEC31CC21BB500079C8E /* DocSetExplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetExplorerTests.m */; };
 		7370BECE1CC21BB500079C8E /* DocSetExplorerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */; };
+		73AC6B511CF9F3F500D6676C /* DIGSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AC6B4E1CF9F3F500D6676C /* DIGSLog.m */; };
+		73AC6B521CF9F3F500D6676C /* DIGSPrefUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AC6B501CF9F3F500D6676C /* DIGSPrefUtils.m */; };
 		73BECE5D1CDC2C71009DCCD9 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE5A1CDC2C71009DCCD9 /* Parameter.m */; };
 		73BECE5E1CDC2C71009DCCD9 /* ReturnValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE5C1CDC2C71009DCCD9 /* ReturnValue.m */; };
 		73BECE631CDC2C8C009DCCD9 /* _Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE601CDC2C8C009DCCD9 /* _Parameter.m */; };
@@ -190,6 +192,10 @@
 		7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerUITests.m; sourceTree = "<group>"; };
 		7370BECF1CC21BB500079C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7370BEDB1CC21C0600079C8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		73AC6B4D1CF9F3F500D6676C /* DIGSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIGSLog.h; sourceTree = "<group>"; };
+		73AC6B4E1CF9F3F500D6676C /* DIGSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIGSLog.m; sourceTree = "<group>"; };
+		73AC6B4F1CF9F3F500D6676C /* DIGSPrefUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIGSPrefUtils.h; sourceTree = "<group>"; };
+		73AC6B501CF9F3F500D6676C /* DIGSPrefUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIGSPrefUtils.m; sourceTree = "<group>"; };
 		73BECE591CDC2C71009DCCD9 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
 		73BECE5A1CDC2C71009DCCD9 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
 		73BECE5B1CDC2C71009DCCD9 /* ReturnValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnValue.h; sourceTree = "<group>"; };
@@ -405,6 +411,19 @@
 			path = DocSetExplorerUITests;
 			sourceTree = "<group>";
 		};
+		73AC6B4C1CF9F3F500D6676C /* DIGS */ = {
+			isa = PBXGroup;
+			children = (
+				73AC6B4D1CF9F3F500D6676C /* DIGSLog.h */,
+				73AC6B4E1CF9F3F500D6676C /* DIGSLog.m */,
+				73AC6B4F1CF9F3F500D6676C /* DIGSPrefUtils.h */,
+				73AC6B501CF9F3F500D6676C /* DIGSPrefUtils.m */,
+				73C2162F1CC5BCA700F097B9 /* QuietLog.h */,
+				73C216301CC5BCA700F097B9 /* QuietLog.m */,
+			);
+			path = DIGS;
+			sourceTree = "<group>";
+		};
 		73C215E91CC5BCA700F097B9 /* DocSet Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,8 +530,7 @@
 		73C2162E1CC5BCA700F097B9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				73C2162F1CC5BCA700F097B9 /* QuietLog.h */,
-				73C216301CC5BCA700F097B9 /* QuietLog.m */,
+				73AC6B4C1CF9F3F500D6676C /* DIGS */,
 				73BECF101CDC7AE2009DCCD9 /* AKRegexUtils.h */,
 				73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */,
 				730590351CF91489007958CB /* DSETextView.h */,
@@ -671,6 +689,7 @@
 				7370BEB01CC21BB400079C8E /* main.m in Sources */,
 				73C2164C1CC5BCA700F097B9 /* FilePath.m in Sources */,
 				73C216341CC5BCA700F097B9 /* APILanguage.m in Sources */,
+				73AC6B511CF9F3F500D6676C /* DIGSLog.m in Sources */,
 				73C216761CC5BCA700F097B9 /* _DSAToken.m in Sources */,
 				7315E6CE1CD97F04004DE0FB /* MOBIndexedObjectItem.m in Sources */,
 				7315E6D11CD97F04004DE0FB /* MOBToManyRelationshipItem.m in Sources */,
@@ -704,6 +723,7 @@
 				73C216491CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */,
 				73BECF021CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m in Sources */,
+				73AC6B521CF9F3F500D6676C /* DIGSPrefUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
