@@ -15,6 +15,7 @@
 		7315E6D11CD97F04004DE0FB /* MOBToManyRelationshipItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6C71CD97F04004DE0FB /* MOBToManyRelationshipItem.m */; };
 		7315E6D31CD97F04004DE0FB /* MOBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315E6CB1CD97F04004DE0FB /* MOBrowserViewController.m */; };
 		7315E6D41CD97F04004DE0FB /* MOBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7315E6CC1CD97F04004DE0FB /* MOBrowserViewController.xib */; };
+		731750641D00D85F00DC05DE /* DSEPrefUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 731750631D00D85F00DC05DE /* DSEPrefUtils.m */; };
 		7335AA5F1CCDB04900080E58 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7335AA5E1CCDB04900080E58 /* WebKit.framework */; };
 		736AB61E1CC58C9500C4376C /* DocSetExplorerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* DocSetExplorerWindowController.m */; };
 		736AB61F1CC58C9500C4376C /* DocSetExplorerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* DocSetExplorerWindowController.xib */; };
@@ -25,7 +26,6 @@
 		7370BEC31CC21BB500079C8E /* DocSetExplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEC21CC21BB500079C8E /* DocSetExplorerTests.m */; };
 		7370BECE1CC21BB500079C8E /* DocSetExplorerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BECD1CC21BB500079C8E /* DocSetExplorerUITests.m */; };
 		73AC6B511CF9F3F500D6676C /* DIGSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AC6B4E1CF9F3F500D6676C /* DIGSLog.m */; };
-		73AC6B521CF9F3F500D6676C /* DIGSPrefUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AC6B501CF9F3F500D6676C /* DIGSPrefUtils.m */; };
 		73BECE5D1CDC2C71009DCCD9 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE5A1CDC2C71009DCCD9 /* Parameter.m */; };
 		73BECE5E1CDC2C71009DCCD9 /* ReturnValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE5C1CDC2C71009DCCD9 /* ReturnValue.m */; };
 		73BECE631CDC2C8C009DCCD9 /* _Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BECE601CDC2C8C009DCCD9 /* _Parameter.m */; };
@@ -174,6 +174,8 @@
 		7315E6CA1CD97F04004DE0FB /* MOBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBrowserViewController.h; sourceTree = "<group>"; };
 		7315E6CB1CD97F04004DE0FB /* MOBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBrowserViewController.m; sourceTree = "<group>"; };
 		7315E6CC1CD97F04004DE0FB /* MOBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOBrowserViewController.xib; sourceTree = "<group>"; };
+		731750621D00D85F00DC05DE /* DSEPrefUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSEPrefUtils.h; sourceTree = "<group>"; };
+		731750631D00D85F00DC05DE /* DSEPrefUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSEPrefUtils.m; sourceTree = "<group>"; };
 		7335AA5E1CCDB04900080E58 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		736AB61B1CC58C9500C4376C /* DocSetExplorerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetExplorerWindowController.h; sourceTree = "<group>"; };
 		736AB61C1CC58C9500C4376C /* DocSetExplorerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerWindowController.m; sourceTree = "<group>"; };
@@ -194,8 +196,6 @@
 		7370BEDB1CC21C0600079C8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		73AC6B4D1CF9F3F500D6676C /* DIGSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIGSLog.h; sourceTree = "<group>"; };
 		73AC6B4E1CF9F3F500D6676C /* DIGSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIGSLog.m; sourceTree = "<group>"; };
-		73AC6B4F1CF9F3F500D6676C /* DIGSPrefUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIGSPrefUtils.h; sourceTree = "<group>"; };
-		73AC6B501CF9F3F500D6676C /* DIGSPrefUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIGSPrefUtils.m; sourceTree = "<group>"; };
 		73BECE591CDC2C71009DCCD9 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
 		73BECE5A1CDC2C71009DCCD9 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
 		73BECE5B1CDC2C71009DCCD9 /* ReturnValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnValue.h; sourceTree = "<group>"; };
@@ -416,8 +416,6 @@
 			children = (
 				73AC6B4D1CF9F3F500D6676C /* DIGSLog.h */,
 				73AC6B4E1CF9F3F500D6676C /* DIGSLog.m */,
-				73AC6B4F1CF9F3F500D6676C /* DIGSPrefUtils.h */,
-				73AC6B501CF9F3F500D6676C /* DIGSPrefUtils.m */,
 				73C2162F1CC5BCA700F097B9 /* QuietLog.h */,
 				73C216301CC5BCA700F097B9 /* QuietLog.m */,
 			);
@@ -533,6 +531,8 @@
 				73AC6B4C1CF9F3F500D6676C /* DIGS */,
 				73BECF101CDC7AE2009DCCD9 /* AKRegexUtils.h */,
 				73BECF111CDC7AE2009DCCD9 /* AKRegexUtils.m */,
+				731750621D00D85F00DC05DE /* DSEPrefUtils.h */,
+				731750631D00D85F00DC05DE /* DSEPrefUtils.m */,
 				730590351CF91489007958CB /* DSETextView.h */,
 				730590361CF91489007958CB /* DSETextView.m */,
 			);
@@ -705,6 +705,7 @@
 				73C2168B1CC5BCA700F097B9 /* _TokenType.m in Sources */,
 				73C216881CC5BCA700F097B9 /* _TokenMetainformation.m in Sources */,
 				73C2168E1CC5BCA700F097B9 /* DocSetModel.xcdatamodeld in Sources */,
+				731750641D00D85F00DC05DE /* DSEPrefUtils.m in Sources */,
 				73C216851CC5BCA700F097B9 /* _TokenGroup.m in Sources */,
 				73C216701CC5BCA700F097B9 /* _DSANode.m in Sources */,
 				7315E6D01CD97F04004DE0FB /* MOBObjectItem.m in Sources */,
@@ -723,7 +724,6 @@
 				73C216491CC5BCA700F097B9 /* DSAToken.m in Sources */,
 				7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */,
 				73BECF021CDC3BB1009DCCD9 /* DocSetIndex+DocSetExplorer.m in Sources */,
-				73AC6B521CF9F3F500D6676C /* DIGSPrefUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
