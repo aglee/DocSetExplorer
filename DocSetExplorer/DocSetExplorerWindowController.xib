@@ -209,6 +209,43 @@
                                                                     <rect key="frame" x="-3" y="-3" width="332.5" height="503"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
+                                                                        <popUpButton verticalHuggingPriority="750" id="gZ7-dp-DHW">
+                                                                            <rect key="frame" x="92" y="459" width="151" height="26"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <popUpButtonCell key="cell" type="push" title="Example Searches" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="-1" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="NLl-2F-eUd" id="vY2-PG-pyq">
+                                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                                <font key="font" metaFont="menu"/>
+                                                                                <menu key="menu" id="9mZ-f5-nHD">
+                                                                                    <items>
+                                                                                        <menuItem title="Example Searches" state="on" tag="-1" hidden="YES" id="NLl-2F-eUd"/>
+                                                                                        <menuItem title="Search Objective-C Tokens for &quot;View&quot;" keyEquivalent="1" id="TDd-Ry-txB">
+                                                                                            <connections>
+                                                                                                <action selector="useSavedSearch:" target="-2" id="gii-Lw-4W3"/>
+                                                                                            </connections>
+                                                                                        </menuItem>
+                                                                                        <menuItem title="Search Nodes for &quot;Guide&quot;" tag="1" keyEquivalent="2" id="adL-Rn-19D">
+                                                                                            <connections>
+                                                                                                <action selector="useSavedSearch:" target="-2" id="Bhi-6e-C0x"/>
+                                                                                            </connections>
+                                                                                        </menuItem>
+                                                                                        <menuItem title="Show All Swift Token Types" tag="2" keyEquivalent="3" id="aad-y8-giT">
+                                                                                            <connections>
+                                                                                                <action selector="useSavedSearch:" target="-2" id="D1h-NY-5XY"/>
+                                                                                            </connections>
+                                                                                        </menuItem>
+                                                                                    </items>
+                                                                                </menu>
+                                                                            </popUpButtonCell>
+                                                                        </popUpButton>
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="elj-Wy-VAC">
+                                                                            <rect key="frame" x="93" y="426" width="221.5" height="33"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Select an example to see how Advanced search works.  You can modify the search parameters below." id="jKK-Nk-tje">
+                                                                                <font key="font" metaFont="miniSystem"/>
+                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                            </textFieldCell>
+                                                                        </textField>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="f1z-bW-oOg">
                                                                             <rect key="frame" x="41.5" y="395" width="47" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -266,7 +303,7 @@
                                                                                 <rect key="frame" x="1" y="1" width="200.5" height="94"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
-                                                                                    <textView importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" textReplacement="YES" smartInsertDelete="YES" id="lay-Hl-Cq2" customClass="DSETextView">
+                                                                                    <textView importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" textReplacement="YES" id="lay-Hl-Cq2" customClass="DSETextView">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="200.5" height="94"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,7 +367,7 @@
                                                                                 <rect key="frame" x="1" y="1" width="201" height="118"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
-                                                                                    <textView importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="GWU-vD-TiT" customClass="DSETextView">
+                                                                                    <textView importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" textReplacement="YES" id="GWU-vD-TiT" customClass="DSETextView">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="201" height="118"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -380,43 +417,6 @@
                                                                                 <action selector="doSearch:" target="SQP-8D-SLK" id="do3-22-PYD"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <popUpButton verticalHuggingPriority="750" id="gZ7-dp-DHW">
-                                                                            <rect key="frame" x="92" y="459" width="151" height="26"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                            <popUpButtonCell key="cell" type="push" title="Example Searches" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="-1" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="NLl-2F-eUd" id="vY2-PG-pyq">
-                                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                                <font key="font" metaFont="menu"/>
-                                                                                <menu key="menu" id="9mZ-f5-nHD">
-                                                                                    <items>
-                                                                                        <menuItem title="Example Searches" state="on" tag="-1" hidden="YES" id="NLl-2F-eUd"/>
-                                                                                        <menuItem title="Search Objective-C Tokens for &quot;View&quot;" keyEquivalent="1" id="TDd-Ry-txB">
-                                                                                            <connections>
-                                                                                                <action selector="useSavedSearch:" target="-2" id="gii-Lw-4W3"/>
-                                                                                            </connections>
-                                                                                        </menuItem>
-                                                                                        <menuItem title="Search Nodes for &quot;Guide&quot;" tag="1" keyEquivalent="2" id="adL-Rn-19D">
-                                                                                            <connections>
-                                                                                                <action selector="useSavedSearch:" target="-2" id="Bhi-6e-C0x"/>
-                                                                                            </connections>
-                                                                                        </menuItem>
-                                                                                        <menuItem title="Show All Swift Token Types" tag="2" keyEquivalent="3" id="aad-y8-giT">
-                                                                                            <connections>
-                                                                                                <action selector="useSavedSearch:" target="-2" id="D1h-NY-5XY"/>
-                                                                                            </connections>
-                                                                                        </menuItem>
-                                                                                    </items>
-                                                                                </menu>
-                                                                            </popUpButtonCell>
-                                                                        </popUpButton>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="elj-Wy-VAC">
-                                                                            <rect key="frame" x="93" y="426" width="221.5" height="33"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                            <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Select an example to see how Advanced search works.  You can modify the search parameters below." id="jKK-Nk-tje">
-                                                                                <font key="font" metaFont="miniSystem"/>
-                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                            </textFieldCell>
-                                                                        </textField>
                                                                     </subviews>
                                                                 </customView>
                                                             </subviews>
