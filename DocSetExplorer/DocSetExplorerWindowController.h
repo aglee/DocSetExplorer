@@ -13,8 +13,6 @@
 
 @interface DocSetExplorerWindowController : NSWindowController <NSTableViewDelegate, NSSplitViewDelegate>
 
-@property (strong, readonly) DocSetIndex *selectedDocSetIndex;
-
 #pragma mark - Search
 
 /*! Perform a search using parameters that the user entered in vc's view. */

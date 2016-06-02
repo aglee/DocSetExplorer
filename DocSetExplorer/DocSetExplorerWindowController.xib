@@ -14,9 +14,9 @@
                 <outlet property="docPathField" destination="opw-6s-GJr" id="Lld-1p-B89"/>
                 <outlet property="docTitleField" destination="KuE-fT-QtJ" id="d8p-1n-uuQ"/>
                 <outlet property="docWebView" destination="h9W-jt-Ml4" id="BXJ-kp-vzU"/>
-                <outlet property="fetchedObjectsArrayController" destination="zLx-OZ-XLy" id="0kN-st-yhO"/>
-                <outlet property="fetchedObjectsTableView" destination="O4m-s9-3mk" id="dRN-4R-Ryj"/>
                 <outlet property="moBrowserContainerView" destination="0b6-Th-V7K" id="FkY-eM-90W"/>
+                <outlet property="searchResultsArrayController" destination="zLx-OZ-XLy" id="0kN-st-yhO"/>
+                <outlet property="searchResultsTableView" destination="O4m-s9-3mk" id="dRN-4R-Ryj"/>
                 <outlet property="simpleSearchTabViewItem" destination="Mbd-1D-P6g" id="GP8-vS-JwJ"/>
                 <outlet property="simpleSearchViewController" destination="fha-K4-CUa" id="2h3-MH-gV2"/>
                 <outlet property="window" destination="6RG-XG-WuU" id="4Q0-en-M0i"/>
@@ -29,9 +29,9 @@
         <window title="DocSetExplorer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="6RG-XG-WuU">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="127" y="343" width="862" height="594"/>
+            <rect key="contentRect" x="127" y="276" width="862" height="594"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <value key="minSize" type="size" width="640" height="640"/>
+            <value key="minSize" type="size" width="800" height="560"/>
             <view key="contentView" id="xX4-c7-PNg" userLabel="Window Content View">
                 <rect key="frame" x="0.0" y="0.0" width="862" height="594"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -271,7 +271,7 @@
                                                                             </textFieldCell>
                                                                         </textField>
                                                                         <popUpButton verticalHuggingPriority="750" id="VWQ-S6-fGU" userLabel="Entities Popup Button">
-                                                                            <rect key="frame" x="93" y="390" width="173" height="26"/>
+                                                                            <rect key="frame" x="93" y="390" width="180" height="26"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="nxg-Tp-Ndi">
                                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>

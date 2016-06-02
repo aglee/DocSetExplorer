@@ -20,19 +20,30 @@
 #define MyErrorDomain @"com.appkido.DocSetExplorer"
 
 @interface DocSetExplorerWindowController ()
-@property (strong) IBOutlet NSArrayController *fetchedObjectsArrayController;
+
+// Selecting from the available docsets.
+@property (strong) IBOutlet NSArrayController *availableDocSetsArrayController;
+@property (strong, readonly) DocSetIndex *selectedDocSetIndex;
+
+// Search UI.
 @property (strong) IBOutlet NSTabViewItem *simpleSearchTabViewItem;
 @property (strong) IBOutlet NSTabViewItem *advancedSearchTabViewItem;
-@property (weak) IBOutlet NSTableView *fetchedObjectsTableView;
-@property (weak) IBOutlet NSTextField *docPathField;
-@property (weak) IBOutlet NSTextField *docTitleField;
-@property (weak) IBOutlet WebView *docWebView;
-@property (weak) IBOutlet NSView *moBrowserContainerView;
-@property (strong) IBOutlet NSArrayController *availableDocSetsArrayController;
 @property (strong) IBOutlet SimpleSearchViewController *simpleSearchViewController;
 @property (strong) IBOutlet AdvancedSearchViewController *advancedSearchViewController;
 
+// Search results.
+@property (strong) IBOutlet NSArrayController *searchResultsArrayController;
+@property (weak) IBOutlet NSTableView *searchResultsTableView;
+
+// Viewing the selected search result's documentation.
+@property (weak) IBOutlet NSTextField *docPathField;
+@property (weak) IBOutlet NSTextField *docTitleField;
+@property (weak) IBOutlet WebView *docWebView;
+
+// Browsing the selected search result's attributes and relationships.
 @property (strong) MOBrowserViewController *moBrowserViewController;
+@property (weak) IBOutlet NSView *moBrowserContainerView;
+
 @end
 
 #pragma mark -
@@ -70,7 +81,9 @@
 	// If that worked, try to display the fetched objects.
 	BOOL tableViewUpdateDidSucceed = NO;
 	if (fetchedObjects) {
-		tableViewUpdateDidSucceed = [self _populateTableViewWithObjects:fetchedObjects keyPaths:keyPaths error:&error];
+		tableViewUpdateDidSucceed = [self _updateWithSearchResults:fetchedObjects
+														  keyPaths:keyPaths
+															 error:&error];
 	}
 
 	// If we got an error anywhere above, report it.
@@ -93,7 +106,7 @@
 
 - (IBAction)selectDocSet:(id)sender
 {
-	[self _updateToReflectSelectedDocSet];
+	[self _selectedDocSetDidChange];
 }
 
 - (IBAction)doSearch:(id)sender
@@ -146,65 +159,11 @@
 {
 	NSTableView *whichTableView = aNotification.object;
 
-	if (whichTableView == self.fetchedObjectsTableView) {
-		[self _updateToReflectSelectedFetchedObject];
+	if (whichTableView == self.searchResultsTableView) {
+		[self _selectedSearchResultDidChange];
 	} else {
 		QLog(@"+++ [ODD] Unexpected table view %@", whichTableView);
 	}
-}
-
-- (void)_updateToReflectSelectedFetchedObject
-{
-	id selectedObject = self.fetchedObjectsArrayController.selectedObjects.firstObject;
-	NSURL *docURL = [self.selectedDocSetIndex documentationURLForObject:selectedObject];
-
-	// Update the managed object browser.
-	if (selectedObject == nil || ![selectedObject isKindOfClass:[NSManagedObject class]]) {
-		self.moBrowserViewController.rootObject = nil;
-	} else {
-		self.moBrowserViewController.rootObject = selectedObject;
-	}
-
-	// Update docPathField.
-	if (docURL == nil) {
-		self.docPathField.stringValue = @"";
-	} else if (docURL.isFileURL) {
-		NSString *itemPath;
-		NSString *itemAnchor;
-		if ([selectedObject isKindOfClass:[DSAToken class]]) {
-			itemPath = ((DSAToken *)selectedObject).metainformation.file.path;
-			itemAnchor = ((DSAToken *)selectedObject).metainformation.anchor;
-		} else if ([selectedObject isKindOfClass:[DSANodeURL class]]) {
-			itemPath = ((DSANodeURL *)selectedObject).path;
-			itemAnchor = ((DSANodeURL *)selectedObject).anchor;
-		}
-		if (itemAnchor.length) {
-			itemPath = [NSString stringWithFormat:@"%@#%@", itemPath, itemAnchor];
-		}
-		self.docPathField.stringValue = (itemPath.length ? itemPath : @"");
-	} else {
-		self.docPathField.stringValue = docURL.absoluteString;
-	}
-
-	// Update docTitleField and docWebView.
-	self.docTitleField.stringValue = @"";  // We will fill this in as the web view loads.
-	QLog(@"+++ Documentation URL for selected item is %@", docURL);
-	if (docURL) {
-		// For local HTML files, turn off JavaScript, which interferes by hiding
-		// stuff we don't want to hide.
-		self.docWebView.preferences.javaScriptEnabled = !docURL.isFileURL;
-
-		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];
-		[self.docWebView.mainFrame loadRequest:urlRequest];
-	} else {
-		[self.docWebView.mainFrame loadHTMLString:@"<h1>?</h1>" baseURL:nil];
-	}
-}
-
-- (void)_updateToReflectSelectedDocSet
-{
-	DocSetIndex *docSetIndex = self.availableDocSetsArrayController.selectedObjects.firstObject;
-	DSEPrefs.defaultDocSetPath = docSetIndex.docSetPath;
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
@@ -380,16 +339,22 @@
 	}
 }
 
-// Tears down and re-adds table columns based on the key paths the table view is now being asked to display.
-// Reuses existing NSTableColumns where possible, so if the user had meticulously set a column width or sort order they liked, we don't blow away those settings.
-// **NOTE:** The logic here only works if the table view is cell-based.  In a view-based table view, the column bindings are at the level of the cell view, not the NSTableColumn.
+// Tears down and re-adds table columns based on the key paths the table view is
+// now being asked to display.  Reuses existing NSTableColumns where possible,
+// so if the user had meticulously set a column width or sort order they liked,
+// we don't blow away those settings.
+//
+// **NOTE:** The logic here only works if the table view is cell-based.  In a
+// view-based table view, the column bindings are at the level of the cell view,
+// not the NSTableColumn.
 - (void)_reconstructTableColumnsWithKeyPaths:(NSArray *)keyPathsForTableColumns
 {
-	// Remove all existing table columns, but keep them around so we can reuse them where possible.
+	// Remove all existing table columns, but keep them around so we can reuse
+	// them where possible.
 	NSMutableDictionary *oldTableColumnsByKeyPath = [NSMutableDictionary dictionary];
-	for (NSTableColumn *tableColumn in [self.fetchedObjectsTableView.tableColumns copy]) {
+	for (NSTableColumn *tableColumn in [self.searchResultsTableView.tableColumns copy]) {
 		oldTableColumnsByKeyPath[tableColumn.sortDescriptorPrototype.key] = tableColumn;
-		[self.fetchedObjectsTableView removeTableColumn:tableColumn];
+		[self.searchResultsTableView removeTableColumn:tableColumn];
 	}
 
 	// Re-add table columns as specified.
@@ -399,27 +364,33 @@
 		if (tableColumn == nil) {
 			tableColumn = [[NSTableColumn alloc] initWithIdentifier:keyPath];
 			tableColumn.title = keyPath;
-			tableColumn.sortDescriptorPrototype = [NSSortDescriptor sortDescriptorWithKey:keyPath ascending:YES];
+			tableColumn.sortDescriptorPrototype = [NSSortDescriptor sortDescriptorWithKey:keyPath
+																				ascending:YES];
 			[tableColumn bind:@"value"
-					 toObject:self.fetchedObjectsArrayController
+					 toObject:self.searchResultsArrayController
 				  withKeyPath:[@"arrangedObjects." stringByAppendingString:keyPath]
 					  options:nil];
 		}
-		[self.fetchedObjectsTableView addTableColumn:tableColumn];
+		[self.searchResultsTableView addTableColumn:tableColumn];
 		[sortDescriptors addObject:tableColumn.sortDescriptorPrototype];
 	}
-	self.fetchedObjectsTableView.sortDescriptors = sortDescriptors;
+	self.searchResultsTableView.sortDescriptors = sortDescriptors;
 }
 
-- (BOOL)_populateTableViewWithObjects:(NSArray *)fetchedObjects keyPaths:(NSArray *)keyPathsForTableColumns error:(NSError **)errorPtr
+- (BOOL)_updateWithSearchResults:(NSArray *)searchResults
+						keyPaths:(NSArray *)keyPathsForTableColumns
+						   error:(NSError **)errorPtr
 {
-	// An exception will be thrown if the objects in fetchedObjects are not KVO-compatible with the key paths.
+	// An exception will be thrown if the objects in fetchedObjects are not
+	// KVO-compatible with the key paths.
 	@try {
-		// I start by removing all existing table rows, so the table view won't try to display objects that aren't compatible with the new key paths.  I'm not sure this is necessary, but it seems safer to do it.
-		self.fetchedObjectsArrayController.content = nil;
+		// Start by removing all existing table rows, so the table view won't
+		// try to display objects that aren't compatible with the new key paths.
+		// I'm not positive this is necessary, but it seems safer to do it.
+		self.searchResultsArrayController.content = nil;
 		[self _reconstructTableColumnsWithKeyPaths:keyPathsForTableColumns];
-		self.fetchedObjectsArrayController.sortDescriptors = self.fetchedObjectsTableView.sortDescriptors;
-		self.fetchedObjectsArrayController.content = fetchedObjects;
+		self.searchResultsArrayController.sortDescriptors = self.searchResultsTableView.sortDescriptors;
+		self.searchResultsArrayController.content = searchResults;
 		return YES;
 	}
 	@catch (NSException *ex) {
@@ -438,7 +409,9 @@
 	}
 
 	[array enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger objectIndex, BOOL * _Nonnull stop) {
-		NSMutableString *valuesString = [NSMutableString stringWithFormat:@"[%lu] %@", (unsigned long)objectIndex, [obj className]];
+		NSMutableString *valuesString = [NSMutableString stringWithFormat:@"[%lu] %@",
+										 (unsigned long)objectIndex,
+										 [obj className]];
 
 		for (NSString *kp in keyPaths) {
 			[valuesString appendFormat:@" [%@]", [obj valueForKeyPath:kp]];
@@ -448,6 +421,62 @@
 	}];
 
 	QLog(@"%@ objects", @(array.count));
+}
+
+#pragma mark - Private methods - selection changes
+
+- (void)_selectedSearchResultDidChange
+{
+	id selectedSearchResult = self.searchResultsArrayController.selectedObjects.firstObject;
+	NSURL *docURL = [self.selectedDocSetIndex documentationURLForObject:selectedSearchResult];
+
+	// Update the managed object browser.
+	if (selectedSearchResult == nil || ![selectedSearchResult isKindOfClass:[NSManagedObject class]]) {
+		self.moBrowserViewController.rootObject = nil;
+	} else {
+		self.moBrowserViewController.rootObject = selectedSearchResult;
+	}
+
+	// Update docPathField.
+	if (docURL == nil) {
+		self.docPathField.stringValue = @"";
+	} else if (docURL.isFileURL) {
+		NSString *itemPath;
+		NSString *itemAnchor;
+		if ([selectedSearchResult isKindOfClass:[DSAToken class]]) {
+			itemPath = ((DSAToken *)selectedSearchResult).metainformation.file.path;
+			itemAnchor = ((DSAToken *)selectedSearchResult).metainformation.anchor;
+		} else if ([selectedSearchResult isKindOfClass:[DSANodeURL class]]) {
+			itemPath = ((DSANodeURL *)selectedSearchResult).path;
+			itemAnchor = ((DSANodeURL *)selectedSearchResult).anchor;
+		}
+		if (itemAnchor.length) {
+			itemPath = [NSString stringWithFormat:@"%@#%@", itemPath, itemAnchor];
+		}
+		self.docPathField.stringValue = (itemPath.length ? itemPath : @"");
+	} else {
+		self.docPathField.stringValue = docURL.absoluteString;
+	}
+
+	// Update docTitleField and docWebView.
+	self.docTitleField.stringValue = @"";  // We will fill this in as the web view loads.
+	QLog(@"+++ Documentation URL for selected item is %@", docURL);
+	if (docURL) {
+		// For local HTML files, turn off JavaScript, which interferes by hiding
+		// stuff we don't want to hide.
+		self.docWebView.preferences.javaScriptEnabled = !docURL.isFileURL;
+
+		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:docURL];
+		[self.docWebView.mainFrame loadRequest:urlRequest];
+	} else {
+		[self.docWebView.mainFrame loadHTMLString:@"<h1>?</h1>" baseURL:nil];
+	}
+}
+
+- (void)_selectedDocSetDidChange
+{
+	DocSetIndex *docSetIndex = self.availableDocSetsArrayController.selectedObjects.firstObject;
+	DSEPrefs.defaultDocSetPath = docSetIndex.docSetPath;
 }
 
 @end
