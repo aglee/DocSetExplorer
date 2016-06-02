@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 /*!
- * Abstract base class.
+ * Abstract base class.  Presents a UI for searching a DocSetIndex.
  */
 @interface SearchingViewController : NSViewController
 

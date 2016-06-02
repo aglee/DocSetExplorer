@@ -32,19 +32,19 @@
             <rect key="contentRect" x="127" y="343" width="862" height="594"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="640" height="640"/>
-            <view key="contentView" id="xX4-c7-PNg">
+            <view key="contentView" id="xX4-c7-PNg" userLabel="Window Content View">
                 <rect key="frame" x="0.0" y="0.0" width="862" height="594"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" id="odn-jy-dSr">
+                    <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" id="odn-jy-dSr" userLabel="Top-Level Split View">
                         <rect key="frame" x="0.0" y="0.0" width="862" height="594"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <customView id="75N-cW-Tbs">
+                            <customView id="75N-cW-Tbs" userLabel="LEFT Pane Container">
                                 <rect key="frame" x="0.0" y="0.0" width="332.5" height="594"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <customView id="OYe-5d-Nyv" userLabel="LEFT">
+                                    <customView id="OYe-5d-Nyv" userLabel="LEFT Pane">
                                         <rect key="frame" x="0.0" y="0.0" width="332.5" height="594"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -57,12 +57,27 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <tabView id="LVD-0w-m5v" userLabel="Search Tab View">
+                                            <popUpButton verticalHuggingPriority="750" id="PYs-jC-5jz" userLabel="DocSets Popup Button">
+                                                <rect key="frame" x="90" y="550" width="225.5" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="rlr-2E-VrI">
+                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="menu"/>
+                                                    <menu key="menu" id="tiW-0j-gXT"/>
+                                                </popUpButtonCell>
+                                                <connections>
+                                                    <action selector="selectDocSet:" target="-2" id="6Kd-lq-iYh"/>
+                                                    <binding destination="tZZ-wy-1nc" name="content" keyPath="arrangedObjects" id="Xpu-zh-1Dz"/>
+                                                    <binding destination="tZZ-wy-1nc" name="contentValues" keyPath="arrangedObjects.docSetName" previousBinding="Xpu-zh-1Dz" id="vyA-Mg-gcS"/>
+                                                    <binding destination="tZZ-wy-1nc" name="selectedIndex" keyPath="selectionIndex" previousBinding="vyA-Mg-gcS" id="dtt-id-xPA"/>
+                                                </connections>
+                                            </popUpButton>
+                                            <tabView id="LVD-0w-m5v" userLabel="Search (Tab View)">
                                                 <rect key="frame" x="-7" y="-10" width="346.5" height="549"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <tabViewItems>
-                                                    <tabViewItem label="Simple" identifier="1" id="Mbd-1D-P6g" userLabel="Simple Tab">
+                                                    <tabViewItem label="Simple" identifier="1" id="Mbd-1D-P6g" userLabel="Simple Search Tab">
                                                         <view key="view" id="wHI-ZF-d4A">
                                                             <rect key="frame" x="10" y="33" width="326.5" height="503"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +215,7 @@
                                                             </subviews>
                                                         </view>
                                                     </tabViewItem>
-                                                    <tabViewItem label="Advanced" identifier="2" id="qbW-5C-FAG" userLabel="Advanced Tab">
+                                                    <tabViewItem label="Advanced" identifier="2" id="qbW-5C-FAG" userLabel="Advanced Search Tab">
                                                         <view key="view" id="NUu-0H-5Zh">
                                                             <rect key="frame" x="10" y="33" width="326.5" height="503"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -424,34 +439,19 @@
                                                     </tabViewItem>
                                                 </tabViewItems>
                                             </tabView>
-                                            <popUpButton verticalHuggingPriority="750" id="PYs-jC-5jz" userLabel="DocSets Popup Button">
-                                                <rect key="frame" x="90" y="550" width="225.5" height="26"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="rlr-2E-VrI">
-                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="menu"/>
-                                                    <menu key="menu" id="tiW-0j-gXT"/>
-                                                </popUpButtonCell>
-                                                <connections>
-                                                    <action selector="selectDocSet:" target="-2" id="6Kd-lq-iYh"/>
-                                                    <binding destination="tZZ-wy-1nc" name="content" keyPath="arrangedObjects" id="Xpu-zh-1Dz"/>
-                                                    <binding destination="tZZ-wy-1nc" name="contentValues" keyPath="arrangedObjects.docSetName" previousBinding="Xpu-zh-1Dz" id="vyA-Mg-gcS"/>
-                                                    <binding destination="tZZ-wy-1nc" name="selectedIndex" keyPath="selectionIndex" previousBinding="vyA-Mg-gcS" id="dtt-id-xPA"/>
-                                                </connections>
-                                            </popUpButton>
                                         </subviews>
                                     </customView>
                                 </subviews>
                             </customView>
-                            <customView id="3xI-pJ-fXp">
+                            <customView id="3xI-pJ-fXp" userLabel="RIGHT Pane Container">
                                 <rect key="frame" x="342.5" y="0.0" width="519.5" height="594"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" id="rOq-9L-mPu" userLabel="RIGHT">
+                                    <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" id="rOq-9L-mPu" userLabel="RIGHT Pane (Split View)">
                                         <rect key="frame" x="0.0" y="0.0" width="519.5" height="594"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <customView id="y67-UK-gq2">
+                                            <customView id="y67-UK-gq2" userLabel="Fetch Results Container">
                                                 <rect key="frame" x="0.0" y="0.0" width="519.5" height="241"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
@@ -514,7 +514,7 @@
                                                     </customView>
                                                 </subviews>
                                             </customView>
-                                            <customView id="nd7-oU-f9Y">
+                                            <customView id="nd7-oU-f9Y" userLabel="Selected Result Container">
                                                 <rect key="frame" x="0.0" y="251" width="519.5" height="343"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>

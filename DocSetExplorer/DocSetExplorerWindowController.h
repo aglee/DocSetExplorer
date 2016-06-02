@@ -15,10 +15,14 @@
 
 @property (strong, readonly) DocSetIndex *selectedDocSetIndex;
 
+#pragma mark - Search
+
+/*! Perform a search using parameters that the user entered in vc's view. */
 - (void)doSearchWithViewController:(SearchingViewController *)vc;
 
 #pragma mark - Action methods
 
+- (IBAction)selectDocSet:(id)sender;
 - (IBAction)doSearch:(id)sender;
 - (IBAction)useSavedSearch:(id)sender;
 

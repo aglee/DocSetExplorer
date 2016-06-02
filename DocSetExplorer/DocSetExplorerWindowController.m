@@ -38,6 +38,8 @@
 
 @implementation DocSetExplorerWindowController
 
+#pragma mark - Search
+
 - (void)doSearchWithViewController:(SearchingViewController *)vc
 {
 	NSError *error;
