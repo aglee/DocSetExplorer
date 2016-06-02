@@ -11,6 +11,7 @@
 #import "AKRegexUtils.h"
 #import "DocSetIndex+DocSetExplorer.h"
 #import "DocSetModel.h"
+#import "DSEPrefUtils.h"
 #import "MOBrowserViewController.h"
 #import "QuietLog.h"
 #import "SimpleSearchViewController.h"
@@ -119,11 +120,20 @@
 	[super windowDidLoad];
 
 	// Initialize the list of available docsets.
-	NSSortDescriptor *sortByDocSetName = [NSSortDescriptor sortDescriptorWithKey:@"docSetName"
-																	   ascending:YES
-																		selector:@selector(caseInsensitiveCompare:)];
-	self.availableDocSetsArrayController.sortDescriptors = @[ sortByDocSetName ];
+	NSSortDescriptor *sort;
+	sort = [NSSortDescriptor sortDescriptorWithKey:@"docSetName"
+										 ascending:YES
+										  selector:@selector(caseInsensitiveCompare:)];
+	self.availableDocSetsArrayController.sortDescriptors = @[sort];
 	self.availableDocSetsArrayController.content = [DocSetIndex arrayWithStandardInstances];
+
+	// Try to select the docset indicated in prefs.
+	NSString *docSetPath = DSEPrefs.defaultDocSetPath;
+	for (DocSetIndex *docSetIndex in self.availableDocSetsArrayController.arrangedObjects) {
+		if ([docSetIndex.docSetPath isEqualToString:docSetPath]) {
+			self.availableDocSetsArrayController.selectedObjects = @[docSetIndex];
+		}
+	}
 
 	// Initialize the managed object browser.
 	self.moBrowserViewController = [[MOBrowserViewController alloc] initWithNibName:@"MOBrowserViewController" bundle:nil];
@@ -194,7 +204,7 @@
 - (void)_updateToReflectSelectedDocSet
 {
 	DocSetIndex *docSetIndex = self.availableDocSetsArrayController.selectedObjects.firstObject;
-	QLog(@"+++ newly selected docset index %@", docSetIndex);
+	DSEPrefs.defaultDocSetPath = docSetIndex.docSetPath;
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex

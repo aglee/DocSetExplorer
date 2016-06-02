@@ -53,4 +53,11 @@
 	[self newFetchWindow:nil];
 }
 
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+	if (![[NSUserDefaults standardUserDefaults] synchronize]) {
+		QLog(@"+++ [WARNING] Failed to synchronize NSUserDefaults in %s.", __PRETTY_FUNCTION__);
+	}
+}
+
 @end
