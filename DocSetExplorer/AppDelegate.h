@@ -12,6 +12,6 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (readonly, strong, nonatomic) DocSetIndex *docSetIndex;
+//@property (readonly, strong, nonatomic) DocSetIndex *docSetIndex;
 
 @end

@@ -45,8 +45,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
 	// Initialize ivars.
-	NSString *pathToDocSetBundle = @"/Users/alee/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.OSX.docset/";
-	_docSetIndex = [[DocSetIndex alloc] initWithDocSetPath:pathToDocSetBundle];
+//	NSString *pathToDocSetBundle = @"/Users/alee/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.OSX.docset/";
+//	_docSetIndex = [[DocSetIndex alloc] initWithDocSetPath:pathToDocSetBundle];
 	_windowControllers = [NSMutableArray array];
 
 	// Do startup stuff.
