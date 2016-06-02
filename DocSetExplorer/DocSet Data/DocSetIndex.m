@@ -7,7 +7,7 @@
 //
 
 #import "DocSetIndex.h"
-#import "QuietLog.h"
+#import "DIGSLog.h"
 
 @interface DocSetIndex ()
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -126,16 +126,10 @@
 	return _managedObjectContext;
 }
 
-- (NSURL *)documentsBaseURL  //TODO: Handle the case when we need the fallback URL.
+- (NSURL *)documentsBaseURL  //TODO: Handle the case when we need the fallback (online) URL.
 {
 	NSString *documentsPath = [self.docSetPath stringByAppendingPathComponent:@"Contents/Resources/Documents"];
 	return [NSURL fileURLWithPath:documentsPath];
-}
-
-- (NSURL *)headerFilesBaseURL
-{
-	NSString *sdkPath = @"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk";  //TODO: Get the right path.
-	return [NSURL fileURLWithPath:sdkPath];
 }
 
 #pragma mark - NSObject methods
