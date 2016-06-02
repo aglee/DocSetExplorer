@@ -1,12 +1,12 @@
 //
-//  DocSetExplorerWindowController.m
+//  DSEWindowController.m
 //  DocSetExplorer
 //
 //  Created by Andy Lee on 4/18/16.
 //  Copyright © 2016 Andy Lee. All rights reserved.
 //
 
-#import "DocSetExplorerWindowController.h"
+#import "DSEWindowController.h"
 #import "AdvancedSearchViewController.h"
 #import "AKRegexUtils.h"
 #import "DocSetIndex+DocSetExplorer.h"
@@ -19,7 +19,7 @@
 
 #define MyErrorDomain @"com.appkido.DocSetExplorer"
 
-@interface DocSetExplorerWindowController ()
+@interface DSEWindowController ()
 
 // Selecting from the available docsets.
 @property (strong) IBOutlet NSArrayController *availableDocSetsArrayController;
@@ -48,7 +48,7 @@
 
 #pragma mark -
 
-@implementation DocSetExplorerWindowController
+@implementation DSEWindowController
 
 #pragma mark - Search
 

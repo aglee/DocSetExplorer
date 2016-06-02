@@ -17,8 +17,8 @@
 		7315E6D41CD97F04004DE0FB /* MOBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7315E6CC1CD97F04004DE0FB /* MOBrowserViewController.xib */; };
 		731750641D00D85F00DC05DE /* DSEPrefUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 731750631D00D85F00DC05DE /* DSEPrefUtils.m */; };
 		7335AA5F1CCDB04900080E58 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7335AA5E1CCDB04900080E58 /* WebKit.framework */; };
-		736AB61E1CC58C9500C4376C /* DocSetExplorerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* DocSetExplorerWindowController.m */; };
-		736AB61F1CC58C9500C4376C /* DocSetExplorerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* DocSetExplorerWindowController.xib */; };
+		736AB61E1CC58C9500C4376C /* DSEWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736AB61C1CC58C9500C4376C /* DSEWindowController.m */; };
+		736AB61F1CC58C9500C4376C /* DSEWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736AB61D1CC58C9500C4376C /* DSEWindowController.xib */; };
 		7370BEAD1CC21BB400079C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAC1CC21BB400079C8E /* AppDelegate.m */; };
 		7370BEB01CC21BB400079C8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7370BEAF1CC21BB400079C8E /* main.m */; };
 		7370BEB51CC21BB400079C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7370BEB41CC21BB400079C8E /* Assets.xcassets */; };
@@ -177,9 +177,9 @@
 		731750621D00D85F00DC05DE /* DSEPrefUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSEPrefUtils.h; sourceTree = "<group>"; };
 		731750631D00D85F00DC05DE /* DSEPrefUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSEPrefUtils.m; sourceTree = "<group>"; };
 		7335AA5E1CCDB04900080E58 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		736AB61B1CC58C9500C4376C /* DocSetExplorerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSetExplorerWindowController.h; sourceTree = "<group>"; };
-		736AB61C1CC58C9500C4376C /* DocSetExplorerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSetExplorerWindowController.m; sourceTree = "<group>"; };
-		736AB61D1CC58C9500C4376C /* DocSetExplorerWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocSetExplorerWindowController.xib; sourceTree = "<group>"; };
+		736AB61B1CC58C9500C4376C /* DSEWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSEWindowController.h; sourceTree = "<group>"; };
+		736AB61C1CC58C9500C4376C /* DSEWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSEWindowController.m; sourceTree = "<group>"; };
+		736AB61D1CC58C9500C4376C /* DSEWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSEWindowController.xib; sourceTree = "<group>"; };
 		7370BEA81CC21BB400079C8E /* DocSetExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocSetExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7370BEAB1CC21BB400079C8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7370BEAC1CC21BB400079C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -374,9 +374,9 @@
 				73BECF051CDC7530009DCCD9 /* SimpleSearchViewController.m */,
 				73BECF181CDD1938009DCCD9 /* AdvancedSearchViewController.h */,
 				73BECF191CDD1938009DCCD9 /* AdvancedSearchViewController.m */,
-				736AB61B1CC58C9500C4376C /* DocSetExplorerWindowController.h */,
-				736AB61C1CC58C9500C4376C /* DocSetExplorerWindowController.m */,
-				736AB61D1CC58C9500C4376C /* DocSetExplorerWindowController.xib */,
+				736AB61B1CC58C9500C4376C /* DSEWindowController.h */,
+				736AB61C1CC58C9500C4376C /* DSEWindowController.m */,
+				736AB61D1CC58C9500C4376C /* DSEWindowController.xib */,
 				7370BEB41CC21BB400079C8E /* Assets.xcassets */,
 				7370BEB61CC21BB400079C8E /* MainMenu.xib */,
 				7370BEB91CC21BB400079C8E /* Info.plist */,
@@ -643,7 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7370BEB51CC21BB400079C8E /* Assets.xcassets in Resources */,
-				736AB61F1CC58C9500C4376C /* DocSetExplorerWindowController.xib in Resources */,
+				736AB61F1CC58C9500C4376C /* DSEWindowController.xib in Resources */,
 				7370BEB81CC21BB400079C8E /* MainMenu.xib in Resources */,
 				7315E6D41CD97F04004DE0FB /* MOBrowserViewController.xib in Resources */,
 			);
@@ -673,7 +673,7 @@
 				73C216551CC5BCA700F097B9 /* OrderedSubnode.m in Sources */,
 				73C2166D1CC5BCA700F097B9 /* _DSADistributionVersion.m in Sources */,
 				73C2165E1CC5BCA700F097B9 /* TokenType.m in Sources */,
-				736AB61E1CC58C9500C4376C /* DocSetExplorerWindowController.m in Sources */,
+				736AB61E1CC58C9500C4376C /* DSEWindowController.m in Sources */,
 				73C2163D1CC5BCA700F097B9 /* DownloadableFile.m in Sources */,
 				73BECF061CDC7530009DCCD9 /* SimpleSearchViewController.m in Sources */,
 				73C2164F1CC5BCA700F097B9 /* Header.m in Sources */,

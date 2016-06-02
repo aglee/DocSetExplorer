@@ -1,5 +1,5 @@
 //
-//  DocSetExplorerWindowController.h
+//  DSEWindowController.h
 //  DocSetExplorer
 //
 //  Created by Andy Lee on 4/18/16.
@@ -11,7 +11,7 @@
 @class DocSetIndex;
 @class SearchingViewController;
 
-@interface DocSetExplorerWindowController : NSWindowController <NSTableViewDelegate, NSSplitViewDelegate>
+@interface DSEWindowController : NSWindowController <NSTableViewDelegate, NSSplitViewDelegate>
 
 #pragma mark - Search
 

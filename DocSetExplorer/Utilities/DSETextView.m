@@ -7,7 +7,7 @@
 //
 
 #import "DSETextView.h"
-#import "DocSetExplorerWindowController.h"
+#import "DSEWindowController.h"
 
 @implementation DSETextView
 

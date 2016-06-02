@@ -10,7 +10,7 @@
 #import "DocSetIndex.h"
 #import "DocSetModel.h"
 #import "QuietLog.h"
-#import "DocSetExplorerWindowController.h"
+#import "DSEWindowController.h"
 
 
 @interface AppDelegate ()
@@ -27,7 +27,7 @@
 - (IBAction)newFetchWindow:(id)sender
 {
 	// Add a new window controller to our list.
-	DocSetExplorerWindowController *windowController = [[DocSetExplorerWindowController alloc] initWithWindowNibName:@"DocSetExplorerWindowController"];
+	DSEWindowController *windowController = [[DSEWindowController alloc] initWithWindowNibName:@"DSEWindowController"];
 	[self.windowControllers addObject:windowController];
 
 	// Ask to be notified when the window closes, so we can remove it from our list.
